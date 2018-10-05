@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.2">
-<title>GitHub Enterprise</title>
+<title>Chapter Title</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -414,164 +414,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_github_enterprise">Appendix A: GitHub Enterprise</h2>
+<h2 id="unique_chapter_id">Chapter Title</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Most people understandably equate GitHub (the company) with github.com (the website), but it&#8217;s interesting to note that they&#8217;re not one and the same.</p>
-</div>
-<div class="paragraph">
-<p>The GitHub website, as important it is to modern open- and closed-source software development, is not the only product that GitHub (the company) produces.
-The single largest other product from that team is called GitHub Enterprise, and it&#8217;s a version of the GitHub software that can be deployed inside a corporate firewall – like having your own private github.com.</p>
-</div>
-<div class="paragraph">
-<p>The two products are very similar from a user point of view, but there are some important differences.
-It can sometimes be hard to imagine the kinds of difficulties that Enterprise is designed to solve, but keep in mind it&#8217;s for large teams.</p>
+<p>Chapter text begins here.</p>
 </div>
 <div class="sect2">
-<h3 id="_installation">Installation</h3>
+<h3 id="_top_level_heading">Top-Level Heading</h3>
 <div class="paragraph">
-<p>Using GitHub Enterprise isn&#8217;t as easy as signing up for an account.
-You&#8217;re responsible for all the infrastructure and maintenance, including installation, updates, system maintenance, keeping the machine running, and so on.
-However, if your company is considering Enterprise, it&#8217;s likely you already have specialists who are already doing this for other services.</p>
+<p>Within a chapter, the first and highest heading level uses three equals signs.</p>
 </div>
+<div class="sect3">
+<h4 id="_second_level_heading">Second-Level Heading</h4>
 <div class="paragraph">
-<p>The GitHub team has also made it pretty easy for them.
-The software comes as a pre-packaged virtual machine in a variety of formats, so you&#8217;ll likely find something that fits into your infrastructure.
-Once the machine is running, most of the configuration can be done with a web interface, but there are some tricky bits like network configuration and port forwarding that aren&#8217;t easy for the layperson to get right.</p>
+<p>The second-level heading uses four equals signs.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_administration">Administration</h3>
+<div class="sect4">
+<h5 id="_third_level_heading">Third-level heading</h5>
 <div class="paragraph">
-<p>Since you&#8217;re in control of the environment in which Enterprise runs, you now have a lot of concerns that the typical github.com user does not.
-GitHub Enterprise has an administration interface for dealing with these issues, which doesn&#8217;t exist on github.com.
-It allows management of things like system resources, reports, search, and many others.</p>
-</div>
-<div class="paragraph">
-<p>Also, while github.com has its own user system, GitHub Enterprise can optionally plug into your organization&#8217;s existing authentication system.
-This allows a company&#8217;s IT organization to manage user identities in one single place, rather than having to duplicate a lot of effort when a new team member hires on.
-It also eases the initial transition, when perhaps thousands of people will need new accounts.
-Several systems are supported, including LDAP and SAML, as well as plain old email and password.</p>
+<p>The third-level heading uses five equals signs.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_endpoints">Endpoints</h3>
-<div class="paragraph">
-<p>The complete GitHub API is also available on an Enterprise instance;
-you just need to send your requests to <a href="https://&lt;hostname&gt;/api/v3" class="bare">https://&lt;hostname&gt;/api/v3</a>
-instead of <a href="https://api.github.com/" class="bare">https://api.github.com/</a>. You can imagine that some users
-have accounts on both an Enterprise instance as well as github.com,
-and many applications have started supporting this scenario.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_full_hostnames_vs_mount_points">Full Hostnames vs. Mount Points</h3>
-<div class="paragraph">
-<p>One of the main differences between GitHub.com and an enterprise setup
-is often in the way that hostnames are setup. GitHub.com has several
-hostnames for various content served. An incomplete list includes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>github.io: hosting Jekyll blogs for users and project pages</p>
-</li>
-<li>
-<p>gist.github.com: hosting "gists"</p>
-</li>
-<li>
-<p>raw.githubusercontent.com: hosting raw pages (unprocessed files)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For a variety of reasons, enterprise GitHub installations often don&#8217;t
-retain the same mapping. An enteprise installation might look like:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>github.bigdevcorp.example.com/pages/xrd/somerepo: hosting gh-pages sites</p>
-</li>
-<li>
-<p>github.bigdevcorp.example.com/gists: hosting gists</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>As you can see, enterprise installations often map the subdomains to a
-subdirectory rather than a different hostname. This simplifies setup
-of the enterprise installation. But it means that some tools require
-reconfiguration.</p>
-</div>
-<div class="paragraph">
-<p>For the command line <a href="https://github.com/defunkt/gist">Gist tool</a>
-(<a href="https://github.com/defunkt/gist" class="bare">https://github.com/defunkt/gist</a>), you need to export an environment
-variable which specifies the gist url:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ export GITHUB_URL=http://github.bigdevcorp.example.com/</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>For the command line <a href="https://github.com/github/hub">Hub tool</a>
-(<a href="https://github.com/github/hub" class="bare">https://github.com/github/hub</a>) you need to use a different
-variable: "GITHUB_HOST".</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ GITHUB_HOST=github.bigdevcorp.example.com hub clone myproject</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_command_line_client_tools_curl">Command Line Client Tools: cURL</h3>
-<div class="paragraph">
-<p>We show in another chapter how to use cURL to make a request against
-the API on the main GitHub.com site. If you wanted to do this against
-an enterprise site, your request would look a little different:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl -i https://github.bigdevcorp.example.com/api/v3/search/repositories?q=@ben</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_example_request_using_a_client_library">Example request using a client library</h3>
-<div class="paragraph">
-<p>If you use a client library, most provide a way
-to configure the library to use a different endpoint, as is required
-when you are using an enterprise GitHub instance.</p>
-</div>
-<div class="paragraph">
-<p>The ruby client configuration looks like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-ruby" data-lang="ruby">github = Github.new
-           basic_auth: 'login:password',
-       	   endpoint: 'https://github.bigdevcorp.example.com/api/v3/'
-puts github.repos.list</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_management_api">Management API</h3>
-<div class="paragraph">
-<p>Enterprise servers have a special additional API section that isn&#8217;t
-available on github.com, called the Management Console API. It allows
-you to do things like check settings, maintain SSH keys, manage your
-license, and so on. Nearly anything you can do from the web management
-console, you can do through the API (so you can script management
-tasks when desirable).</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_documentation">Documentation</h3>
-<div class="paragraph">
-<p>Documentation for the enterprise API is available at <a href="https://developer.github.com/v3/enterprise" class="bare">https://developer.github.com/v3/enterprise</a>.</p>
 </div>
 </div>
 </div>
@@ -579,10 +442,8 @@ tasks when desirable).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-10-01 08:12:19 PDT
+Last updated 2018-10-05 14:28:21 PDT
 </div>
 </div>
 </body>
-<script type="text/javascript" src="init.js"></script>
-
 </html>
