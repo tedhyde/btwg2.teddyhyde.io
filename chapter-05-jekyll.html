@@ -2698,46 +2698,22 @@ you to create Jekyll blog posts with the Git Data API.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-05 15:35:18 PDT
+  Last updated 2018-10-05 15:35:18 PDT
 </div>
 </div>
 
-			     <div class="loginWrapper">
-			     <div style="display: none" class="fab-left">👽</div>
-			     <div onclick="loggedIn()" style="display: none" class="login">First, login!</div>
-			     </div>
-			     
+<div class="loginWrapper">
+  <div style="display: none" class="fab-left">👽</div>
+  <div onclick="loginToGithub()" style="display: none" class="login">First, login!</div>
+</div>
+
 <div onclick="showLogin()" class="fab">✏️</div>
 <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
-	     
-<script>
-function openIt() {
-MicroModal.show('modal-1'); 
-}
-
-			     function showLogin() {
-				 let els = document.getElementsByClassName("fab-left");
-				 els[0].style.display = "inline";
-				 els = document.getElementsByClassName("login");
-				 els[0].style.display = "inline";
-			     }
-			     
-			     function loggedIn() {
-				 let wrappers = document.getElementsByClassName("loginWrapper");
-				 wrappers[0].style.display = "none";
-				 
-    const els = document.getElementsByClassName("paragraph");
-    for( const index in els ) {
-	const el = els[index];
-	el.classList.add("dotted");
-	el.addEventListener('click', function() {
-	    console.log( "Clicked on", el.textContent );
-document.getElementById("selectedText").innerHTML = el.textContent;
-	    MicroModal.show('modal-1'); 
-	});
-    };
-}
-</script>
+<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-auth.js"></script>
+<script src="edit.js"></script>
 
     <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
       <div class="modal__overlay" tabindex="-1" data-micromodal-close>
@@ -2752,15 +2728,16 @@ document.getElementById("selectedText").innerHTML = el.textContent;
 	    Add a comment or change to this text
 	    <p id="selectedText">
 	    </p>
+
+	    <input name="change" type="text" placeholder="Enter your comment or edit request..."/>
 	  </main>
 	  <footer class="modal__footer">
-	    <button class="modal__btn modal__btn-primary">Store comment</button>
+	    <button onclick="storeIt()" class="modal__btn modal__btn-primary">Store comment</button>
 	    <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
 	  </footer>
 	</div>
       </div>
-        </div>
-
-			     
+    </div>
+    
 </body>
 </html>
