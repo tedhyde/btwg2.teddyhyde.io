@@ -1,6 +1,7 @@
 // Initialize Firebase
 // TODO: Replace with your project's customized code snippet
 var user = undefined;
+var original = undefined;
 
 var config = {
     apiKey: "AIzaSyAN9gGLqhY_sgbUMoaTk4zqSJGb7_hm1fE",
@@ -19,14 +20,14 @@ db.settings({
 });
 
 function addSomeData(data) {
-    console.log( "Sending data with: ", user.uid, data );
-    db.collection(user.uid).add({ data })
-	.then(function(docRef) {
-	    console.log("Document written with ID: ", docRef.id);
-	})
-	.catch(function(error) {
-	    console.error("Error adding document: ", error);
-	});
+  console.log( "Sending data with: ", user.uid, data );
+  db.collection(user.uid).add({ comment: data, original })
+    .then(function(docRef) {
+      console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+      console.error("Error adding document: ", error);
+    });
 }
 
 function loginToGithub() {
@@ -90,7 +91,7 @@ function loggedIn() {
 	el.classList.add("dotted");
 	el.addEventListener('click', function() {
 	    console.log( "Clicked on", el.textContent );
-	    document.getElementById("selectedText").innerHTML = el.textContent;
+	    document.getElementById("selectedText").innerHTML = original = el.textContent;
 	    MicroModal.show('modal-1'); 
 	});
     };
