@@ -19,13 +19,26 @@ db.settings({
     timestampsInSnapshots: true
 });
 
+function clearDots() {
+    const els = document.getElementsByClassName("paragraph");
+    for( const index in els ) {
+      const el = els[index];
+      if( el ) {
+	el.classList.remove("dotted");
+	// el.removeEventListener('click');
+      }
+    };
+}
+
 function addSomeData(data) {
   console.log( "Sending data with: ", user.uid, data );
   db.collection(user.uid).add({ comment: data, original })
     .then(function(docRef) {
+      clearDots();
       console.log("Document written with ID: ", docRef.id);
     })
     .catch(function(error) {
+      clearDots();
       console.error("Error adding document: ", error);
     });
 }
@@ -68,7 +81,7 @@ function storeIt() {
     var els = document.getElementsByTagName('input');
     let data = undefined;
     for( var index in els ) {
-	if( els[index].name == "change" ) {
+      if( els[index].name == "change" ) {
 	    console.log( "Data is: ", els[index].value );
 	    data = els[index].value;
 	}
@@ -92,12 +105,14 @@ function loggedIn() {
     
     const els = document.getElementsByClassName("paragraph");
     for( const index in els ) {
-	const el = els[index];
+      const el = els[index];
+      if( el ) {
 	el.classList.add("dotted");
 	el.addEventListener('click', function() {
-	    console.log( "Clicked on", el.textContent );
-	    document.getElementById("selectedText").innerHTML = original = el.textContent;
-	    MicroModal.show('modal-1'); 
+	  console.log( "Clicked on", el.textContent );
+	  document.getElementById("selectedText").innerHTML = original = el.textContent;
+	  MicroModal.show('modal-1'); 
 	});
+      }
     };
 }
