@@ -19,13 +19,24 @@ db.settings({
     timestampsInSnapshots: true
 });
 
+const handleClick = (event) => {
+  const el = event.target;
+  console.log( "Clicked on", el.textContent );
+  document.getElementById("selectedText").innerHTML = original = el.textContent;
+  MicroModal.show('modal-1'); 
+}
+
 function clearDots() {
     const els = document.getElementsByClassName("paragraph");
     for( const index in els ) {
       const el = els[index];
       if( el ) {
-	el.classList.remove("dotted");
-	// el.removeEventListener('click');
+	if( el.classList ) {
+	  el.classList.remove("dotted");
+	}
+	if( el.removeEventListener ) {
+	  el.removeEventListener('click', handleClick );
+	}
       }
     };
 }
@@ -99,6 +110,7 @@ function showLogin() {
     els[0].style.display = "inline";
 }
 
+
 function loggedIn() {
     let wrappers = document.getElementsByClassName("loginWrapper");
     wrappers[0].style.display = "none";
@@ -108,11 +120,7 @@ function loggedIn() {
       const el = els[index];
       if( el ) {
 	el.classList.add("dotted");
-	el.addEventListener('click', function() {
-	  console.log( "Clicked on", el.textContent );
-	  document.getElementById("selectedText").innerHTML = original = el.textContent;
-	  MicroModal.show('modal-1'); 
-	});
+	el.addEventListener('click', handleClick );
       }
     };
 }
