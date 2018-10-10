@@ -41,12 +41,31 @@ function clearDots() {
     };
 }
 
+function getUrlWhenReady(id) {
+  db.collection(user.uid).doc(id)
+    .onSnapshot(function(doc) {
+      console.log("Current data: ", doc.data());
+      const url = doc.data().url;
+      if( url ) {
+	console.log( "Finally got the URL: ", url );
+	// Fix it
+	const fixed = url.replace( 'api.github.com/repos', 'github.com' );
+	const issueUrlEl = document.getElementById("issueUrl");
+	issueUrlEl.innerHTML = `<a target="_new" href="${fixed}">Click here to visit it on GitHub</a>`;
+	const issueDiv = document.getElementById("filedIssue");
+	issueDiv.style.display = "block";
+	setTimeout( () => { issueDiv.style.display = "none"; }, 8000 );
+      }
+    });
+}
+
 function addSomeData(data) {
   console.log( "Sending data with: ", user.uid, data );
   db.collection(user.uid).add({ comment: data, original })
     .then(function(docRef) {
       clearDots();
-      console.log("Document written with ID: ", docRef.id);
+      getUrlWhenReady(docRef.id);
+      // Show the response.
     })
     .catch(function(error) {
       clearDots();
