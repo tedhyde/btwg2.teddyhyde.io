@@ -55,6 +55,11 @@ function loginToGithub() {
 
 function openIt() {
     MicroModal.show('modal-1'); 
+
+}
+
+function openCustomization() {
+    MicroModal.show('modal-2'); 
 }
 
 function storeIt() {

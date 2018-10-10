@@ -19,13 +19,13 @@
 .fab-left {
     width: 30px;
     height: 30px;
-    background-color: grey;
+    background-color: white;
     border-radius: 50%;
     box-shadow: 0 2px 6px 0 #666;
     transition: all 0.1s ease-in-out;
 
     font-size: 30px;
-    color: white;
+    color: black;
     text-align: center;
     line-height: 30px;
 
@@ -60,4 +60,14 @@
     overflow: hidden;
     font-style: italic;
     padding: 0.2em;
+}
+
+
+.explanation {
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+.customization {
+    padding-top: 1em;
 }
