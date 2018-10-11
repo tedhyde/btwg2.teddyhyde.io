@@ -1819,7 +1819,7 @@ We&#8217;ll be using what only a few years ago would have been a polarizing choi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-11 14:33:16 PDT
+Last updated 2018-10-11 14:45:18 PDT
 </div>
 
 <div onclick="openCustomization()" class="fab-customization">☃</div>
@@ -1936,6 +1936,10 @@ Last updated 2018-10-11 14:33:16 PDT
 <script>
   TeddyHydeClient.onContribution( function() {
   revealContent();
+  });
+
+  TeddyHydeClient.onAlreadyPaid( function() {
+    revealContent();
   });
 
   function setDisplayById( id, display ) {

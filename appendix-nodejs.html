@@ -456,7 +456,7 @@ install all libraries specified by the application if there is a
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-11 14:33:15 PDT
+Last updated 2018-10-11 14:45:18 PDT
 </div>
 
 <div onclick="openCustomization()" class="fab-customization">☃</div>
@@ -573,6 +573,10 @@ Last updated 2018-10-11 14:33:15 PDT
 <script>
   TeddyHydeClient.onContribution( function() {
   revealContent();
+  });
+
+  TeddyHydeClient.onAlreadyPaid( function() {
+    revealContent();
   });
 
   function setDisplayById( id, display ) {

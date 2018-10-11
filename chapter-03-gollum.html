@@ -1454,7 +1454,7 @@ application for searching GitHub issues. And we&#8217;ll do it in Python.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-11 14:33:16 PDT
+Last updated 2018-10-11 14:45:18 PDT
 </div>
 
 <div onclick="openCustomization()" class="fab-customization">☃</div>
@@ -1571,6 +1571,10 @@ Last updated 2018-10-11 14:33:16 PDT
 <script>
   TeddyHydeClient.onContribution( function() {
   revealContent();
+  });
+
+  TeddyHydeClient.onAlreadyPaid( function() {
+    revealContent();
   });
 
   function setDisplayById( id, display ) {
