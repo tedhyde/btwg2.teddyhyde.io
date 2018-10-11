@@ -413,11 +413,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-auth.js"></script>
+<script src="https://cdn.teddyhyde.com/0.0.1/teddyhyde-client-0.0.1.js"></script>
 <script src="edit.js"></script>
 <link rel="stylesheet" type="text/css" href="fab.css">
 <link rel="stylesheet" type="text/css" href="micromodal.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css" />
-
 <!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
 <!-- Include jQuery Popup Overlay -->
@@ -2687,7 +2687,7 @@ using the Activities API.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-11 14:51:21 PDT
+Last updated 2018-10-11 14:53:31 PDT
 </div>
 
 <div onclick="openCustomization()" class="fab-customization">☃</div>
@@ -2792,67 +2792,12 @@ Last updated 2018-10-11 14:51:21 PDT
 </div>
 
 
-<script
-  src="https://cdn.teddyhyde.com/0.0.1/teddyhyde-client-0.0.1.js"></script>
-
-
 <iframe height="150px" width="100%"
 	style="background-color: white !important"
 	frameborder="0" id="th"
 	src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
 
 <script>
-  TeddyHydeClient.onContribution( function() {
-  revealContent();
-  });
-
-  function showAltMessage() {
-  console.log( "Popping popup" );
-  $('#personal_ad_popup').popup(
-  {
-  color: 'white',
-  opacity: 1,
-  transition: '0.3s',
-  scrolllock: true
-  }
-  ).popup('show');
-
-    setTimeout( function()  {
-    	console.log( "Hiding popup" );
-    	$('#personal_ad_popup').popup('hide');
-	setTimeout( revealContent, 1000 );
-    }, 15*1000 );
-
-    // setDisplayById( "myad", "inline-block" );
-    // setDisplayById("th", "none" );
-    // setTimeout( function() {
-    // 	revealContent();
-    // 	setDisplayById( "myad", "none" );
-    // }, 10*1000 );
-    // console.log( "Hmm, you won't contribute, OK" );
-  }
-
-  TeddyHydeClient.onDecline( function() {
-  showAltMessage();
-  console.log( "Hey, we declined to pay!!!" );
-  });
-
-  TeddyHydeClient.onAlreadyPaid( function() {
-    revealContent();
-  });
-
-
-
-  function setDisplayById( id, display ) {
-  const el = document.getElementById(id);
-  if (el) { el.style.display = display; }
-  }
-
-  function revealContent(){
-  setDisplayById("excerpt", "none" );
-  setDisplayById("content", "inline-block" );
-  }
-
 </script>
 
 
