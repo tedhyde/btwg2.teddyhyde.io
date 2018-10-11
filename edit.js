@@ -193,3 +193,33 @@ function turnOffLoginAndEnableEditing() {
       }
     };
 }
+  
+window.onload = function() {
+  // Hide the body, and create a new excerpt
+  const ps = document.getElementsByClassName( "paragraph" );
+  const h2s = document.getElementsByTagName( "h2" );
+  // Use the first one.
+
+  const title = document.createElement("h2");
+  title.innerHTML = h2s[0].innerHTML;
+
+  var text = document.createElement("div");
+  text.classList.add("paragraph");
+  text.innerHTML = ps[0].innerHTML;
+
+  const sectionbody = document.createElement("div");
+  sectionbody.classList.add("sectionbody");
+  sectionbody.appendChild(text);
+  
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("sect1");
+  wrapper.id = "excerpt";
+  wrapper.appendChild(title);
+  wrapper.appendChild(sectionbody);
+  
+  document.body.insertBefore(wrapper, document.body.firstChild);
+  
+  const content = document.getElementById( "content" );
+  content.style.display = "none";
+}
+
