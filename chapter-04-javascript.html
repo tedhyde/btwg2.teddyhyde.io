@@ -2681,17 +2681,23 @@ using the Activities API.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-11 12:31:41 PDT
+Last updated 2018-10-11 13:27:13 PDT
 </div>
 
-<div onclick="openCustomization()" class="fab-left">☃</div>
+<div onclick="openCustomization()" class="fab-customization">☃</div>
 
 <div class="loginWrapper">
-  <div style="display: none" class="fab-left">👽</div>
-  <div onclick="loginToGithub()" style="display: none" class="login">First, login!</div>
+  <div style="display: none" class="fab-user">👽</div>
+  <div onclick="loginToGithub()" style="display: none" class="informational">Please login to GitHub</div>
 </div>
 
-<div onclick="showLogin()" class="fab">✏️</div>
+<div class="informationalWrapper" style="display: none">
+  <div class="informational smaller">
+    Click on any dotted section to provide a comment or suggestion. Click on the edit button to cancel.
+  </div>
+</div>
+
+<div onclick="toggleEditing()" class="fab">✏️</div>
 
 <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
   <div class="modal__overlay" tabindex="-1" data-micromodal-close>

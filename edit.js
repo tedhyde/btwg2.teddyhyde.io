@@ -10,6 +10,12 @@ var config = {
     projectId: "btwg2-c9c3f",
 };
 firebase.initializeApp(config);
+firebase.auth().onAuthStateChanged(function(_user) {
+  if (_user) {
+    console.log( "User is logged in, reusing" );
+    user = _user;
+  }
+});
 
 // Initialize Cloud Firestore through Firebase
 var db = firebase.firestore();
@@ -26,19 +32,19 @@ const handleClick = (event) => {
   MicroModal.show('modal-1'); 
 }
 
-function clearDots() {
-    const els = document.getElementsByClassName("paragraph");
-    for( const index in els ) {
-      const el = els[index];
-      if( el ) {
-	if( el.classList ) {
-	  el.classList.remove("dotted");
-	}
-	if( el.removeEventListener ) {
-	  el.removeEventListener('click', handleClick );
-	}
+function cleanupEditing() {
+  const els = getAllDottableElements();
+  for( const index in els ) {
+    const el = els[index];
+    if( el ) {
+      if( el.classList ) {
+	el.classList.remove("dotted");
       }
-    };
+      if( el.removeEventListener ) {
+	el.removeEventListener('click', handleClick );
+      }
+    }
+  };
 }
 
 function getUrlWhenReady(id) {
@@ -63,12 +69,12 @@ function addSomeData(data) {
   console.log( "Sending data with: ", user.uid, data );
   db.collection(user.uid).add({ comment: data, original })
     .then(function(docRef) {
-      clearDots();
+      cleanupEditing();
       getUrlWhenReady(docRef.id);
       // Show the response.
     })
     .catch(function(error) {
-      clearDots();
+      cleanupEditing();
       console.error("Error adding document: ", error);
     });
 }
@@ -122,24 +128,68 @@ function storeIt() {
     }
 }
 
-function showLogin() {
-    let els = document.getElementsByClassName("fab-left");
-    els[0].style.display = "inline";
-    els = document.getElementsByClassName("login");
-    els[0].style.display = "inline";
+let editing = false;
+function toggleEditing() {
+  if( editing ) {
+    toggleLoginInformation(false);
+    toggleEditingInformation(false);
+    cleanupEditing();
+  }
+  else {
+    if( !user ) {
+      let els = document.getElementsByClassName("fab-user");
+      els[0].style.display = "inline";
+      els = document.getElementsByClassName("login");
+      els[0].style.display = "inline";
+    }
+    else {
+      turnOffLoginAndEnableEditing();
+    }
+  }
+  editing = !editing;
 }
 
+function toggleLoginInformation(onOff) {
+  let login = document.getElementsByClassName("loginWrapper");
+  login[0].style.display = onOff ? "inline" : "none";
+}
 
-function loggedIn() {
-    let wrappers = document.getElementsByClassName("loginWrapper");
-    wrappers[0].style.display = "none";
-    
-    const els = document.getElementsByClassName("paragraph");
-    for( const index in els ) {
+function toggleEditingInformation(onOff) {
+  let info = document.getElementsByClassName("informationalWrapper");
+  info[0].style.display = onOff ? "inline" : "none";
+  
+  if( onOff ) {
+    // Turn it off in 8 seconds...
+    setTimeout( () => {
+      info[0].style.display = "none";
+    }, 8000 )
+  }
+}
+
+function getAllDottableElements() {
+  const els = document.getElementsByClassName("paragraph");
+  let all = [].slice.call(els);
+  const contents = document.getElementsByClassName("content");
+  all = all.concat([].slice.call(contents));
+  const lis = document.getElementsByTagName("li");
+  all = all.concat([].slice.call(lis));
+  return all;
+}
+
+function turnOffLoginAndEnableEditing() {
+  toggleLoginInformation(false);
+  toggleEditingInformation(true);
+  
+  const els = getAllDottableElements();
+  for( const index in els ) {
       const el = els[index];
       if( el ) {
-	el.classList.add("dotted");
-	el.addEventListener('click', handleClick );
+	if ( el.classList ) {
+	  el.classList.add("dotted");
+	}
+	if( el.addEventListener ) {
+	  el.addEventListener('click', handleClick );
+	}
       }
     };
 }
