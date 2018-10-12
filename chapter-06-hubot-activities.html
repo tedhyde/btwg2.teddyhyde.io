@@ -1,6 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<body>
+<div id="excerpt"><div class="sect1">
+<h2>CoffeScript, Hubot and the Activities API</h2>
+<div class="sectionbody"><div class="paragraph"><p>
+Though the phrase has now been removed from their marketing materials,
+GitHub used to call itself a tool for "social coding." This idea is
+still central to the services GitHub provides, intimate access to the
+social layer inside of GitHub through the Activity API.
+</p></div></div>
+</div></div>
+
+
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -417,16 +426,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <script src="edit.js"></script>
 <link rel="stylesheet" type="text/css" href="fab.css">
 <link rel="stylesheet" type="text/css" href="micromodal.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css">
 <!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
 <!-- Include jQuery Popup Overlay -->
 <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
-</head>
-<body class="article">
+
+
 <div id="header">
 </div>
-<div id="content">
+<div id="content" style="display: none">
 <div class="sect1">
 <h2 id="Hubot">CoffeScript, Hubot and the Activities API</h2>
 <div class="sectionbody">
@@ -437,13 +446,13 @@ still central to the services GitHub provides, intimate access to the
 social layer inside of GitHub through the Activity API.</p>
 </div>
 <div class="paragraph">
-<p>In this chapter we&#8217;ll investigate the Activity API by extending a chat
+<p>In this chapter we’ll investigate the Activity API by extending a chat
 robot. You might find it odd that a robot, generally considered an anti-social
 invention despite all best attempts, would play nicely with a social
 API, but this is a social robot. GitHubbers use an
 extensible chat robot called Hubot to record and automate their tasks,
 and to have fun on the Internet. If there were any robot suited for
-interacting with the GitHub Activity API, it&#8217;s Hubot, described on the
+interacting with the GitHub Activity API, it’s Hubot, described on the
 site hubot.github.io as "a customizable, kegerator-powered life
 embetterment robot."</p>
 </div>
@@ -477,7 +486,7 @@ embetterment robot."</p>
 <td class="content">
 The Activity API section also includes "feeds." While feeds are
 grouped within the Activity API, they are not programmatic in the same
-way that an API is, and we won&#8217;t cover them in depth here.  Feeds are
+way that an API is, and we won’t cover them in depth here.  Feeds are
 actually Atom feeds and not interactive beyond that. Atom feeds are
 similar to RSS feeds: a static feed you can subscribe to with an Atom
 client.
@@ -521,7 +530,7 @@ inputs and outputs it gets from APIs and services.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Hubot provides the skeleton for our chat robot. We&#8217;ll add the above
+<p>Hubot provides the skeleton for our chat robot. We’ll add the above
 functionality to Hubot and see how easy it is to combine these
 features into a coherent whole that solves a real problem.</p>
 </div>
@@ -539,7 +548,7 @@ you can host on a private internal server as well.</p>
 <div class="paragraph">
 <p>The simplest and cheapest hosting service for Hubot is Heroku. Once we
 generate our Hubot, we can simply do a git-push into Heroku to publish
-our chat robot for free. We&#8217;ll show these steps later in the chapter.</p>
+our chat robot for free. We’ll show these steps later in the chapter.</p>
 </div>
 <div class="paragraph">
 <p>Hubot works with many chat endpoints. Your Hubot can connect to almost
@@ -547,10 +556,10 @@ any popular chat service or protocol: IRC, XMPP and many commercial
 services like Gchat, Basecamp, even Twitter. Slack is a relatively new
 entrant into the world of chat services, but despite its youth, the
 Slack API is solid and connecting third party clients to the Slack
-service is simple and straightforward. We&#8217;ll use Slack as our chat endpoint.</p>
+service is simple and straightforward. We’ll use Slack as our chat endpoint.</p>
 </div>
 <div class="paragraph">
-<p>Now let&#8217;s create our Hubot and configure it to use Slack.</p>
+<p>Now let’s create our Hubot and configure it to use Slack.</p>
 </div>
 </div>
 <div class="sect3">
@@ -570,7 +579,7 @@ $ npm install hubot-slack --save <b class="conum">(4)</b></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>You may not be familiar with these commands, so let&#8217;s go over the
+<p>You may not be familiar with these commands, so let’s go over the
 important ones.</p>
 </div>
 <div class="colist arabic">
@@ -604,8 +613,8 @@ where our Hubot will live.</p>
 <h4 id="_creating_a_slack_account">Creating a Slack Account</h4>
 <div class="paragraph">
 <p>Going to slack.com starts you on the process to create your own Slack
-site. You&#8217;ll need to step through creating an account. Slack sites are
-segmented by organization, and you&#8217;ll want to establish a URL prefix
+site. You’ll need to step through creating an account. Slack sites are
+segmented by organization, and you’ll want to establish a URL prefix
 for your Slack site. Typically this is the name of your organization.</p>
 </div>
 <div class="sect4">
@@ -625,7 +634,7 @@ mnemonic to use a name that suggests this is a channel where more
 serious work gets done. You could use a name like "PR Discussion" to
 indicate this is the channel where PRs are discussed. To keep things
 simple, we will use the name "#general." Once you click
-the link to create a channel, you&#8217;ll see a popup asking for the name
+the link to create a channel, you’ll see a popup asking for the name
 and an optional description. After you have created the channel,
 you will see a link to "Add a service integration" as shown in <a href="#adding_service_integrations_to_slack">Adding service integrations to Slack</a>.</p>
 </div>
@@ -657,7 +666,7 @@ Slack. If you ever accidentally publicize this token, you can easily
 revoke and reassign a token to your Hubot on this screen.</p>
 </div>
 <div class="paragraph">
-<p>You will also need to specify a name. Use "probot" and if you&#8217;d like,
+<p>You will also need to specify a name. Use "probot" and if you’d like,
 change the avatar associated with the Hubot (these options are shown in <a href="#choose_hubots_name">Hubot configuration page for Slack</a>).</p>
 </div>
 <div id="choose_hubots_name" class="imageblock">
@@ -709,13 +718,13 @@ variable at the beginning of the line.</p>
 Slack site. Go to the #general room. Then, you can test that Hubot
 is properly connectd by typing in the name of your Hubot
 and then a command like <code>the rules</code>. For example, if our Hubot is
-named probot, then we would type <code>probot the rules</code>, which then displays the following conversation as shown in <a href="#hubots_built_in_repartee">Hubot&#8217;s built-in repartee</a>.</p>
+named probot, then we would type <code>probot the rules</code>, which then displays the following conversation as shown in <a href="#hubots_built_in_repartee">Hubot’s built-in repartee</a>.</p>
 </div>
 <div id="hubots_built_in_repartee" class="imageblock">
 <div class="content">
 <img src="images/btwg_08in05.png" alt="btwg 08in05">
 </div>
-<div class="title">Figure 5. Hubot&#8217;s built-in repartee</div>
+<div class="title">Figure 5. Hubot’s built-in repartee</div>
 </div>
 <div class="paragraph">
 <p>We see that our hubot printed out the rules it
@@ -745,14 +754,14 @@ pugs. Beware!</p>
 <div class="sect2">
 <h3 id="_installation_on_heroku">Installation on Heroku</h3>
 <div class="paragraph">
-<p>Now that we&#8217;ve successfully started our hubot locally, we can move it
+<p>Now that we’ve successfully started our hubot locally, we can move it
 to Heroku and keep it running even when our laptop is turned off.</p>
 </div>
 <div class="sect3">
 <h4 id="_setting_up_heroku">Setting up Heroku</h4>
 <div class="paragraph">
 <p>Heroku requires registration before using it. Heroku offers free plans and everything
-we&#8217;ll do here can be done using a free plan. Once you have created an
+we’ll do here can be done using a free plan. Once you have created an
 acccount, install the heroku toolbelt found here:
 <a href="https://toolbelt.heroku.com/" class="bare">https://toolbelt.heroku.com/</a>. The toolbelt provides a set
 of tools useful for managing Heroku applications. You will need to
@@ -760,7 +769,7 @@ have Ruby setup as explained in the first chapter.</p>
 </div>
 <div class="paragraph">
 <p>If your chatbot is working per the instructions given in the previous
-section, then it is almost ready to deploy to Heroku. You&#8217;ll need to
+section, then it is almost ready to deploy to Heroku. You’ll need to
 add the same environment variable using the heroku tools. In addition
 to the authentication token for slack, you will need to configure a
 URL for your site. Heroku will generate a URL for you from the name of
@@ -825,7 +834,7 @@ locally, and then push into Heroku using the ease of the Git workflow
 as a deployment layer.</p>
 </div>
 <div class="paragraph">
-<p>Now that we have created and installed Hubot, let&#8217;s look at the
+<p>Now that we have created and installed Hubot, let’s look at the
 Activities API and determine how we want to code our extension.</p>
 </div>
 </div>
@@ -837,7 +846,7 @@ Activities API and determine how we want to code our extension.</p>
 to the notifications you see on social networking sites, events that
 occur which document important points of interest inside a timeline of
 activity. GitHub activity events are often tied to important
-milestones inside of a developer&#8217;s day, activities like pushing
+milestones inside of a developer’s day, activities like pushing
 commits into the main remote repository, asking questions on
 discussion threads associated with a repository, or assigning issues
 to a developer for review.</p>
@@ -851,7 +860,7 @@ user has watched a repository and issues or comments are added, a pull
 request is made, or there are comments made on a commit. In addition,
 even if a user has not watched a repository, they will be notified if
 that user is <strong>@mentioned</strong> (prefixing the <code>@</code> character to a team
-member&#8217;s name inside a comment), when an issue is assigned to them, or
+member’s name inside a comment), when an issue is assigned to them, or
 when that user participates in a discussion associated with any
 repository.</p>
 </div>
@@ -868,8 +877,8 @@ which email can be delivered breeds a secondary problem: overwhelm. It
 can be very easy to lose focus (vital to building software) when you
 are constantly context switching by checking email, and notifications
 can often fly by. In addition, email is privately directed and
-prevents easily collaboration; generally people don&#8217;t share email
-inboxes. Let&#8217;s extend our Hubot to help us resolve these problems by taking
+prevents easily collaboration; generally people don’t share email
+inboxes. Let’s extend our Hubot to help us resolve these problems by taking
 our GitHub notifications into a shared and "opt-in when you are logged-in"
 communication channel.</p>
 </div>
@@ -887,7 +896,7 @@ Python) and after the initial learning curve, can feel easier to read
 than JavaScript, especially when you have many nested function
 callbacks (common in JavaScript programming); it is easier to see
 where a function begins and ends given the indentation levels. Hubot
-is itself written in CoffeeScript and we&#8217;ll write our extension in
+is itself written in CoffeeScript and we’ll write our extension in
 CoffeeScript as well.</p>
 </div>
 <div class="admonitionblock note">
@@ -931,7 +940,7 @@ discrete messages.</p>
 <li>
 <p>Hubots have different respose mechanisms. They can choose to respond
 only when they hear exact phrases or when keywords are found in any
-message, and you don&#8217;t need to do the grunt work inside your code to
+message, and you don’t need to do the grunt work inside your code to
 determine the differences between these communication types.</p>
 </li>
 <li>
@@ -992,13 +1001,13 @@ the specific pull request ID from a chat user message.</p>
 <div class="paragraph">
 <p>There are examples of the other two features (events and generic
 errors) inside the examples script that ship with the Hubot source
-code but we won&#8217;t use those APIs in our Hubot.</p>
+code but we won’t use those APIs in our Hubot.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_code_reviews_via_pull_requests">Code Reviews via Pull Requests</h4>
 <div class="paragraph">
-<p>As we&#8217;ve seen in other chapters, pull requests are the mechanism used
+<p>As we’ve seen in other chapters, pull requests are the mechanism used
 on GitHub to easily integrate code changes into a project. Contributors
 either fork the master repository and then issues a pull request against that
 repository, or, if they have write permission to the main
@@ -1095,11 +1104,11 @@ channel with the text "Thanks, you got it!".</p>
 <li>
 <p>The accept method then also calls <code>console.log</code> with information
 that is displayed on the console from which we started Hubot. This is
-a simple way for us to assure everything worked correctly; if we don&#8217;t
+a simple way for us to assure everything worked correctly; if we don’t
 see this message, our code before this was broken. The <code>console.log</code>
 is not visible to any users in the channel. It is good practice to
 remove this code when you finalize your production code, but if you
-forget, it won&#8217;t affect anything happening in the channel.</p>
+forget, it won’t affect anything happening in the channel.</p>
 </li>
 <li>
 <p>We then define the <code>decline</code> method using the same APIs as for the
@@ -1111,8 +1120,8 @@ forget, it won&#8217;t affect anything happening in the channel.</p>
 <p>If Hubot is running, you will need to restart it to reload any
 scripts. Kill Hubot (using Ctrl-C), and then restart it, and then
 play with commands inside your Slack site. Entering the commands
-<code>probot accept</code> and <code>probot decline</code> and you&#8217;ll see Hubot
-respoding inside the channel. You&#8217;ll also see the message <code>Accepted!</code> or
+<code>probot accept</code> and <code>probot decline</code> and you’ll see Hubot
+respoding inside the channel. You’ll also see the message <code>Accepted!</code> or
 <code>Declined!</code> printed to the console on which Hubot is
 running.</p>
 </div>
@@ -1120,8 +1129,8 @@ running.</p>
 <div class="sect4">
 <h5 id="_writing_tests_for_hubot_extensions">Writing Tests for Hubot Extensions</h5>
 <div class="paragraph">
-<p>Now that we have the basics of our Hubot working, let&#8217;s make sure we
-certify our code with some tests. We&#8217;ll use the Jasmine testing
+<p>Now that we have the basics of our Hubot working, let’s make sure we
+certify our code with some tests. We’ll use the Jasmine testing
 framework for NodeJS. It offers an elegant behavior driven testing
 syntax where you specify a behavior as the first parameter to an <code>it</code>
 function, and as a second parameter, a function which is run as the
@@ -1129,13 +1138,13 @@ test itself. Jasmine manages running each <code>it</code> call and displays a
 nice output of passing and failed tests at the end of your
 run. Jasmine tests are typically written in JavaScript, but the latest versions of
 Jasmine support tests also written in CoffeeScript. Hubot is written
-in CoffeeScript, so let&#8217;s write our tests in CoffeeScript as
+in CoffeeScript, so let’s write our tests in CoffeeScript as
 well. We need to put our tests inside a
 directory called "spec" and make sure our filename ends with
-<code>.spec.coffee</code>. Let&#8217;s use <code>spec/pr-delegator.spec.coffee</code> as the
+<code>.spec.coffee</code>. Let’s use <code>spec/pr-delegator.spec.coffee</code> as the
 complete filename. Jasmine expects spec files to have <code>.spec.</code> at the
 end of their filename (before the extension, either <code>.js</code> or
-<code>.coffee</code>); if your filename does not match this pattern Jasmine won&#8217;t
+<code>.coffee</code>); if your filename does not match this pattern Jasmine won’t
 recognize it as a test.</p>
 </div>
 <div class="listingblock">
@@ -1176,7 +1185,7 @@ running Hubot itself, Hubot creates the robot and passes it into the
 and query it to make sure that it is receiving the proper
 configuration. If we make a change inside our actual Hubot code and
 forget to update our tests to verify those changes, our tests will
-fail and we&#8217;ll know we need to either augment our tests, or something
+fail and we’ll know we need to either augment our tests, or something
 broke inside our robot, a good automated sanity check for us when we
 are feverishly coding away, animating our helpful Hubot.</p>
 </div>
@@ -1270,7 +1279,7 @@ this:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>If your username and password are correct and you don&#8217;t have
+<p>If your username and password are correct and you don’t have
 two-factor authentication turned on, the request will succeed and you
 will get back a token inside the JSON response.</p>
 </div>
@@ -1409,8 +1418,8 @@ disturbed by. We create a few variables which we use in the final
 command. Since the $CONFIG variable is particularly long, we use <code>echo</code>
 to print out a bunch of information with the webhook URL in the
 middle. If you want to see the result of that variable, type <code>echo
-$CONFIG</code> and you&#8217;ll notice the snippet <code>&#8230;&#8203; "url":
-"https://inqry-chatbot.herokuapp.com/pr" &#8230;&#8203;</code> properly interpolated.</p>
+$CONFIG</code> and you’ll notice the snippet <code>…​ "url":
+"https://inqry-chatbot.herokuapp.com/pr" …​</code> properly interpolated.</p>
 </div>
 <div class="paragraph">
 <p>Here we use the Heroku API URL as our webhook endpoint. This means we
@@ -1429,10 +1438,10 @@ digest. We want to make sure all requests are real requests from GitHub
 and not a cracker attempting to maliciously inject themselves into our
 conversations. To protect from this possible situation, we verify each
 request back into GitHub by using the secret generated
-when we created the webhook. We&#8217;ll discuss this in detail later in this
+when we created the webhook. We’ll discuss this in detail later in this
 chapter, but for now, establish a secret when you create the hook. A
 cracker might be able to guess about where our endpoint exists, but
-unless Heroku or GitHub is compromised, they won&#8217;t know our webhook secret.</p>
+unless Heroku or GitHub is compromised, they won’t know our webhook secret.</p>
 </div>
 <div class="paragraph">
 <p>We should update our tests to make sure we anticipate this new
@@ -1463,7 +1472,7 @@ the end of the file.</p>
 </div>
 <div class="paragraph">
 <p>Now if we run our tests, they all pass. If they do, publish our new
-version of the app into Heroku. We&#8217;ll omit this step in the future,
+version of the app into Heroku. We’ll omit this step in the future,
 but if you want to receive pull requests on the router you have setup,
 remember that you need to publish your files into Heroku so the
 endpoint is public.</p>
@@ -1494,7 +1503,7 @@ notifications.</p>
 <h4 id="_triggering_real_pull_requests">Triggering Real Pull Requests</h4>
 <div class="paragraph">
 <p>We can now start testing our Hubot with real GitHub
-notifications. First, let&#8217;s set up a repository which we can use for
+notifications. First, let’s set up a repository which we can use for
 testing. Creating the new repository on GitHub is a quick task if we
 use the <code>hub</code> tool described in the previous chapter on Jekyll.</p>
 </div>
@@ -1536,7 +1545,7 @@ like the following:</p>
 </div>
 <div class="paragraph">
 <p>All of this can be automated using a combination of git commands and cURL.
-We&#8217;ve seen some of these commands before and can reuse previous
+We’ve seen some of these commands before and can reuse previous
 command line invocations and variables that we used when generating
 our webhook using the API via cURL. Our config variable is similar,
 but the required fields in this case are: the title and body for the
@@ -1547,10 +1556,10 @@ where to merge it to using the "base" key.</p>
 <p>Creating a new branch, adding some content and then issuing a pull
 request against the branch might be something we need to do several
 (or more) times as we experiment and learn about the Hubot extension
-API. The examples here work right out of the box, but don&#8217;t be fooled
+API. The examples here work right out of the box, but don’t be fooled
 into thinking that it all went exactly as we expected the first time.
 Given that, these are commands you might want to perform multiple times as you are
-experimenting, so let&#8217;s put the commands described in the prior paragraph
+experimenting, so let’s put the commands described in the prior paragraph
 into a bash script that is generic and can be run multiple times. We
 can call it <code>issue-pull-request.sh</code> and place the script inside the
 test directory.</p>
@@ -1593,7 +1602,7 @@ below or an error message. And, as we are going to run this script as
 a command, make it executable using the <code>chmod</code> command.</p>
 </div>
 <div class="paragraph">
-<p>Now, let&#8217;s run it and see what happens.</p>
+<p>Now, let’s run it and see what happens.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1636,7 +1645,7 @@ very bottom of the page a list of recent deliveries to our webhook, as in <a hre
 <div class="paragraph">
 <p>These requests all failed; our Hubot is not correctly configured
 to handle real HTTP requests from GitHub. This does show that GitHub is
-trying to do something when a pull request is received. We&#8217;ll work on
+trying to do something when a pull request is received. We’ll work on
 getting our handler code written and pushed into Heroku, and then
 issue another PR.</p>
 </div>
@@ -1644,7 +1653,7 @@ issue another PR.</p>
 <div class="sect3">
 <h4 id="_handling_pr_notifications_as_post_requests_over_http">Handling PR Notifications as Post Requests over HTTP</h4>
 <div class="paragraph">
-<p>Let&#8217;s build our HTTP handler when PRs notifications arrive from
+<p>Let’s build our HTTP handler when PRs notifications arrive from
 GitHub. At first glance, we might take the easy route, adding it
 directly into the top level script. But, given the fact that
 JavaScript handles events inside of callbacks and the fact that Hubot
@@ -1653,9 +1662,9 @@ extensions only export a single constructor (using the
 test, a separate module which we require in our main extension script.</p>
 </div>
 <div class="paragraph">
-<p>We start by writing our tests. We&#8217;ve already created a test which
+<p>We start by writing our tests. We’ve already created a test which
 verifies the call to <code>robot.router.post</code>. Our new functionality will
-actually handle the PR notification, so let&#8217;s add a new grouping using
+actually handle the PR notification, so let’s add a new grouping using
 the describe syntax and call it "#pr". The new functionality is
 simple: if the Hubot receives the proper parameters (most importantly
 that the internal secret matches the secret sent on the request) then
@@ -1740,7 +1749,7 @@ provided by the built in <strong>express</strong> server that Hubot uses to prov
 an HTTP server). For debugging purposes we output that the secret
 was validated, if it was in fact validated, but otherwise the behavior
 of our response to the calling client is the same regardless of
-whether they provided a correct secret or not. We don&#8217;t want to
+whether they provided a correct secret or not. We don’t want to
 provide an attacker with anything extra if they pass in an incorrect secret.</p>
 </div>
 <div class="paragraph">
@@ -1795,7 +1804,7 @@ process) and then sends it a SIGHUP signal, signaling to Hubot that it
 should quit.</p>
 </div>
 <div class="paragraph">
-<p>Provided you connected correctly to your Slack site, you&#8217;ll also see a
+<p>Provided you connected correctly to your Slack site, you’ll also see a
 message inside your #general channel which says "OMG, GitHub is on my
 caller-id!?!" We now have a simple way to trigger a pull request notification
 without going through the formality of actually generating a pull
@@ -2021,7 +2030,7 @@ that inside our tests. We will need to provide a new function called
 <code>users</code> to the Hubot inside the faked brain we created</p>
 </div>
 <div class="paragraph">
-<p>Unfortunately, things don&#8217;t just work when we change our code to this:</p>
+<p>Unfortunately, things don’t just work when we change our code to this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2120,7 +2129,7 @@ anyoneButProbot = ( users ) -&gt;
 <div class="sect4">
 <h5 id="_sending_pr_data_via_webhook">Sending PR Data via Webhook</h5>
 <div class="paragraph">
-<p>Our wiring is almost complete, so let&#8217;s actually send real pull
+<p>Our wiring is almost complete, so let’s actually send real pull
 request information. If we run our script <code>issue-pull-request.sh</code> we
 will see it sending data out to our Hubot. Once we have deployed to
 Heroku, our Hubot is listening on a public hostname. GitHub will
@@ -2290,7 +2299,7 @@ it "should allow calls with the secret and url", (done) -&gt;
 </div>
 </div>
 <div class="paragraph">
-<p>You&#8217;ll notice we moved the secret out of the JSON and into the
+<p>You’ll notice we moved the secret out of the JSON and into the
 headers. This is the same structure our Hubot will see when the
 GitHub webhook encodes the content of the JSON and provides us with a
 secure hash in the HTTP_X_HUB_SIGNATURE key. Inside our test we will need
@@ -2298,14 +2307,14 @@ to provide the same signature inside our mocked request object. We
 could duplicate our secure hash generation code from the
 handler implementation, or we could be lazy and just run our tests
 once (knowing they will fail this time), watch for the
-console.log output which says "Hash: cd970490d83c&#8230;&#8203;" and copy this
+console.log output which says "Hash: cd970490d83c…​" and copy this
 hash into our mocked request object. Once we do this, our tests will
 pass.</p>
 </div>
 <div class="paragraph">
 <p>Now, after reloading our Hubot, if we issue a pull request using our
 <code>issue-pull-request.sh</code> script, we should see the matching
-hashes. But, we won&#8217;t (at least if you used the same <code>package.json</code>
+hashes. But, we won’t (at least if you used the same <code>package.json</code>
 file as we specified above) because of a critical bug inside of Hubot
 at the time of this writing.</p>
 </div>
@@ -2503,7 +2512,7 @@ notification, and falsely engage chat room users around it. If the PR
 the attacker used was fake, it might confuse our Hubot, but no real
 harm would be done. If they used an existing real PR, an attacker
 could trick our Hubot into adding data to the PR, adding confusion in
-the comments about who accepted the review request. We won&#8217;t solve that
+the comments about who accepted the review request. We won’t solve that
 potential problem with this code, but you can imagine adding code to
 our Hubot that handles a case like this (for example, by checking
 first to see if someone was already tagged on the PR, and ignoring
@@ -2535,7 +2544,7 @@ always make sure we were interpreting the message in the correct
 context. <code>respond</code> makes more sense here.</p>
 </div>
 <div class="paragraph">
-<p>If they decline the request, let&#8217;s just graciously note that the offer
+<p>If they decline the request, let’s just graciously note that the offer
 was declined.</p>
 </div>
 <div class="listingblock">
@@ -2571,35 +2580,35 @@ value, you should probably call <code>JSON.stringify</code> on the object to
 maintain full control over the roundtrip storing and retrieval.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s modify our Hubot handler to deal with accepting or declining
+<p>Let’s modify our Hubot handler to deal with accepting or declining
 responses (and change our extension file to deal with this new
 interface). Of course, we will need to add to our tests. Finally, we
 will need to set up a way to provide the GitHub API key to our Hubot
-handler, so we&#8217;ll add a method to do that that looks almost exactly
+handler, so we’ll add a method to do that that looks almost exactly
 like the one for setting our secret key.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll use a GitHub API NodeJs module called <code>node-github</code>, found on
+<p>We’ll use a GitHub API NodeJs module called <code>node-github</code>, found on
 GitHub at <a href="https://github.com/mikedeboer/node-github" class="bare">https://github.com/mikedeboer/node-github</a>. If we look
 at the API documentation, we see that it supports authentication using
 an oAuth token (using the <code>github.authenticate( {  'type' : 'oauth':
-'token' : '&#8230;&#8203;' }</code> syntax), and has methods we can use to add a comment to an
+'token' : '…​' }</code> syntax), and has methods we can use to add a comment to an
 issue or pull request associated with a repository (using the
 <code>github.issues.createComment</code> method).</p>
 </div>
 <div class="paragraph">
 <p>Knowing that this module handles most of the work for us between these
-two methods, we can start by writing our tests. We&#8217;ll create a new
+two methods, we can start by writing our tests. We’ll create a new
 describe block called <code>#response</code> which groups our tests together. As
 we noted above, our Hubot can take affirmative and negative
 responses, so our tests should reflect these two code paths. Our setup
 block (the <code>beforeEach</code> section) in both cases should do the same
 thing for each response, make the pull request invitation to a random user: this all
-happens inside our <code>prHandler</code> code. We don&#8217;t need to verify the
+happens inside our <code>prHandler</code> code. We don’t need to verify the
 expectations of this method since that got that covered by prior
 tests. After we get our handler to the right state, we need to test
 that the handler works correctly with an <code>accept</code> and <code>decline</code> method
-(they don&#8217;t yet exist in our handler code so we&#8217;ll add them
+(they don’t yet exist in our handler code so we’ll add them
 next).</p>
 </div>
 <div class="paragraph">
@@ -2619,12 +2628,12 @@ Hubot handler which receives the pull request information, and we
 will add code which does this (and is exposed in our handler for
 testing). We saw that a pull request comes in through a large JSON
 response, and we can use the URL we used earlier as the way we decode
-this information. So, we&#8217;ll need to have two more tests inside our
+this information. So, we’ll need to have two more tests inside our
 <code>#response</code> block, one for the decoding of the URL into a message
 object, and another to retrieve the username which we insert into the
 comment stored in the pull request on the repository. We know what our
 test URL looks like since we saw it in our PR webhook message, but we
-don&#8217;t yet have the structure of the chat message from which we can
+don’t yet have the structure of the chat message from which we can
 pull out our username, so our test will need to be adjusted when we
 know what it really looks like.</p>
 </div>
@@ -2684,7 +2693,7 @@ happens using the reply method on our response object.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Our tests will fail if we run them now. So, let&#8217;s write the code at
+<p>Our tests will fail if we run them now. So, let’s write the code at
 the end of our delegator extension. We need code which parses the URL into the
 appropriate structured message object, code to put the reminder into
 the pull request comment on GitHub and code which pulls the user out
@@ -2698,7 +2707,7 @@ little more investigation, so we will leave this as a placeholder for now.</p>
 call, we just need to split the message into pieces by the slash
 character, and then retrieve the correct items by index. We probably
 could add some additional tests which cover passing in empty strings,
-or other edge cases, but we&#8217;ll leave it as an exercise to the
+or other edge cases, but we’ll leave it as an exercise to the
 reader. Our code does not crash in these cases, but it would be
 nice to have coverage of our expectations represented in our tests.</p>
 </div>
@@ -2791,7 +2800,7 @@ to us when we get a respond callback might have it in there. The
 <code>respond</code> method provided by the Hubot API is documented mostly by
 way of the example scripts which come with hubot. There is very little
 information on what the parameter passed to your callback looks
-like. Let&#8217;s use the <code>util</code> library to inspect the data and print it to
+like. Let’s use the <code>util</code> library to inspect the data and print it to
 the console. We abbreviate the full output here, and show you that it
 contains information on the  user who sent the message to our
 Hubot. We can access this information by using
@@ -2824,7 +2833,7 @@ the name of the user.</p>
 </div>
 <div class="paragraph">
 <p>Inside it all we can find information we need,
-specifically the user name and email. So, let&#8217;s update our test and
+specifically the user name and email. So, let’s update our test and
 our handler code. The last test in our spec file can be modified to
 look like this:</p>
 </div>
@@ -2867,7 +2876,7 @@ the PR. We can use the collaborator sub section of the Repository API
 to look up their name on GitHub.</p>
 </div>
 <div class="paragraph">
-<p>If we don&#8217;t find them inside the list of users and there is not an
+<p>If we don’t find them inside the list of users and there is not an
 exact match with their Slack name then we have at least one problem,
 maybe two. First, we could just have a mismatch in their identities
 (their usernames are different on each site). If this is the case, we
@@ -2881,7 +2890,7 @@ discussion should happen (write access to a repository is a big
 resposibility in a way that being inside a chat room is not). Adding a
 user as a repository collaborator should not be automated inside a chat
 room. Because of the complexity here, we will write code to unify a
-username inside the chat room, but we won&#8217;t handle the case where
+username inside the chat room, but we won’t handle the case where
 there is no clarification to be made because they are not in the
 repository collaborator list.</p>
 </div>
@@ -3013,7 +3022,7 @@ PROBOT_SECRET=XYZABC</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Don&#8217;t forget that when we run our tests, we will need to specify the
+<p>Don’t forget that when we run our tests, we will need to specify the
 environment variables on the command line as well.</p>
 </div>
 <div class="listingblock">
@@ -3044,7 +3053,7 @@ receiving (and faking data) coming from a GitHub webhook.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-12 06:46:27 PDT
+Last updated 2018-10-12 07:45:36 PDT
 </div>
 
 <div onclick="openCustomization()" class="fab-customization">☃</div>
@@ -3076,7 +3085,7 @@ Last updated 2018-10-12 06:46:27 PDT
 	<p id="selectedText">
 	</p>
 
-	<input name="change" type="text" placeholder="Enter your comment or edit request..."/>
+	<input name="change" type="text" placeholder="Enter your comment or edit request...">
       </main>
       <footer class="modal__footer">
 	<button onclick="storeIt()" class="modal__btn modal__btn-primary">Store comment</button>
@@ -3100,7 +3109,7 @@ Last updated 2018-10-12 06:46:27 PDT
 	FYI: This does not yet work!
 	<a target="_new" href="https://goo.gl/forms/8o5NgerENFqgm6vH3">Can you help provide feedback on what you like and want?</a>
 
-	<div  class="customization">
+	<div class="customization">
 	  <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
 	  <label for="checkbox_id">Minimize callouts</label>
 	  <div class="explanation">If a chapter contains callouts with code, don't show those.
@@ -3135,7 +3144,7 @@ Last updated 2018-10-12 06:46:27 PDT
 
       </main>
       <footer class="modal__footer">
-	<button  class="modal__btn modal__btn-primary">Save Customizations</button>
+	<button class="modal__btn modal__btn-primary">Save Customizations</button>
 	<button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
       </footer>
     </div>
@@ -3148,10 +3157,7 @@ Last updated 2018-10-12 06:46:27 PDT
   You've been tagged on it, so you will get updates automatically.
 </div>
 
-<iframe height="150px" width="100%"
-	style="background-color: white !important"
-	frameborder="0" id="th"
-	src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
+<iframe height="150px" width="100%" style="background-color: white !important" frameborder="0" id="th" src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
 
 <div class="faked">NB: This "contribution" button is a only a simulation, no actual money is required.
 You can safely click the contribute button to see what would happen if you actually made a micro-contribution.
@@ -3188,5 +3194,5 @@ You can safely click the contribute button to see what would happen if you actua
 </div>
 </div>
 </div>
+
 </body>
-</html>

@@ -1,6 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<body>
+<div id="excerpt"><div class="sect1">
+<h2>Preface</h2>
+<div class="sectionbody"><div class="paragraph"><p>
+This book contains stories about building software tools.
+</p></div></div>
+</div></div>
+
+
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -417,17 +423,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <script src="edit.js"></script>
 <link rel="stylesheet" type="text/css" href="fab.css">
 <link rel="stylesheet" type="text/css" href="micromodal.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css">
 <!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
 <!-- Include jQuery Popup Overlay -->
 <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
-</head>
-<body class="article">
+
+
 <div id="header">
 <h1>The GitHub Book</h1>
 </div>
-<div id="content">
+<div id="content" style="display: none">
 <div id="preamble">
 <div class="sectionbody">
 <div class="literalblock">
@@ -632,7 +638,7 @@ more than a tool. A spreadsheet is fundamentally a tool to
 add and subtract numbers. A video game is fundamentally a tool to
 alleviate boredom. Almost immediately after people started writing
 software tools we then discovered we needed more tools to permit us to
-write the tools we set out to build in the first place. Let&#8217;s
+write the tools we set out to build in the first place. Let’s
 call these tools that are strictly to support writing software (rather
 than software tools for the general population) meta-tools.</p>
 </div>
@@ -665,7 +671,7 @@ GitHub.com website is itself a meta-tool, and we discuss the many
 facets of the GitHub service. Specifically these technologies are the
 GitHub API and related GitHub technologies, Gollum wiki, Jekyll
 static  page generator, and the chat robot called Hubot (if you are
-not familiar with any of these, we&#8217;ll explain them fully in their
+not familiar with any of these, we’ll explain them fully in their
 respective chapters).</p>
 </div>
 <div class="paragraph">
@@ -696,11 +702,11 @@ building your own.</p>
 is the future of application development. APIs provide a great pattern
 for making data accessible to the multiscreen world. If your
 application is backed by a remote service API, the
-first application could be a mobile app running on Apple&#8217;s iOS
+first application could be a mobile app running on Apple’s iOS
 operating system. Critically, if that business model does not turn out
 to be correct, you can respond quickly to changing requirements and
 iterate to build another application for an Android wearable. Or,
-perhaps you&#8217;ll build an integrated car application, or any other
+perhaps you’ll build an integrated car application, or any other
 console (or even nonconsole) application. As long as your applications
 can send and receive data using calls to a remote API you are free to
 build whatever user interface you want on whatever platform you want.</p>
@@ -709,20 +715,20 @@ build whatever user interface you want on whatever platform you want.</p>
 <p>As an author, you could write and host your own API. Many frameworks
 for popular languages like Ruby, Go, or Java support building APIs
 using standard architectural styles like REST. Or, you could use a
-third-party API. In this book we&#8217;ll focus on a third-party API: the
+third-party API. In this book we’ll focus on a third-party API: the
 GitHub API.</p>
 </div>
 <div class="paragraph">
 <p>Why the GitHub API? The GitHub API is exceedingly relevant if you are
 building software because you are probably using GitHub to manage your
-software code. For those that aren&#8217;t, you might be using Git without
+software code. For those that aren’t, you might be using Git without
 GitHub, and the GitHub API is useful to know there as well, as it
 layers the functionality of Git into a networked programming interface.</p>
 </div>
 <div class="paragraph">
-<p>The GitHub API is perhaps the best designed API I&#8217;ve ever used. It is
+<p>The GitHub API is perhaps the best designed API I’ve ever used. It is
 a Hypermedia API, which is an arguably successful attempt to make
-API clients resilient to API changes&#x2014;a tricky problem. The API is well
+API clients resilient to API changes—a tricky problem. The API is well
 versioned. It is comprehensive, mapping closely to most features of
 Git. It is consistent across sections and well organized. The GitHub
 API is a great API on which to build applications, serving as a
@@ -804,7 +810,7 @@ these chapters are stories about building applications on top of
 the technologies provided by GitHub. Within these stories you will learn
 the trade-offs and considerations you will face when you use the GitHub
 API. Chapters in this book often cover multiple pieces of the API
-when appropriate for the story we are telling. We&#8217;ve generally tried
+when appropriate for the story we are telling. We’ve generally tried
 to focus on a major API section and limit exposure to other pieces as
 much as possible, but most chapters do need to bring in small pieces
 of more than one section.</p>
@@ -897,13 +903,13 @@ GitHub API when needed.</p>
 </dl>
 </div>
 <div class="paragraph">
-<p>We don&#8217;t cover the Organizations API: this is a small facet of the API
+<p>We don’t cover the Organizations API: this is a small facet of the API
 with only the ability to list organizations and modify metadata about
 your organization; once you have used other parts of the API this nook
 of the API will be very intuitive.</p>
 </div>
 <div class="paragraph">
-<p>We also don&#8217;t cover the Users section of the API. While you might
+<p>We also don’t cover the Users section of the API. While you might
 expect it to be an important part of the API, the Users API is really
 nothing more than an endpoint to list information about users, add or
 remove SSH keys, adjust email addresses, and modify your list of
@@ -920,7 +926,7 @@ is a good reference for issues in that way.</p>
 </div>
 <div class="paragraph">
 <p>The Enterprise API works almost exactly the same as the GitHub.com
-site API. We don&#8217;t have a chapter telling a story about an Enterprise
+site API. We don’t have a chapter telling a story about an Enterprise
 version of the API, but we do provide an <a href="#appendix">appendix</a> that contains a few
 notes about how the examples work when using an Enterprise server. We also
 provide the specific syntax for each of the languages used in the
@@ -944,7 +950,7 @@ technologies.</p>
 </div>
 <div class="paragraph">
 <p>You should have good familiarity with at least one imperative modern
-programming language. You don&#8217;t need to be an expert programmer to
+programming language. You don’t need to be an expert programmer to
 read this book, but having some programming experience and familiarity
 with at least one language is essential.</p>
 </div>
@@ -999,7 +1005,7 @@ shell.</p>
 <div class="paragraph">
 <p>If you absorb not only the technical facets of using GitHub but also
 pay attention to the cultural and ideological changes offered behind
-the tools, you&#8217;ll very likely see a new way of working in the modern
+the tools, you’ll very likely see a new way of working in the modern
 age. We focus on these "meta" viewpoints as we discuss the tools
 themselves to help you see these extra opportunities.</p>
 </div>
@@ -1044,7 +1050,7 @@ NodeJS, rivaling even the popularity of Ruby on Rails as a server-side toolkit f
 <div class="paragraph">
 <p>Undoubtedly, many of you picking up this book already have familiarity
 with Ruby or JavaScript/NodeJS. So, the basics and installation of them are in
-appendices in the back of the book. The appendices don&#8217;t cover syntax
+appendices in the back of the book. The appendices don’t cover syntax
 of these languages; we expect you have experience with other languages
 as a prerequisite and can read code from any imperative language
 regardless of the syntax. Later chapters discuss facets of the API and
@@ -1118,7 +1124,7 @@ transformational about writing tests if you have never done so
 before. Having these examples in hand, we hope, will allow you to
 transition to writing testable code for APIs, especially if you have
 not done so before. Some of the associated repositories have much
-greater test suites than are documented in this book, but we don&#8217;t
+greater test suites than are documented in this book, but we don’t
 cover all the entire set of edge cases in every situation.</p>
 </div>
 </div>
@@ -1189,7 +1195,7 @@ cover all the entire set of edge cases in every situation.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_o_reilly_safari">O&#8217;Reilly Safari</h3>
+<h3 id="_o_reilly_safari">O’Reilly Safari</h3>
 <div class="admonitionblock note safarienabled">
 <table>
 <tr>
@@ -1249,11 +1255,11 @@ cover all the entire set of edge cases in every situation.</p>
 <div class="paragraph">
 <p>Chris wants to thank his lovely wife, Nicole. I hope that I have added
 to this book even a tiny bit of the wit and wisdom you provide to me
-and our family every day. My son Roosevelt&#8217;s energy continues to
+and our family every day. My son Roosevelt’s energy continues to
 inspire me and keep me going even when I am at my limits. To my
 daughter Charlotte, you are my little smiling Buddha. To my mother,
 who showed me how to write and, most importantly, why to write, which
-is something we need more of in the technology world. To Tim O&#8217;Brien
+is something we need more of in the technology world. To Tim O’Brien
 who invited me into this project, thank you, and I hope we can
 collaborate again. To Bradley Horowitz, who demonstrates how small
 acts of kindness can have immeasurable impact. And, to David J. Groom,
@@ -1315,7 +1321,7 @@ highlight according to the language when displayed as in <a href="#documenting_j
 <p>There are other services that do this: pastebin was the first, and
 there are many others that offer variances on code sharing. But gists
 by GitHub are not simply a pasting service. Gists are first-class
-repositories, forkable, editable, and expansive. We&#8217;ll go over the basics
+repositories, forkable, editable, and expansive. We’ll go over the basics
 of what gists are, and how to create them, and then show how they
 allow you to share code that is also a live application.</p>
 </div>
@@ -1339,7 +1345,7 @@ inside a repository and the branch information is retained on the
 upstream repository after you push it up.</p>
 </div>
 <div class="paragraph">
-<p>You can have an unlimited number of public and secret gists. Secret gists can, in many cases, replace private repositories, and these secret gists don&#8217;t count against the limited amount of private repositories you have with paid GitHub accounts. Or, you can make a gist public, and
+<p>You can have an unlimited number of public and secret gists. Secret gists can, in many cases, replace private repositories, and these secret gists don’t count against the limited amount of private repositories you have with paid GitHub accounts. Or, you can make a gist public, and
 share that URL to mailing lists or anywhere you need public feedback.</p>
 </div>
 <div class="admonitionblock note">
@@ -1352,7 +1358,7 @@ share that URL to mailing lists or anywhere you need public feedback.</p>
 As there are two types of gists (public and secret), it is important
 to understand the differences between them. Public gists are
 searchable. Secret gists are not searchable, but they are accessible
-to anyone who knows the URL. Don&#8217;t post any code to a gist you
+to anyone who knows the URL. Don’t post any code to a gist you
 need to keep secret as once you put it there, it is only as safe as
 the URL is secret.
 </td>
@@ -1391,7 +1397,7 @@ use a secret gist, prefix the username of the account holder in the
 gist like so: <code>{% gist xrd/8138797 hi.rb %}</code>.</p>
 </div>
 <div class="paragraph">
-<p>Now let&#8217;s look at creating gists from outside the GitHub.com site,
+<p>Now let’s look at creating gists from outside the GitHub.com site,
 using the command-line.</p>
 </div>
 </div>
@@ -1448,7 +1454,7 @@ https://gist.github.com/9345609</code></pre>
 </div>
 <div class="paragraph">
 <p>Gists are often used to show interesting or troublesome code, and there
-are times when you don&#8217;t want to display the entirety of a file. In
+are times when you don’t want to display the entirety of a file. In
 this case the command-line <code>grep</code> tool can be useful; <code>grep</code> searches
 for a specific piece of code and with the right switches can include
 several lines of context around that code inside a gist. This command
@@ -1480,7 +1486,7 @@ fully working and packaged applications inside a gist repository.</p>
 <div class="sect2">
 <h3 id="_gists_as_fully_functioning_apps">Gists as Fully Functioning Apps</h3>
 <div class="paragraph">
-<p>Let&#8217;s build a simple Sinatra application to showcase how code hosted
+<p>Let’s build a simple Sinatra application to showcase how code hosted
 as a gist can also be a living application. Sinatra is a Ruby library
 for creating dead-simple web servers. A Sinatra program can be as
 simple as this:</p>
@@ -1510,7 +1516,7 @@ authentication enabled. In most cases it is easier and more flexible
 to use the Git protocol URL.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s clone it now:</p>
+<p>Let’s clone it now:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1518,7 +1524,7 @@ to use the Git protocol URL.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Once you have cloned the repository, go inside it. You&#8217;ll see a list
+<p>Once you have cloned the repository, go inside it. You’ll see a list
 of files, a list that right now includes only one file:</p>
 </div>
 <div class="listingblock">
@@ -1573,11 +1579,11 @@ code.</p>
 <div class="sect2">
 <h3 id="_gists_that_render_gists">Gists that Render Gists</h3>
 <div class="paragraph">
-<p>Let&#8217;s add to our application and use the Octokit Ruby gem to pull all
+<p>Let’s add to our application and use the Octokit Ruby gem to pull all
 public gists for any user we specify. The Octokit library is the
 the official Ruby library for accessing the GitHub API. Why would we want to make a gist
 that displays other gists? Self-referential meta code is all the rage, the
-modern-day response to René Magritte&#8217;s famous work: "Ceci n&#8217;est pas une
+modern-day response to René Magritte’s famous work: "Ceci n’est pas une
 pipe."<span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span></p>
 </div>
 <div class="paragraph">
@@ -1711,7 +1717,7 @@ Hypermedia APIs with HTML5 and Node</em> (O'Reilly)</a>.</p>
 <div class="sect3">
 <h4 id="_using_hypermedia_data_from_octokit">Using Hypermedia Data from Octokit</h4>
 <div class="paragraph">
-<p>Now that you know a little about hypermedia, let&#8217;s navigate it using Octokit:</p>
+<p>Now that you know a little about hypermedia, let’s navigate it using Octokit:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1745,7 +1751,7 @@ exceeds 100 items).</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s extend our Sinatra app to retrieve actual data about the user&#8217;s
+<p>Let’s extend our Sinatra app to retrieve actual data about the user’s
 gists by using hypermedia references:</p>
 </div>
 <div class="listingblock">
@@ -1844,7 +1850,7 @@ a wiki with any
 repository.</p>
 </div>
 <div class="paragraph">
-<p>In this chapter we&#8217;ll explore the basics of using Gollum, creating a
+<p>In this chapter we’ll explore the basics of using Gollum, creating a
 wiki on GitHub and then learning how to edit it on GitHub and as
 a repository on our local machine. We will then create a Gollum wiki by
 hand from the command line, and show the bare minimum set of files to
@@ -1865,13 +1871,13 @@ This chapter demonstrates code that modifies a Git repository
 programmatically. You will be able to follow along without possessing
 a deep understanding of the internals of Git. And, a good supplement
 to this chapter (and later chapters as well) is the <a class="orm:hideurl" href="http://shop.oreilly.com/product/0636920022862.do"><em>Version Control
-with Git</em></a> book from O&#8217;Reilly.
+with Git</em></a> book from O’Reilly.
 </td>
 </tr>
 </table>
 </div>
 <div class="sect2">
-<h3 id="__the_story_of_smeagol">"The Story of Smeagol&#8230;&#8203;"</h3>
+<h3 id="__the_story_of_smeagol">"The Story of Smeagol…​"</h3>
 <div class="paragraph">
 <p>At its most basic form, a Gollum wiki is a Git repository with a single file,
 <em>Home.ext</em> (<em>ext</em> would be any of the supported wiki markup formats,
@@ -1882,7 +1888,7 @@ which we will talk about later).</p>
 <div class="paragraph">
 <p>Any repository on GitHub, public or private, can have an associated Gollum wiki.
 To create a wiki linked to your repository, visit the repository
-page and then look in the rightmost colum. You&#8217;ll see an icon that
+page and then look in the rightmost colum. You’ll see an icon that
 looks like a book, next to which will be the word "Wiki," as in <a href="#integrated_gollum_wiki_in_the_sidebar">Accessing the associated wiki from the sidebar</a>.</p>
 </div>
 <div id="integrated_gollum_wiki_in_the_sidebar" class="imageblock">
@@ -1911,7 +1917,7 @@ repositories have private wikis, accessible only to those users or
 organizations that have rights to edit the repository data.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s review the markup options for Gollum wikis now.</p>
+<p>Let’s review the markup options for Gollum wikis now.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1932,7 +1938,7 @@ Markdown language tags, Gollum adds its own set of wiki-specific tags. There
 are often subtle (or conflicting) differences from other wiki markup
 so it is worth reviewing the
 <a href="https://github.com/gollum/gollum/wiki">Gollum repository documentation
-page</a>. We&#8217;ll go over the most important ones here.</p>
+page</a>. We’ll go over the most important ones here.</p>
 </div>
 <div class="sect4">
 <h5 id="_links">Links</h5>
@@ -1948,7 +1954,7 @@ own link tag: <code><a id="Link"></a></code>.</p>
 <ul>
 <li>
 <p>You can add a link title using the bar character:
-<code>[[<a href="http://foobar.com|A" class="bare">http://foobar.com|A</a> link to foobar]]</code>.</p>
+<code>[[<a href="http://foobar.com%7CA" class="bare">http://foobar.com|A</a> link to foobar]]</code>.</p>
 </li>
 <li>
 <p>Links can be either external or internal links.</p>
@@ -2032,7 +2038,7 @@ repository (or any other repository) into your wiki content.</p>
 <div class="paragraph">
 <p>Gollum includes capabilities to add sidebars, headers, and footers. If
 you include a file called <em>_Sidebar.ext</em> inside your repository,
-you&#8217;ll see it as a sidebar for every file rendered. Sidebars are
+you’ll see it as a sidebar for every file rendered. Sidebars are
 automatically added to any file and any file from subdirectories that
 do not have their own sidebar files. If you wanted to add sidebars
 specific to a subdirectory, add another sidebar file in the
@@ -2066,7 +2072,7 @@ Gollum repository for more details about the breadth of the image
 options.</p>
 </div>
 <div class="paragraph">
-<p>You can also add images using the editor on GitHub. But you&#8217;ll notice
+<p>You can also add images using the editor on GitHub. But you’ll notice
 that either way you are adding a link to an image and that there is no
 way to upload images into GitHub from the editor (<a href="#no_image_upload_only_image_urls">No image upload, only image URLs</a>).</p>
 </div>
@@ -2078,7 +2084,7 @@ way to upload images into GitHub from the editor (<a href="#no_image_upload_only
 </div>
 <div class="paragraph">
 <p>For nontechnical users, this makes Gollum wikis on GitHub almost
-unusable if they need to add images. Let&#8217;s address this problem by
+unusable if they need to add images. Let’s address this problem by
 building our own customized image-centric Gollum editor that still
 interoperates with regular Gollum wikis. We can put this editor in
 front of nontechnical users, allowing them to add images, and then
@@ -2093,7 +2099,7 @@ publish the wiki into GitHub as is.</p>
 <p>Would an image editor based on Gollum be of general use? On many
 software teams there is tension between the design
 team and the software team stemming from the fact that designers
-generally don&#8217;t like using source-code tools to manage images. This
+generally don’t like using source-code tools to manage images. This
 causes issues when software developers rely on designs that are
 rapidly changing: coders quickly get out of sync with the latest
 designs. As a wiki, Gollum is the perfect tool to bridge this gap
@@ -2124,7 +2130,7 @@ $ git commit -m "Initial commit"</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>We&#8217;ve just created a wiki compatible with Gollum. Let&#8217;s see what it
+<p>We’ve just created a wiki compatible with Gollum. Let’s see what it
 looks like inside Gollum. Run the <code>gollum</code> command then open
 <em><a href="http://localhost:4567/" class="bare">http://localhost:4567/</a></em> in your browser, as shown in <a href="#gollum_running_locally">Viewing the wiki home page running on our laptop</a>.</p>
 </div>
@@ -2154,14 +2160,14 @@ your index, they will not be visible to Gollum.
 </table>
 </div>
 <div class="paragraph">
-<p>Now let&#8217;s begin creating the web app that will help us store images
+<p>Now let’s begin creating the web app that will help us store images
 inside a Gollum wiki.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_the_starting_point_of_a_gollum_editor">The Starting Point of a Gollum Editor</h3>
 <div class="paragraph">
-<p>Now we will create our custom editor. We&#8217;ll use Sinatra, a Ruby
+<p>Now we will create our custom editor. We’ll use Sinatra, a Ruby
 library that provides a simple DSL (domain-specific language) for
 building web applications. First, create a file called <em>image.rb</em> and
 put the following contents inside it:</p>
@@ -2204,14 +2210,14 @@ bundler context (using gems installed from this Gemfile rather than
 system gems) using the <code>bundle exec ruby image.rb</code> command.</p>
 </div>
 <div class="paragraph">
-<p>You&#8217;ll see a report of the files that exist in our Gollum wiki right
-now. We&#8217;ve only added one file, the <em>Home.md</em> file.</p>
+<p>You’ll see a report of the files that exist in our Gollum wiki right
+now. We’ve only added one file, the <em>Home.md</em> file.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_programmatically_handling_images">Programmatically Handling Images</h3>
 <div class="paragraph">
-<p>Let&#8217;s add to our server. We want to support uploading ZIP files into our system that we will then unpack and add to our repository, as well as add a list of these files to our wiki. Modify our <em>image.rb</em> script to look like this:</p>
+<p>Let’s add to our server. We want to support uploading ZIP files into our system that we will then unpack and add to our repository, as well as add a list of these files to our wiki. Modify our <em>image.rb</em> script to look like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2252,7 +2258,7 @@ end</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll need an <em>index.html</em> file as well, so add that:</p>
+<p>We’ll need an <em>index.html</em> file as well, so add that:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2313,7 +2319,7 @@ install Rugged. On OS X this can look like <code>brew install cmake</code> or
 </div>
 <div class="paragraph">
 <p>Then, we can open <em><a href="http://localhost:4567/" class="bare">http://localhost:4567/</a></em> and test uploading a ZIP file
-full of images. You&#8217;ll see output similar to this in your console
+full of images. You’ll see output similar to this in your console
 after uploading a ZIP file:</p>
 </div>
 <div class="listingblock">
@@ -2334,7 +2340,7 @@ Writing out: IMG5678.png
 </div>
 <div class="paragraph">
 <p>We are not doing anything beyond printing out the names of the images
-in the ZIP. We&#8217;ll actually insert them into our Git repository in the
+in the ZIP. We’ll actually insert them into our Git repository in the
 next section.</p>
 </div>
 </div>
@@ -2355,7 +2361,7 @@ elegant way to interface with a Git repository than raw Git
 commands. As you might expect, Rugged is maintained by several employees of GitHub.</p>
 </div>
 <div class="paragraph">
-<p>To change our script to modify our Git repository, let&#8217;s change our
+<p>To change our script to modify our Git repository, let’s change our
 script to no longer print the filename (using the <code>puts</code> method inside
 the ZIP decode block) and instead call a new method called
 <code>write_file_to_repo</code>. And, at the end of the ZIP block, add a method
@@ -2439,7 +2445,7 @@ can just modify this method to suit your needs. The instance variables
 </div>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s verify
+<p>Let’s verify
 that things are working correctly after uploading a ZIP file. Jumping
 into a terminal window after uploading a new file, imagine running
 these commands:</p>
@@ -2478,11 +2484,11 @@ on the index and then built a commit. This is important to note
 because our files will not exist in our working directory if we only
 write them using the Rugged calls, and if we do this, we cannot
 reference them inside our wiki page when we are running Gollum
-locally. We&#8217;ll fix this in the next section.</p>
+locally. We’ll fix this in the next section.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ve now added the files to our repository, but we have not exposed
-these files inside our wiki. Let&#8217;s modify our server script to write
+<p>We’ve now added the files to our repository, but we have not exposed
+these files inside our wiki. Let’s modify our server script to write
 out each file to a wiki page for review. As we mentioned in the
 previous section, we need to make sure we write the files to both
 the working index and the repository (using the Rugged library <code>write</code>
@@ -2532,7 +2538,7 @@ call to <code>build_commit</code> like so:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Now, let&#8217;s take a look at how images are stored inside our repository, particularly if the same image
+<p>Now, let’s take a look at how images are stored inside our repository, particularly if the same image
 is uploaded twice.</p>
 </div>
 </div>
@@ -2601,7 +2607,7 @@ Archive:  /Users/xrdawson/Downloads/Photos (4).zip
 </div>
 </div>
 <div class="paragraph">
-<p>Now let&#8217;s use another ZIP file with the same two files present but
+<p>Now let’s use another ZIP file with the same two files present but
 with an additional image file added:</p>
 </div>
 <div class="listingblock">
@@ -2696,9 +2702,9 @@ without overloading the repository.</p>
 <div class="sect2">
 <h3 id="_reviewing_on_github">Reviewing on GitHub</h3>
 <div class="paragraph">
-<p>The raison d&#8217;etre for this wiki is to annotate a development project.
+<p>The raison d’etre for this wiki is to annotate a development project.
 If you follow the instructions and create a new wiki for a
-repository, you&#8217;ll then be able to push up the changes we&#8217;ve made
+repository, you’ll then be able to push up the changes we’ve made
 using our image.rb script. Once you have created a new wiki, look
 for a box on the right that says "Clone this wiki locally," as seen in <a href="#gollum_git_clone_url">Getting the clone URL for our wiki</a>.</p>
 </div>
@@ -2731,9 +2737,9 @@ $ git push</code></pre>
 <p>When we pull, we will be asked to merge our changes since GitHub
 created a <em>Home.md</em> file that did not exist in our local repository.
 We can just accept the merge as is. The <code>git push</code> publishes our
-changes. If we then visit the wiki, we&#8217;ll see an additional file
+changes. If we then visit the wiki, we’ll see an additional file
 listed under the pages sidebar to the right. Clicking the Review
-page, as in <a href="#images_displayed_within_a_gollum_wiki">An image review page</a>, we can see the images we&#8217;ve added most recently.</p>
+page, as in <a href="#images_displayed_within_a_gollum_wiki">An image review page</a>, we can see the images we’ve added most recently.</p>
 </div>
 <div id="images_displayed_within_a_gollum_wiki" class="imageblock">
 <div class="content">
@@ -2770,7 +2776,7 @@ our designer.</p>
 </div>
 <div class="paragraph">
 <p>It would be nice if GitHub provided a simple way to jump
-from a revision to the parent (older) revision, but it doesn&#8217;t expose
+from a revision to the parent (older) revision, but it doesn’t expose
 this in its site at this point. We can fix this, however, by generating
 our own special link inside the Review page itself, which will
 magically know how to navigate to a previous version of the page.</p>
@@ -2786,7 +2792,7 @@ critical when we are trying to understand how things have changed
 between comps. We can improve this easily.</p>
 </div>
 <div class="paragraph">
-<p>First, let&#8217;s add a commit message field to our upload form:</p>
+<p>First, let’s add a commit message field to our upload form:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2804,7 +2810,7 @@ Choose a zip file:
 </div>
 </div>
 <div class="paragraph">
-<p>Then, let&#8217;s adjust the commit message inside our <em>image.rb</em> script,
+<p>Then, let’s adjust the commit message inside our <em>image.rb</em> script,
 which is a one-line change to the options hash, setting the value of
 it to the parameter we are now passing in for commit:</p>
 </div>
@@ -2866,7 +2872,7 @@ button to jump back to the prior page in the history stack of our
 browser. We might try to get clever
 and use a link with JavaScript to call window.history.back() but
 Gollum will foil this attempt by stripping JavaScript from rendered
-markup files. This is generally a good thing, as we don&#8217;t want to
+markup files. This is generally a good thing, as we don’t want to
 permit rogue markup inside our wiki pages, but it does limit our
 options in this situation.</p>
 </div>
@@ -2875,7 +2881,7 @@ options in this situation.</p>
 (clicking them brings you to a page that asks you to create this
 as a new page). Gollum, unlike Jekyll, does not support Liquid
 tags, which would permit building a link using the username and
-repository. Right now we don&#8217;t have access to these variables, so our
+repository. Right now we don’t have access to these variables, so our
 link needs to be relative, which works when we are in history review,
 but not in the normal review. It does not affect viewing the files so
 this would require educating your stakeholders on the limitations of
@@ -2892,8 +2898,8 @@ our own Gollum server. Finally, we built a customized Gollum
 image-centric editor using the Rugged and Sinatra Ruby libraries.</p>
 </div>
 <div class="paragraph">
-<p>In the next chapter we&#8217;ll switch gears completely and build a GUI
-application for searching GitHub issues. And we&#8217;ll do it in Python.</p>
+<p>In the next chapter we’ll switch gears completely and build a GUI
+application for searching GitHub issues. And we’ll do it in Python.</p>
 </div>
 </div>
 </div>
@@ -2918,7 +2924,7 @@ recently the best way to test nonlinear code. But recent
 toolkits like AngularJS and promise-based libraries have made testing
 not only easy, but elegant as well. Building applications on top of
 third-party services makes testing even more important than it already
-was, and we&#8217;ll make sure to add testing to our application to verify
+was, and we’ll make sure to add testing to our application to verify
 the functionality works as we expect.</p>
 </div>
 <div class="paragraph">
@@ -2949,23 +2955,23 @@ coffee shop and reviews, but the granularity of information about that
 coffee shop is often poor and limited in scope. Do they offer rice
 milk as a dairy-free alternative?  What special details should I know
 when considering a place? Many guidance and mapping applications
-exist, but if they don&#8217;t fit my own personalized informational niche,
+exist, but if they don’t fit my own personalized informational niche,
 I might miss a unique experience. With such a pressing and dire
-problem in front of us, let&#8217;s use the GitHub API to solve it.</p>
+problem in front of us, let’s use the GitHub API to solve it.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll build a coffee shop single-page web app that allows anyone to add
+<p>We’ll build a coffee shop single-page web app that allows anyone to add
 information on coffee shops, information that is flexible and
 dynamic, and search and filter through that information about a coffee
 shop. All files, such as the HTML, images, and JavaScript will be
-hosted on GitHub. And we&#8217;ll be using the GitHub API to allow
+hosted on GitHub. And we’ll be using the GitHub API to allow
 contributors to add data to our database, a database we will
 also host on GitHub. And as GitHub developers write code with tests,
 we will write tests to validate our JavaScript code as well as the
 expectations we have of the GitHub API.</p>
 </div>
 <div class="paragraph">
-<p>More specifically, we&#8217;ll use these technologies:</p>
+<p>More specifically, we’ll use these technologies:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2982,13 +2988,13 @@ are testable</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>You don&#8217;t need to know these technologies in advance of working on this chapter.</p>
+<p>You don’t need to know these technologies in advance of working on this chapter.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_set_up">Set Up</h3>
 <div class="paragraph">
-<p>To create our app, let&#8217;s first create our main web page and push it into our repository:</p>
+<p>To create our app, let’s first create our main web page and push it into our repository:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3003,7 +3009,7 @@ $ git config push.default gh-pages</code></pre>
 </div>
 <div class="paragraph">
 <p>Notice that we created a new repository, and then created and entered
-the gh-pages branch. We&#8217;ll do all our work there. And by using the
+the gh-pages branch. We’ll do all our work there. And by using the
 git config command, we specified that we want the default push branch
 to be gh-pages. This allows us to use <code>git push</code> to push our branch up
 instead of the longer <code>git push origin gh-pages</code>.</p>
@@ -3066,7 +3072,7 @@ hostname far in advance if your site has to be live by a certain point.
 <h4 id="_adding_the_support_libraries">Adding the Support Libraries</h4>
 <div class="paragraph">
 <p>As we mentioned, we will use the GitHub.js library, AngularJS, and
-Bootstrap. Let&#8217;s add those to our project now. Using whatever editor
+Bootstrap. Let’s add those to our project now. Using whatever editor
 you prefer, edit the <em>index.html</em> file to look like this:</p>
 </div>
 <div class="listingblock">
@@ -3103,7 +3109,7 @@ and compile our page from the body tag downward.</p>
 </li>
 <li>
 <p>The <code>{{ }}</code> (double brackets) are an AngularJS two-way data binding
-directive. You&#8217;ll see two-way data binding in action very soon if it
+directive. You’ll see two-way data binding in action very soon if it
 is not already familiar. Adding this code here sanity checks whether
 AngularJS is working for us; if we see "Welcome to Coffeete.ch"
 without the braces then we know AngularJS is loading and working
@@ -3111,7 +3117,7 @@ properly. If we see the braces, then there is some error in our
 setup to resolve. Two-way data binding solves a significant pain point when building JS apps:
 marshalling data back and forth between network events, into HTML
 and out of HTML forms. AngularJS does all this heavy lifting for
-you. In a moment we&#8217;ll show how to use two-way data binding as it was
+you. In a moment we’ll show how to use two-way data binding as it was
 intended by defining a variable on the AngularJS scope. We then
 access the variable using the same <code>{{ }}</code> data binding directives.</p>
 </li>
@@ -3136,7 +3142,7 @@ $ wget https://github.com/michael/github/raw/master/github.js</code></pre>
 <div class="sect2">
 <h3 id="_an_angularjs_application_using_github_js">An AngularJS Application Using GitHub.js</h3>
 <div class="paragraph">
-<p>Now let&#8217;s implement a <em>coffeetech.js</em> file, which is where we will
+<p>Now let’s implement a <em>coffeetech.js</em> file, which is where we will
 build our single-page application functionality. Create a new file called
 <em>coffeetech.js</em> in the root of your repository:</p>
 </div>
@@ -3248,8 +3254,8 @@ references.</p>
 <div class="title">Figure 11. The whole messy JSON</div>
 </div>
 <div class="paragraph">
-<p>That is a lot of data. AngularJS&#8217;s JSON filter pretty-printed
-it for us, but this is a bit too much. Let&#8217;s change the HTML to reduce
+<p>That is a lot of data. AngularJS’s JSON filter pretty-printed
+it for us, but this is a bit too much. Let’s change the HTML to reduce
 some noise:</p>
 </div>
 <div class="listingblock">
@@ -3275,7 +3281,7 @@ src="angular.js"&gt;&lt;/script&gt;
 </div>
 <div class="paragraph">
 <p>We can filter this information by modifying the HTML to show just a
-few vital pieces of information from the repository JSON. Let&#8217;s
+few vital pieces of information from the repository JSON. Let’s
 display the <code>subscriber_count</code> and the <code>network_count</code>. Now we see
 something more palatable (<a href="#pulling_out_what_we_want">Pulling out what we want</a>).</p>
 </div>
@@ -3286,7 +3292,7 @@ something more palatable (<a href="#pulling_out_what_we_want">Pulling out what w
 <div class="title">Figure 12. Pulling out what we want</div>
 </div>
 <div class="paragraph">
-<p>We&#8217;ve just extracted the subscriber and network count from the Gollum
+<p>We’ve just extracted the subscriber and network count from the Gollum
 repository hosted on GitHub using the GitHub API and placed it into
 our single-page app.</p>
 </div>
@@ -3294,7 +3300,7 @@ our single-page app.</p>
 <h4 id="_visualize_application_data_structure">Visualize Application Data Structure</h4>
 <div class="paragraph">
 <p>We are going to be building a coffee shop database. We want to use Git
-as our datastore, but Git and its associated tools (either command-line tools or GitHub) don&#8217;t offer the same features as
+as our datastore, but Git and its associated tools (either command-line tools or GitHub) don’t offer the same features as
 a standard relational database. So, we need to think and plan how we
 will structure our data inside our repository to make it easily searchable.</p>
 </div>
@@ -3309,14 +3315,14 @@ their city manually.</p>
 <div class="paragraph">
 <p>If we look at the <a href="https://github.com/michael/github">GitHub.js JavaScript documentation on GitHub</a>
 we can see that there are some
-options for us to pull content from a repository. We&#8217;ll store a data
+options for us to pull content from a repository. We’ll store a data
 file in JSON named after the city inside our repository and retrieve
 this from that repository. It looks like the calls we need to use are
 <code>github.getRepo( username, reponame )</code>, and once we have retrieved the
 repository, <code>repo.contents( branch, path, callback )</code>.</p>
 </div>
 <div class="paragraph">
-<p>Now that we have a barebones application let&#8217;s pause and make sure we
+<p>Now that we have a barebones application let’s pause and make sure we
 are building something we can refactor and maintain long term. This
 means adding tests to our project.</p>
 </div>
@@ -3330,7 +3336,7 @@ easier for an outsider (meaning other team members) to use our code.
 Testing facilitates "social coding."</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll use a JavaScript testing tool called "Karma." Karma simplifies
+<p>We’ll use a JavaScript testing tool called "Karma." Karma simplifies
 writing JavaScript unit tests. We need to first install the tool, then
 write a test or two. Karma can easily be installed using npm
 (installation of which is documented in <a href="#appendix">[appendix]</a>):</p>
@@ -3381,12 +3387,12 @@ dependencies in our tests.</p>
 <ol>
 <li>
 <p>The <code>files</code> section specifying the load order of our JavaScript
-implementations and the test scripts. You can see a few of the files we&#8217;ve
+implementations and the test scripts. You can see a few of the files we’ve
 added specified directly and wildcards to cover the remaining
 files.</p>
 </li>
 <li>
-<p>Note also that we&#8217;ve specified Chrome as our test browser (so
+<p>Note also that we’ve specified Chrome as our test browser (so
 you should have it installed), which is a safe bet because it works on
 just about any desktop platform you might be running. Know that
 you can always choose Safari or Firefox if you want Karma to test
@@ -3396,7 +3402,7 @@ specified and run your tests inside a test harness in those browsers.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>To write the test, let&#8217;s clarify what we want our code to do:</p>
+<p>To write the test, let’s clarify what we want our code to do:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3418,14 +3424,14 @@ any of the cities. If so, set the current city to the first match.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Concretely, let&#8217;s assert that we load the list of cities and have two
+<p>Concretely, let’s assert that we load the list of cities and have two
 of them, then we load a matching city named "Portland," a city that
 has three shops available.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll use an <code>ng-init</code> directive, which is the mechanism to tell
+<p>We’ll use an <code>ng-init</code> directive, which is the mechanism to tell
 AngularJS we want to call the function specified when the controller
-has finished loading. We&#8217;ll call this function <code>init</code> so let&#8217;s test it.</p>
+has finished loading. We’ll call this function <code>init</code> so let’s test it.</p>
 </div>
 <div class="paragraph">
 <p>First, we will write the setup code for an AngularJS test written
@@ -3438,7 +3444,7 @@ ability to define your own custom matchers. Jasmine also gives you the
 ability to "spy" on functions, which is another way of saying Jasmine
 can intercept function calls to validate that those calls were made in
 the way you anticipate. It is easiest to explain the power of Jasmine
-by showing the elegance of the tests themselves, so let&#8217;s do that now:</p>
+by showing the elegance of the tests themselves, so let’s do that now:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3481,13 +3487,13 @@ the <code><span class="keep-together">$controller</span></code> and <code>$rootS
 </li>
 <li>
 <p>We will be creating two functions that generate the mock objects
-required for our tests. We&#8217;ll discuss these two functions in a bit.</p>
+required for our tests. We’ll discuss these two functions in a bit.</p>
 </li>
 <li>
 <p>scope is the AngularJS convention for the object into which all
 functionality and state is stored. We create a new scope using the
 AngularJS utility function <code>$rootScope.$new()</code> and store a
-reference to this scope so we can test functionality we&#8217;ve implemented
+reference to this scope so we can test functionality we’ve implemented
 in our actual code.</p>
 </li>
 <li>
@@ -3500,7 +3506,7 @@ inspect that data and assert our implementation is correct.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Now, let&#8217;s write an actual test:</p>
+<p>Now, let’s write an actual test:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3620,7 +3626,7 @@ in our actual tests.</p>
 <code>read</code>. This function matches the function of the same name contained
 in the API provided by the JavaScript GitHub.js library. Just like in
 the previous mock, we <code>spyOn</code> the function so we can validate it was
-called. However, this is not the "top-level" repository object&#x2014;this
+called. However, this is not the "top-level" repository object—this
 is the object returned from the call to <code>getRepo</code>. We will take this
 mock object and return it from the <code>getRepo</code> call.</p>
 </li>
@@ -3695,7 +3701,7 @@ Chrome 32.0.1700 (Mac OS X 10.9.1) GithubCtrl #init should initialize,
 <div class="sect3">
 <h4 id="_coffeetech_js">CoffeeTech.js</h4>
 <div class="paragraph">
-<p>Then, add the <em>coffeetech.js</em> file. We&#8217;ll focus just on the setup code
+<p>Then, add the <em>coffeetech.js</em> file. We’ll focus just on the setup code
 and the changes to the <code>init</code> function for now:</p>
 </div>
 <div class="listingblock">
@@ -3757,7 +3763,7 @@ our tests.</p>
 <p>Our new controller "injects" the various objects we need. We have
 extracted the GitHub API object and a Geo object into dependencies,
 and this syntax finds the proper objects and provides them to our
-controller. You&#8217;ll also notice a slightly different syntax for
+controller. You’ll also notice a slightly different syntax for
 creating the controller: <code>controller( "CtrlName", [ 'dependency1',
 'dependency2', function( dependency1, dependency2 ) {} ] );</code>. This
 style works even if JavaScript minification were to occur; the
@@ -3801,9 +3807,9 @@ callback, we need to call <code>scope.$apply()</code> like we showed in prior ex
 <div class="sect2">
 <h3 id="_geocoding_support">Geocoding Support</h3>
 <div class="paragraph">
-<p>We&#8217;ll build functions
+<p>We’ll build functions
 to retrieve the data for a city from the GitHub API, find the location
-of the user using their browser&#8217;s Geolocation feature, use the user&#8217;s
+of the user using their browser’s Geolocation feature, use the user’s
 current location to determine what cities they are close to, implement
 a distance calculation function, load the city once close proximity
 cities are determined, and finally, add a function to query the user
@@ -3935,7 +3941,7 @@ function.</p>
 This was code I developed after reading a post on geocoding using a
 stored procedure within the PostgreSQL database, and I converted the
 code to JavaScript. Unless you are a geocoding geek, how do we know
-this works as advertised? Well, let&#8217;s write some tests to prove it.
+this works as advertised? Well, let’s write some tests to prove it.
 Add these lines to the bottom of your <em>coffeetech.spec.js</em>, just within
 the last <code>});</code> closing braces:</p>
 </div>
@@ -3968,7 +3974,7 @@ enough to what Google reports the distance to be.</p>
 <div class="sect3">
 <h4 id="_city_data">City Data</h4>
 <div class="paragraph">
-<p>Let&#8217;s seed our application with some starting data and write out the <em>cities.json</em> file:</p>
+<p>Let’s seed our application with some starting data and write out the <em>cities.json</em> file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4063,13 +4069,13 @@ shop.</p>
 <div class="paragraph">
 <p>If you run this in your browser, you will not see the shops for our city
 displayed. Something is broken, so
-let&#8217;s investigate. I recommend using the Chrome browser to
+let’s investigate. I recommend using the Chrome browser to
 debug this, but you can use any browser and set of developer tools you
 like. For Chrome, right-clicking the
 page anywhere and selecting "Inspect Element" at the bottom (or by
 the keyboard shortcut "F12" or "Ctrl-Shift-I" on Windows or Linux or "Cmd-Opt-I" on Mac) will bring up
 the developer console. Then select the
-console window. Refresh the browser window, and you&#8217;ll see this in the
+console window. Refresh the browser window, and you’ll see this in the
 console:</p>
 </div>
 <div class="listingblock">
@@ -4078,7 +4084,7 @@ console:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>If you click the link to the right for GitHub.js, you&#8217;ll see something like <a href="#an_unexpected_error">An unexpected error</a>.</p>
+<p>If you click the link to the right for GitHub.js, you’ll see something like <a href="#an_unexpected_error">An unexpected error</a>.</p>
 </div>
 <div id="an_unexpected_error" class="imageblock">
 <div class="content">
@@ -4088,7 +4094,7 @@ console:</p>
 </div>
 <div class="paragraph">
 <p>You see at the point of error that we are calling <code>select</code> on the tree. select appears to be a method defined on an underscore character. If
-you use JavaScript frequently, you&#8217;ll recognize that the underscore
+you use JavaScript frequently, you’ll recognize that the underscore
 variable comes from the Underscore library, and <code>select</code> is a method
 that detects the first matching instance inside an array. Under the
 hood, the GitHub.js library is pulling the entire tree from the
@@ -4146,7 +4152,7 @@ someone might find useful once they have found the coffee shop on their
 favorite mapping application.</p>
 </div>
 <div class="paragraph">
-<p>So, to start, let&#8217;s add some fake data to our coffee shop
+<p>So, to start, let’s add some fake data to our coffee shop
 information. Add a file called <em>portland.json</em> that looks like
 this:</p>
 </div>
@@ -4178,7 +4184,7 @@ this:</p>
 </div>
 <div class="paragraph">
 <p>Notice that we added an array called <code>information</code> to our data set.
-We&#8217;ll use this to allow simple search. Add the search feature to our
+We’ll use this to allow simple search. Add the search feature to our
 <em>index.html</em>:</p>
 </div>
 <div class="listingblock">
@@ -4237,7 +4243,7 @@ we show the extra information.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Now if we type the word &#x201c;gluten&#x201d; in our search box, we filter out
+<p>Now if we type the word “gluten” in our search box, we filter out
 anything except shops that match that, and we see the information
 pieces formatted as labels underneath the shop name (<a href="#filtering_coffeeshops_using_the_term_gluten">Filtering coffee shops using the term gluten</a>).</p>
 </div>
@@ -4250,7 +4256,7 @@ pieces formatted as labels underneath the shop name (<a href="#filtering_coffees
 <div class="sect3">
 <h4 id="_user_contributed_data">User-Contributed Data</h4>
 <div class="paragraph">
-<p>Now that we have a functioning application, let&#8217;s allow people to add
+<p>Now that we have a functioning application, let’s allow people to add
 information themselves and help build our database. Just beneath the
 link to the map link, add a button that will allow us to annotate a
 coffee shop with extra information.</p>
@@ -4264,7 +4270,7 @@ possible from within our webapp using the GitHub.js library. Of
 course, if someone is going to fork a repository into their account,
 we must ask the user to log in, so we will prompt them for
 their username and password. If you are grimacing at the thought of a
-webapp asking for GitHub credentials, don&#8217;t fret&#x2014;we&#8217;ll find a safe
+webapp asking for GitHub credentials, don’t fret—we’ll find a safe
 way to achieve the same thing shortly.</p>
 </div>
 <div class="paragraph">
@@ -4277,7 +4283,7 @@ to our HTML:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s add some tests. Add another file called
+<p>Let’s add some tests. Add another file called
 <em>coffeetech.annotate.spec.js</em> with these contents:</p>
 </div>
 <div class="listingblock">
@@ -4472,7 +4478,7 @@ in a waiting state.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>If you are still running Karma in the background, you&#8217;ll see the tests
+<p>If you are still running Karma in the background, you’ll see the tests
 fail with:</p>
 </div>
 <div class="listingblock">
@@ -4484,7 +4490,7 @@ annotate a shop FAILED
 </div>
 </div>
 <div class="paragraph">
-<p>Now, let&#8217;s implement this functionality in our <em>coffeetech.js</em> file.
+<p>Now, let’s implement this functionality in our <em>coffeetech.js</em> file.
 Add these lines to the bottom of the file, but before the last closing
 braces. The function <code>annotate</code> actually does two things: makes a fork of the
 repository for the user, and then adds annotation information to that
@@ -4523,7 +4529,7 @@ annotations about the shop are added.</p>
 <li>
 <p>We prompt the user three times: username and password on GitHub,
 and the text they want to annotate. If this seems like a really bad
-way to do things, don&#8217;t worry, we&#8217;ll fix it in a moment.</p>
+way to do things, don’t worry, we’ll fix it in a moment.</p>
 </li>
 <li>
 <p>We create a new GitHub object with the username and password
@@ -4549,7 +4555,7 @@ could just mean it was still pending on GitHub.</p>
 <li>
 <p>We register a message using a key called "forking" which we can
 use inside our HTML template to display to the user that our fork has
-completed. We&#8217;ll build this function out soon; it basically stores
+completed. We’ll build this function out soon; it basically stores
 the value and a string for display, and allows us to clear it when the
 message is no longer valid.</p>
 </li>
@@ -4560,7 +4566,7 @@ data to our new forked repository once the process is fully complete.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s now build the code to annotate our repository after the fork has
+<p>Let’s now build the code to annotate our repository after the fork has
 completed:</p>
 </div>
 <div class="listingblock">
@@ -4623,7 +4629,7 @@ $scope.annotateAfterForkCompletes = function() {<b class="conum">(1)</b>
 new forked repository. We use the username provided to our code when
 the user logs in to build the repository object. We then read the
 <em>cities.json</em> file from the repository; if we retrieve this file
-successfully (we don&#8217;t see the <code>err</code> object evaluating to true) then
+successfully (we don’t see the <code>err</code> object evaluating to true) then
 we know we are ready to start editing data.</p>
 </li>
 <li>
@@ -4640,7 +4646,7 @@ elements to ignore when serializing and how and if to indent the
 resultant JSON. So, we provide the stripHashKey function to remove the
 <code>$$hashKey</code> Angular tracking data, and an indentation count. The
 indentation count makes it much easier to read a pull request, because
-the diff&#8217;ing algorithm can diff line by line rather than as a long
+the diff’ing algorithm can diff line by line rather than as a long
 JSON string, which is how <code>JSON.stringify</code> serializes by default.</p>
 </li>
 <li>
@@ -4715,7 +4721,7 @@ $scope.notifyWaiting = function( state, msg ) { <b class="conum">(3)</b>
 <li>
 <p>The <code>appendQuirkToShop</code> function creates an empty array if it is
 not yet defined and then adds the annotation to the list of annotations.
-We don&#8217;t want our code to crash if we try to add an
+We don’t want our code to crash if we try to add an
 annotation to an object for which there is an undefined array reference.</p>
 </li>
 <li>
@@ -4764,7 +4770,7 @@ HTML:</p>
 <div class="title">Figure 15. Adding information through a pull request</div>
 </div>
 <div class="paragraph">
-<p>Now we can review changes through GitHub&#8217;s integrated online diff tool (<a href="#reviewing_annotation_pull_request_diffs_from_within_github">Reviewing annotation pull request diffs from within GitHub</a>).</p>
+<p>Now we can review changes through GitHub’s integrated online diff tool (<a href="#reviewing_annotation_pull_request_diffs_from_within_github">Reviewing annotation pull request diffs from within GitHub</a>).</p>
 </div>
 <div id="reviewing_annotation_pull_request_diffs_from_within_github" class="imageblock">
 <div class="content">
@@ -4839,7 +4845,7 @@ other services.
 </table>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s modify our application to use OAuth.</p>
+<p>Let’s modify our application to use OAuth.</p>
 </div>
 <div class="sect3">
 <h4 id="_authentication_requires_a_server">Authentication Requires a Server</h4>
@@ -4902,7 +4908,7 @@ application by clicking the "Register application" button as shown in <a href="#
 <p>Now, create an account on Firebase. Once you have done this, create
 a new app called "CoffeeTech" inside Firebase. The APP URL needs be unique, so use
 "coffeetech-&lt;USERNAME&gt;", replacing USERNAME with your GitHub username.
-Once you have created the app, click the "View Firebase" button. You&#8217;ll
+Once you have created the app, click the "View Firebase" button. You’ll
 then see a settings screen, and click "Simple Login" and then
 "GitHub" as shown in <a href="#creating_the_firebase_hosted_login">Creating the Firebase hosted login</a>.</p>
 </div>
@@ -4918,11 +4924,11 @@ Firebase Simple Login settings for the GitHub provider. Make sure the
 "enabled" checkbox is checked to enable the provider.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ve now established a login application on GitHub, configured it
+<p>We’ve now established a login application on GitHub, configured it
 to use the Firebase service, and have properly configured Firebase to
 use that GitHub application. We want all
 functionality, especially external services, to be covered by tests,
-so we&#8217;ll write that test coverage next.</p>
+so we’ll write that test coverage next.</p>
 </div>
 </div>
 <div class="sect3">
@@ -5025,7 +5031,7 @@ we are changing the required injections for any controller.</p>
 (normally created inside the initialization).</p>
 </li>
 <li>
-<p>We prompt only once for the data to annotate (we don&#8217;t need to
+<p>We prompt only once for the data to annotate (we don’t need to
 prompt for username and password any longer).</p>
 </li>
 </ol>
@@ -5121,7 +5127,7 @@ interface that has a <code>then()</code> method that will be called if the
 user object.</p>
 </li>
 <li>
-<p>We still need to prompt the user for one piece of information&#x2014;the
+<p>We still need to prompt the user for one piece of information—the
 data to annotate. You can imagine other ways to get this information,
 using modal HTML5 dialogs, but this will work for us for right now. At
 least we are only prompting once instead of three times!</p>
@@ -5134,7 +5140,7 @@ the token.</p>
 </div>
 <div class="paragraph">
 <p>After we make these changes, we can click the "Add factoid" button and
-we&#8217;ll get a dialog like <a href="#the_final_step_in_the_permission_flow">The final step in the permission flow for GitHub access using Firebase</a> indicating we are logging in to GitHub
+we’ll get a dialog like <a href="#the_final_step_in_the_permission_flow">The final step in the permission flow for GitHub access using Firebase</a> indicating we are logging in to GitHub
 (via the Firebase SimpleLogin).</p>
 </div>
 <div id="the_final_step_in_the_permission_flow" class="imageblock">
@@ -5147,15 +5153,15 @@ we&#8217;ll get a dialog like <a href="#the_final_step_in_the_permission_flow">T
 <p>After you authorize the application, the execution flow is identical to
 the prior authentication flow (using username and password). As an optimization
 we could check for previous logins before calling <code>$login()</code> again, but
-we don&#8217;t do that here, meaning the login dialog momentarily pops up
+we don’t do that here, meaning the login dialog momentarily pops up
 each time we click the button.</p>
 </div>
 <div class="paragraph">
 <p>Once users have logged in, they will be redirected to the application,
-and we&#8217;ll notify them that they have submitted a pull request with their
+and we’ll notify them that they have submitted a pull request with their
 contribution. Since their contribution is associated with their GitHub
 account, they will receive standard pull request notifications when
-their contribution is accepted, so we don&#8217;t need to implement that
+their contribution is accepted, so we don’t need to implement that
 ourselves.</p>
 </div>
 </div>
@@ -5163,7 +5169,7 @@ ourselves.</p>
 <div class="sect2">
 <h3 id="_summary_3">Summary</h3>
 <div class="paragraph">
-<p>We&#8217;ve built an application in JavaScript that requires no server and provides users
+<p>We’ve built an application in JavaScript that requires no server and provides users
 with a searchable coffee shop database that accepts contributions in a
 very safe and secure way using the Pull Request API. We were able to completely ignore all the
 administrative features of a data entry system, delegating all these
@@ -5233,7 +5239,7 @@ tools.</p>
 <div class="sect3">
 <h4 id="_operating_jekyll_locally">Operating Jekyll Locally</h4>
 <div class="paragraph">
-<p>To really use Jekyll, you&#8217;ll need the <code>jekyll</code> gem. As we explain in
+<p>To really use Jekyll, you’ll need the <code>jekyll</code> gem. As we explain in
 <a href="#appendix">[appendix]</a>, we could install a ruby gem using this command:</p>
 </div>
 <div class="listingblock">
@@ -5248,7 +5254,7 @@ commands we run inside the command line are lost to us and the world
 we are going to publish any of our sites to GitHub, we will want to
 make sure we are matching the exact versions of Jekyll and its
 dependencies so that a site that works on our local laptop also works
-when published into GitHub. If you don&#8217;t take care of this, you&#8217;ll
+when published into GitHub. If you don’t take care of this, you’ll
 occasionally get an email like this from GitHub:</p>
 </div>
 <div class="listingblock">
@@ -5263,10 +5269,10 @@ occasionally get an email like this from GitHub:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The fix for these two issues is a simple one. You&#8217;ve probably seen other
+<p>The fix for these two issues is a simple one. You’ve probably seen other
 chapters using a <code>Gemfile</code> to install Ruby libraries. Instead of
 using a manual command like <code>bundle</code> to install from the command line,
-let&#8217;s put this dependency into the Gemfile. Then, anyone else using
+let’s put this dependency into the Gemfile. Then, anyone else using
 this repository can run the command <code>bundle install</code> and install the
 correct dependencies. And instead of using the <code>jekyll</code> gem directly, use the
 <code>github-pages</code> gem, which synchronizes your Jekyll gem versions with
@@ -5293,7 +5299,7 @@ way to get your Jekyll tool synced with the version running on GitHub.</p>
 <div class="sect2">
 <h3 id="_jekyll_blog_quick_start">Jekyll Blog Quick Start</h3>
 <div class="paragraph">
-<p>We have our required tools installed, so let&#8217;s create a simple blog. Run
+<p>We have our required tools installed, so let’s create a simple blog. Run
 these commands:</p>
 </div>
 <div class="listingblock">
@@ -5304,7 +5310,7 @@ $ cd myblog</code></pre>
 </div>
 <div class="paragraph">
 <p>The <code>jekyll new</code> command creates the necessary structure for a
-minimal Jekyll blog. Taking a look inside the directory, you&#8217;ll see a
+minimal Jekyll blog. Taking a look inside the directory, you’ll see a
 few files that comprise the structure of a basic Jekyll blog.</p>
 </div>
 <div class="paragraph">
@@ -5389,7 +5395,7 @@ and how they work later in the chapter.</p>
 </div>
 <div class="paragraph">
 <p>Lastly, your Jekyll directory has a special file called <em>_config.yml</em>.
-This is the Jekyll configuration file. Peering into it, you&#8217;ll see it
+This is the Jekyll configuration file. Peering into it, you’ll see it
 is very basic:</p>
 </div>
 <div class="listingblock">
@@ -5450,7 +5456,7 @@ categories: jekyll update
 </div>
 </div>
 <div class="paragraph">
-<p>You&#8217;ll find this post in your <em>_posts</em> directory&#x2014;edit this
+<p>You’ll find this post in your <em>_posts</em> directory—edit this
 post and rebuild (or run with the <code>-w</code> switch) to see your changes!
 To add new posts, simply add a file in the <em>_posts</em> directory
 that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
@@ -5472,14 +5478,14 @@ print_hi('Tom')
 <div class="paragraph">
 <p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get
 the most out of Jekyll. File all bugs/feature requests at
-<a href="https://github.com/mojombo/jekyll">Jekyll&#8217;s GitHub repo</a>.</p>
+<a href="https://github.com/mojombo/jekyll">Jekyll’s GitHub repo</a>.</p>
 </div>
 <div class="paragraph">
 <p>Hopefully you agree that this is a fairly intuitive and readable
 alternative to raw HTML. This simplicity and readability is one of the
 major benefits of using Jekyll. Your source files maintain a
 readability that allows you to focus on the content itself, not on the
-technology that will eventually make them beautiful. Let&#8217;s go over
+technology that will eventually make them beautiful. Let’s go over
 this file and investigate some of the important pieces.</p>
 </div>
 <div class="sect3">
@@ -5508,7 +5514,7 @@ layout, the title, the date, and a list of categories.</p>
 </div>
 <div class="paragraph">
 <p>The layout specified references one of the files in our <em>_layouts</em>
-directory. If you don&#8217;t specify a layout file in the YFM, then Jekyll
+directory. If you don’t specify a layout file in the YFM, then Jekyll
 assumes you want to use a file called <em>default.html</em> to wrap your
 content. You can easily imagine adding your own custom layout files
 to this directory and then overriding them in the YFM. If you look at
@@ -5523,7 +5529,7 @@ Though the title matches the filename (after replacing
 spaces with hyphens), changing the title in the YFM does not affect
 the name of the URL generated by Jekyll. If you want to change the URL, you need to
 rename the file itself. This is a nice benefit if you need to slightly modify the
-title and don&#8217;t want to damage preexisting URLs.</p>
+title and don’t want to damage preexisting URLs.</p>
 </div>
 <div class="paragraph">
 <p>The date and categories are two other variables included in the YFM.
@@ -5533,14 +5539,14 @@ provide additional context to the post, but are only stored in the
 Markdown file and not included inside the generated content itself.
 The categories list is often used to generate an index file of
 categories with a list of each post included in a category. If you
-come from a Wordpress background, you&#8217;ll likely have used categories.
+come from a Wordpress background, you’ll likely have used categories.
 These are generated dynamically from the MySQL database each time you
 request a list of them, but in Jekyll this file is statically generated.
 If you wanted something more dynamic, you could imagine generating a
 JSON file with these categories and files, and then building a
 JavaScript widget that requests this file and then does something
 more interactive on the client side. Jekyll can take any template file
-and convert it to JSON (or any other format)&#x2014;you are not limited to
+and convert it to JSON (or any other format)—you are not limited to
 just generating HTML files.</p>
 </div>
 <div class="paragraph">
@@ -5561,7 +5567,7 @@ private until writing has completed by making sure published is set
 to false. Unfortunately, not all tools that help you create Jekyll
 Markdown files remember to set the published variable explicitly
 inside of YFM, so make sure you check before committing the file to
-your repository if there is something you don&#8217;t yet want published.</p>
+your repository if there is something you don’t yet want published.</p>
 </div>
 </div>
 <div class="sect3">
@@ -5578,7 +5584,7 @@ fancy formatting, just pure textual content.</p>
 shine. One of the first Markdown components we notice is the backtick
 character, which is used to wrap small spans of code (or code-ish
 information, like filenames in this case). As you use more and more
-Markdown, you&#8217;ll find Markdown to be insidiously clever in the way it
+Markdown, you’ll find Markdown to be insidiously clever in the way it
 provides formatting characters without the onerous weight that HTML
 requires to offer the same explicit formatting.</p>
 </div>
@@ -5587,19 +5593,19 @@ requires to offer the same explicit formatting.</p>
 fully qualified URL (like "<em><a href="http://example.com" class="bare">http://example.com</a></em>"), or a reference to a
 link at the bottom of the page. In our page we have two references,
 keyed as <code>jekyll-gh</code> and <code>jekyll</code>; we can then use these inside our
-page with syntax like <code>[Jekyll&#8217;s GitHub repo][jekyll-gh]</code>. Using
+page with syntax like <code>[Jekyll’s GitHub repo][jekyll-gh]</code>. Using
 references has an additional benefit in that you can use the link more
 than once by its short name.</p>
 </div>
 <div class="paragraph">
 <p>Though not offered in the sample, Markdown provides an easy way to
-generate headers of varying degrees. To add a header, use the <code><mark></code>
-character, and repeat the <code></mark></code> character to build smaller headers.
-These delimiters simply map to the H tag; two hash characters (<code><mark></code>)
+generate headers of varying degrees. To add a header, use the <code><mark></mark></code>
+character, and repeat the <code></code> character to build smaller headers.
+These delimiters simply map to the H tag; two hash characters (<code><mark></mark></code>)
 turns into an <code>&lt;h2&gt;</code> tag. Building text enclosed by <code>&lt;h3&gt;</code> tags looks
-like <code></mark># Some Text</code>. You can optionally match the same number of hash
+like <code># Some Text</code>. You can optionally match the same number of hash
 symbols at the end of the line if you find it more expressive (<code><mark>#
-Some Text </mark>#</code>), but you don&#8217;t have to.</p>
+Some Text </mark>#</code>), but you don’t have to.</p>
 </div>
 <div class="paragraph">
 <p>Markdown offers easy shortcuts for most HTML elements: numbered and
@@ -5620,11 +5626,11 @@ description of the how and why of Markdown.</p>
 You already saw the <code>jekyll serve</code> command, which builds the files into
 the <em>_site</em> directory and then starts a web server with its root at that directory.
 If you start to use this mechanism to build your Jekyll sites then
-there are a few other switches you&#8217;ll want to learn about.</p>
+there are a few other switches you’ll want to learn about.</p>
 </div>
 <div class="paragraph">
 <p>If you are authoring and adjusting a page often, and switching back
-into your browser to see what it looks like, you&#8217;ll find utility in
+into your browser to see what it looks like, you’ll find utility in
 the <code>-w</code> switch ("watch"). This can be used to automatically
 regenerate the entire site if you make changes to any of the source
 files. If you edit a post file and save it, that file will be
@@ -5646,7 +5652,7 @@ will need to stop and restart the server.
 </table>
 </div>
 <div class="paragraph">
-<p>If you are running multiple Jekyll sites on the same laptop, you&#8217;ll
+<p>If you are running multiple Jekyll sites on the same laptop, you’ll
 quickly find that the second instance of <code>jekyll serve</code> fails because
 it cannot open port 4000. In this case, use <code>jekyll --port 4010</code> to
 open port 4010 (or whatever port you wish to use instead).</p>
@@ -5715,7 +5721,7 @@ your username.</p>
 The hub tool was originally written in Ruby and as such could be
 easily installed using only <code>gem install hub</code>, but hub was recently
 rewritten in Go. Go has a somewhat more complicated installation
-process, so we won&#8217;t document it here. If you have the <code>brew</code> command
+process, so we won’t document it here. If you have the <code>brew</code> command
 installed for OS X, you can install hub with the <code>brew install hub</code>
 command. Other platforms vary, so check <a href="http://github.com/github/hub" class="bare">http://github.com/github/hub</a>
 to determine the best way for your system.
@@ -5908,7 +5914,7 @@ on GitHub.</p>
 <div class="paragraph">
 <p>There are many more options than listed here. For example, by default,
 the Wordpress-Jekyll importer imports categories from your Wordpress
-database, but you can turn this off by specifying <code>"categories" &#8658;
+database, but you can turn this off by specifying <code>"categories" ⇒
 false</code>.</p>
 </div>
 </div>
@@ -5929,7 +5935,7 @@ Then, you can run the importer on that file:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This can be used to export files from a server you don&#8217;t
+<p>This can be used to export files from a server you don’t
 maintain, but works with sites you do maintain and might be a more
 plausible option than running against a database.</p>
 </div>
@@ -5937,7 +5943,7 @@ plausible option than running against a database.</p>
 <p>To export the XML file, visit the export page on your Wordpress
 site. This is usually mapped to <em>/wp-admin/export.php</em>, so it will be
 something like <em><a href="https://blogname.com/wp-admin/export.php" class="bare">https://blogname.com/wp-admin/export.php</a></em> (replacing
-&#x201c;blogname.com&#x201d; with your blog&#8217;s name).</p>
+“blogname.com” with your blog’s name).</p>
 </div>
 <div class="paragraph">
 <p>Like many free tools, there are definitely limitations to using this
@@ -6006,7 +6012,7 @@ Tumblr exporter scrapes all public posts from the blog, and then
 converts to a Jekyll-compatible post format.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ve seen how we can use the importers available on
+<p>We’ve seen how we can use the importers available on
 <a href="http://import.jekyllrb.com"><em>import.jekyllrb.com</em></a> to import. What if we have a nonstandard site
 we need to import?</p>
 </div>
@@ -6031,8 +6037,8 @@ is a Jekyll blog. This is much lazier than reading through the Jekyll
 tools and their libraries, of course. I started as a Perl programmer and
 always loved this quote from Larry Wall, the creator of Perl: "We will
 encourage you to develop the three great virtues of a programmer:
-laziness, impatience, and hubris." Let&#8217;s accept our inherent laziness
-and choose the second route. We&#8217;ll write some code to scrape a site
+laziness, impatience, and hubris." Let’s accept our inherent laziness
+and choose the second route. We’ll write some code to scrape a site
 and make a new Jekyll site from scratch, learning about the structure
 of a Jekyll blog through trial and error.</p>
 </div>
@@ -6065,7 +6071,7 @@ scraped by the Internet Archive for this site as shown in <a href="#calendar-vie
 upgrade it to another set of technologies, and never got around to
 completing this migration, and then lost the data. If we click the
 calendar item on June 6th, 2003, we will see a view of the data that
-was more or less complete at the height of the site&#8217;s functionality
+was more or less complete at the height of the site’s functionality
 and data. There are a few broken links to images, but otherwise the
 site is functionally archived inside Archive.org (<a href="#calendar-view-bytravelers">Archive of ByTravelers.com on Archive.org</a>).</p>
 </div>
@@ -6092,7 +6098,7 @@ which the execution and functionality were contained all in one.
 However, if we expose the functionality as a class, and then
 instantiate the class in a separate file, we can also write tests
 that utilize and validate the same steps as the runner script. So,
-let&#8217;s take this smarter approach and create three files: the scraper
+let’s take this smarter approach and create three files: the scraper
 class, the runner class (which instantiates and "runs" our scraper), and the test
 file (which instantiates and validates the functionality of our scraper).</p>
 </div>
@@ -6175,10 +6181,10 @@ closely the code we write inside our runner wrapper.</p>
 <div class="sect3">
 <h4 id="_scraping_titles">Scraping Titles</h4>
 <div class="paragraph">
-<p>Let&#8217;s start with something simple: scraping the titles from the
-site. We&#8217;ll use Ruby to scrape the site; Ruby has some intuitive gems like
+<p>Let’s start with something simple: scraping the titles from the
+site. We’ll use Ruby to scrape the site; Ruby has some intuitive gems like
 mechanize that simplify building web clients. There is an API for
-the Internet archive, but I found it flakey and unreliable, so we&#8217;ll
+the Internet archive, but I found it flakey and unreliable, so we’ll
 just scrape the site. Add these additional lines to the Gemfile using
 this command and then install the libraries:</p>
 </div>
@@ -6249,7 +6255,7 @@ title of the page object.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s run our scraper and see what happens now:</p>
+<p>Let’s run our scraper and see what happens now:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -6269,7 +6275,7 @@ title of the page object.</p>
 Wayback Machine" while some have "Read Journal Entries." Archive.org
 will respond with a placeholder title when it does not have content
 from the site (as is the case with item #58, for example). We should
-ignore those pages that don&#8217;t have the string "Read Journal Entries"
+ignore those pages that don’t have the string "Read Journal Entries"
 as the title (which tells us Archive.org does have cached content from
 our site).</p>
 </div>
@@ -6283,8 +6289,8 @@ pieces inside and putting them into our Jekyll posts.</p>
 <div class="paragraph">
 <p>There are two things that make Mechanize immensely powerful as the
 foundation for a scraping tool: easy access to making HTTP calls, and
-a powerful searching syntax once you have a remote document. You&#8217;ve
-seen how Mechanize makes it simple to make a GET request. Let&#8217;s
+a powerful searching syntax once you have a remote document. You’ve
+seen how Mechanize makes it simple to make a GET request. Let’s
 explore sifting through a massive document to get the important pieces
 of textual content. We can manually explore scraping using the Ruby
 IRB (interactive Ruby shell):</p>
@@ -6308,11 +6314,11 @@ running. IRB has a lot of features beyond what we will discuss here,
 but those indexes can be used to replay history and for job control,
 like many other types of shells. At the IRB prompt you can enter Ruby
 and IRB executes the command immediately. Once the command executes,
-IRB prints the result; the characters <code>&#8658;</code> indicate the return
+IRB prints the result; the characters <code>⇒</code> indicate the return
 value. When you are playing with Ruby, return values will often be complex
 objects: the return value when
 you use <code>scraper.agent.get</code> is a Mechanize Ruby object. This is a very
-large object, so printing it out takes a lot of real estate. We&#8217;ve
+large object, so printing it out takes a lot of real estate. We’ve
 abbreviated the majority of it here, and will do that for many complex
 objects to save space when discussing IRB.</p>
 </div>
@@ -6320,7 +6326,7 @@ objects to save space when discussing IRB.</p>
 <p>The last command in IRB saves the HTTP GET request as a page object.
 Once we have the page, how do we extract information from it?
 Mechanize has a nice piece of syntactic sugar that makes it easy to
-search the DOM structure: the "/" operator. Let&#8217;s try it:</p>
+search the DOM structure: the "/" operator. Let’s try it:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -6541,7 +6547,7 @@ get these cached responses for free, and inside our IRB sessions as well.</p>
 <p>The titles look good, but the fourth one is a little worrisome. Looks
 like one of the users decided to enclose their title in double
 quotes. To control the formatting, it would be nice to clean that
-up. Let&#8217;s do that, and write tests to verify things work:</p>
+up. Let’s do that, and write tests to verify things work:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -6597,7 +6603,7 @@ with double quotes</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>To fix this test, let&#8217;s strip out the double quotes by changing one line
+<p>To fix this test, let’s strip out the double quotes by changing one line
 in the <em>scraper.rb</em> file:</p>
 </div>
 <div class="listingblock">
@@ -6616,7 +6622,7 @@ end
 you believe in defensive coding. If this function were called with a
 nil value, for example, it would crash. Even if we could guarantee
 that this situation would never occur from our calling context, it is
-better to make our method safe. Let&#8217;s make sure it works and write a
+better to make our method safe. Let’s make sure it works and write a
 test to prove it.</p>
 </div>
 <div class="paragraph">
@@ -6744,7 +6750,7 @@ end</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s build the <code>get_filename</code> method. This method uses the handy Ruby
+<p>Let’s build the <code>get_filename</code> method. This method uses the handy Ruby
 <code>DateTime.parse</code> method to convert a string representation of a date
 into a date object, and then uses the <code>strfmtime</code> method to format
 that date into the format we want in our filename:</p>
@@ -6805,7 +6811,7 @@ def run
 <li>
 <p>We define a render method. This takes the processed information
 (which arrives as a hash) and renders the information into the proper
-format: the YAML Front Matter (YFM) and then the body (which we don&#8217;t
+format: the YAML Front Matter (YFM) and then the body (which we don’t
 have yet). We then return the rendered string.</p>
 </li>
 <li>
@@ -6822,7 +6828,7 @@ path, prefixed with the <em>_posts</em> directory.</p>
 </li>
 <li>
 <p><code>process_creation_date</code> takes a piece from the scraped page and
-breaks it apart by the string &#x201c;<code>last updated</code> on:&#x201d; and uses the second
+breaks it apart by the string “<code>last updated</code> on:” and uses the second
 item in the resultant array.</p>
 </li>
 <li>
@@ -6854,7 +6860,7 @@ layout: post
 is still a perfectly valid Jekyll post.</p>
 </div>
 <div class="paragraph">
-<p>Now let&#8217;s use the jekyll command-line tool to start looking at our
+<p>Now let’s use the jekyll command-line tool to start looking at our
 posts and to troubleshoot any issues with our Jekyll repository.</p>
 </div>
 </div>
@@ -6890,8 +6896,8 @@ Configuration file: none
 </div>
 </div>
 <div class="paragraph">
-<p>So, we see a few problems already. First, we don&#8217;t have a layout for
-"post." And, there is no configuration file. Let&#8217;s fix these problems.</p>
+<p>So, we see a few problems already. First, we don’t have a layout for
+"post." And, there is no configuration file. Let’s fix these problems.</p>
 </div>
 <div class="paragraph">
 <p>Add a file called <em>_config.yml</em> to the root directory:</p>
@@ -6959,13 +6965,13 @@ wrapped around the entire contents.</p>
 </div>
 <div class="paragraph">
 <p>When we add these files, the Jekyll tool will notice the filesystem has changed and regenerate files. We now have generated posts, but
-we don&#8217;t have a master index file, so let&#8217;s add this now.</p>
+we don’t have a master index file, so let’s add this now.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_master_index_file_with_liquid_markup">Master Index File with Liquid Markup</h4>
 <div class="paragraph">
-<p>We now have the posts generated properly, but we don&#8217;t have an entry page into the blog. We can create an <em>index.md</em> file, which just displays an index of all the blog posts:</p>
+<p>We now have the posts generated properly, but we don’t have an entry page into the blog. We can create an <em>index.md</em> file, which just displays an index of all the blog posts:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -7005,17 +7011,17 @@ logic operation, like conditionals or loops.</p>
 </div>
 <div class="paragraph">
 <p>The preceding template has both output and logic tags. We see a logic tag
-in the form of <code>{% for &#8230;&#8203; %}</code>, which loops over each post. Jekyll will
+in the form of <code>{% for …​ %}</code>, which loops over each post. Jekyll will
 process the entire posts directory and provide it to pages inside the
 <code>site.posts</code> variable, and the <code>for</code> logic tag allows us to iterate
-over them. If we use a <code>{% for &#8230;&#8203; %}</code> tag we need to "close" the tag
+over them. If we use a <code>{% for …​ %}</code> tag we need to "close" the tag
 with a matching <code>{% endfor %}</code> tag. Inside of our for
 loop we have several output tags: <code>{{ post.url }}</code> outputs the post
 URL associated with a post, for example. We also have <em>filters</em>, which
 are methods defined to process data. One such filter is the
 <code>strip_html</code> filter, which you might guess strips out HTML text,
 converting it to escaped text. This is necessary when your text could
-include HTML tags. You&#8217;ll also notice that filters can be "chained";
+include HTML tags. You’ll also notice that filters can be "chained";
 we process the body with the <code>strip_html</code> filter and then truncate the
 text by 40 characters using the <code>truncatewords:40</code> filter.</p>
 </div>
@@ -7030,7 +7036,7 @@ simple index page with the titles of our posts, like <a href="#austere_but_a_ste
 <div class="title">Figure 25. The Index Page, for a naked Jekyll blog</div>
 </div>
 <div class="paragraph">
-<p>This index page lists every post: let&#8217;s make it display only the last
+<p>This index page lists every post: let’s make it display only the last
 10 posts. Copy the <em>index.md</em> file to a file named <em>archive.md</em>.
 Then, change the <code>{% for post in site.posts %}</code> tag to <code>{% for post in
 site.posts | limit:10 %}</code>.</p>
@@ -7142,7 +7148,7 @@ the <code>render</code> method, and we will insert it into the post.</p>
 <h4 id="_adding_images_to_jekyll">Adding Images to Jekyll</h4>
 <div class="paragraph">
 <p>Jekyll can host any binary files as well, and Markdown files can host
-the proper markup to include these assets. Let&#8217;s add the images from
+the proper markup to include these assets. Let’s add the images from
 the original site:</p>
 </div>
 <div class="listingblock">
@@ -7175,7 +7181,7 @@ transparently redirected inside the browser.</p>
 </div>
 <div class="paragraph">
 <p>We need to customize our run method to invoke the <code>process_image</code> call:
-add <code><span class="keep-together">processed</span>&#x5b;'image'&#x5d; = process_image( rows&#x5b;0&#x5d; )</code> after any of the
+add <code><span class="keep-together">processed</span>['image'] = process_image( rows[0] )</code> after any of the
 other process methods.</p>
 </div>
 <div class="admonitionblock warning">
@@ -7212,7 +7218,7 @@ layout: default
 <div class="paragraph">
 <p>Regenerating this page shows us a white background with an awkwardly
 juxtaposed colored image. Adding background colors to the entire site
-will help, so let&#8217;s now modify the CSS for our site.</p>
+will help, so let’s now modify the CSS for our site.</p>
 </div>
 </div>
 <div class="sect3">
@@ -7321,7 +7327,7 @@ your imagination:</p>
 <div class="title">Figure 26. Restoring the original colors and images</div>
 </div>
 <div class="paragraph">
-<p>We&#8217;ve now entirely scraped an old site and built a new Jekyll blog, so
+<p>We’ve now entirely scraped an old site and built a new Jekyll blog, so
 there is just one thing left to do: encourage and permit
 collaboration, which GitHub makes particularly easy.</p>
 </div>
@@ -7335,9 +7341,9 @@ because forking is a button click away, you can ask people to
 contribute or make changes with very little friction.
 You might have seen the banner saying "Fork me on GitHub" on many a
 software project page hosted on GitHub. We can motivate others to
-participate in our blog using pull requests. Let&#8217;s add that as a final touch and
+participate in our blog using pull requests. Let’s add that as a final touch and
 invite people to make contributions the GitHub way. The <a href="https://github.com/blog/273-github-ribbons">GitHub blog
-first posted these banners</a>, and we&#8217;ll use its code almost as is inside our
+first posted these banners</a>, and we’ll use its code almost as is inside our
 <em>default.html</em> page, just changing the reference to our repository in
 the link tag:</p>
 </div>
@@ -7379,7 +7385,7 @@ $ sleep $((10*60)) &amp;&amp; open http://bytravelers.com</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>And, don&#8217;t forget to set up DNS records and give yourself appropriate
+<p>And, don’t forget to set up DNS records and give yourself appropriate
 time to let those records propagate out.</p>
 </div>
 </div>
@@ -7387,14 +7393,14 @@ time to let those records propagate out.</p>
 <div class="sect2">
 <h3 id="_summary_4">Summary</h3>
 <div class="paragraph">
-<p>We&#8217;ve explored the details of Jekyll, looking at the structure of a
+<p>We’ve explored the details of Jekyll, looking at the structure of a
 Jekyll blog. Liquid Markup is a powerful way to use programmatic
 constructs inside a Markdown file, and we documented the most
 important concepts around using this templating language. By
 investigating the internals of a Jekyll post, we explained the
 intricacies of YAML Front Matter (YFM) and how seamlessly you can mix
 and match HTML with Markdown syntax. Jekyll blogs can utilize their
-own custom CSS, and we&#8217;ve shown how easy it is
+own custom CSS, and we’ve shown how easy it is
 to use a powerful complete library like Bootstrap layered underneath a
 site-specific small CSS file. And, we built a scraper application
 that retrieves a remote site in its entirety and converts it into the
@@ -7418,17 +7424,17 @@ you to create Jekyll blog posts with the Git Data API.</p>
 <div class="paragraph">
 <p>Though the phrase has now been removed from its marketing materials,
 GitHub used to call itself a tool for "social coding." This idea is
-still central to the services GitHub provides&#x2014;intimate access to the
+still central to the services GitHub provides—intimate access to the
 social layer inside of GitHub through the Activity API.</p>
 </div>
 <div class="paragraph">
-<p>In this chapter we&#8217;ll investigate the Activity API by extending a chat
+<p>In this chapter we’ll investigate the Activity API by extending a chat
 robot. You might find it odd that a robot, generally considered an antisocial
 invention despite all best attempts, would play nicely with a social
 API, but this is a social robot. GitHubbers use an
 extensible chat robot called Hubot to record and automate their tasks,
 and to have fun on the Internet. If there were any robot suited for
-interacting with the GitHub Activity API, it&#8217;s Hubot, described on the
+interacting with the GitHub Activity API, it’s Hubot, described on the
 site <a href="https://hubot.github.com/" class="bare">https://hubot.github.com/</a> as "a customizable, kegerator-powered life
 embetterment robot."</p>
 </div>
@@ -7462,7 +7468,7 @@ embetterment robot."</p>
 <td class="content">
 The Activity API section also includes <em>feeds</em>. While feeds are
 grouped within the Activity API, they are not programmatic in the same
-way an API is, and we won&#8217;t cover them in depth here. Feeds are
+way an API is, and we won’t cover them in depth here. Feeds are
 actually Atom feeds and not interactive beyond that. Atom feeds are
 similar to RSS feeds: a static feed you can subscribe to with an Atom
 client.
@@ -7475,7 +7481,7 @@ client.
 <h3 id="_planning_for_pr_satisfaction_guaranteed">Planning for PR Satisfaction Guaranteed</h3>
 <div class="paragraph">
 <p>We are going to build an extension to Hubot. When we are done, Hubot
-will be transformed into a robot that&#8230;&#8203;</p>
+will be transformed into a robot that…​</p>
 </div>
 <div class="ulist">
 <ul>
@@ -7506,7 +7512,7 @@ inputs and outputs it gets from APIs and services; and</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Hubot provides the skeleton for our chat robot. We&#8217;ll add the preceding
+<p>Hubot provides the skeleton for our chat robot. We’ll add the preceding
 functionality to Hubot and see how easy it is to combine these
 features into a coherent whole that solves a real problem.</p>
 </div>
@@ -7524,7 +7530,7 @@ you can host on a private internal server as well.</p>
 <div class="paragraph">
 <p>The simplest and cheapest hosting service for Hubot is Heroku. Once we
 generate our Hubot, we can simply do a git-push into Heroku to publish
-our chat robot for free. We&#8217;ll show these steps later in the chapter.</p>
+our chat robot for free. We’ll show these steps later in the chapter.</p>
 </div>
 <div class="paragraph">
 <p>Hubot works with many chat endpoints. Your Hubot can connect to almost
@@ -7532,10 +7538,10 @@ any popular chat service or protocol: IRC, XMPP, and many commercial
 services like Gchat, Basecamp, and even Twitter. Slack is a relatively new
 entrant into the world of chat services, but despite its youth, the
 Slack API is solid and connecting third-party clients to the Slack
-service is simple and straightforward. We&#8217;ll use Slack as our chat endpoint.</p>
+service is simple and straightforward. We’ll use Slack as our chat endpoint.</p>
 </div>
 <div class="paragraph">
-<p>Now let&#8217;s create our Hubot and configure it to use Slack.</p>
+<p>Now let’s create our Hubot and configure it to use Slack.</p>
 </div>
 </div>
 <div class="sect3">
@@ -7555,7 +7561,7 @@ $ npm install hubot-slack --save <b class="conum">(4)</b></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>You may not be familiar with these commands, so let&#8217;s go over the
+<p>You may not be familiar with these commands, so let’s go over the
 important ones.</p>
 </div>
 <div class="colist arabic">
@@ -7589,8 +7595,8 @@ where our Hubot will live.</p>
 <h4 id="_creating_a_slack_account">Creating a Slack Account</h4>
 <div class="paragraph">
 <p>Going to <a href="https://slack.com/" class="bare">https://slack.com/</a> starts the process of creating your own Slack
-site. You&#8217;ll need to step through creating an account. Slack sites are
-segmented by organization, and you&#8217;ll want to establish a URL prefix
+site. You’ll need to step through creating an account. Slack sites are
+segmented by organization, and you’ll want to establish a URL prefix
 for your Slack site. Typically this is the name of your organization.</p>
 </div>
 <div class="sect4">
@@ -7610,7 +7616,7 @@ mnemonic to use a name that suggests this is a channel where more
 serious work gets done. You could use a name like "PR Discussion" to
 indicate this is the channel where PRs are discussed. To keep things
 simple, we will use the name "#general." Once you click
-the link to create a channel, you&#8217;ll see a popup asking for the name
+the link to create a channel, you’ll see a popup asking for the name
 and an optional description. After you have created the channel,
 you will see a link to "Add a service integration" as shown in <a href="#adding_service_integrations_to_slack">Adding service integrations to Slack</a>.</p>
 </div>
@@ -7642,7 +7648,7 @@ Slack. If you ever accidentally publicize this token, you can easily
 revoke and reassign a token to your Hubot on this screen.</p>
 </div>
 <div class="paragraph">
-<p>You will also need to specify a name. Use "probot" and if you&#8217;d like,
+<p>You will also need to specify a name. Use "probot" and if you’d like,
 change the avatar associated with the Hubot (these options are shown in <a href="#choose_hubots_name">Hubot configuration page for Slack</a>).</p>
 </div>
 <div id="choose_hubots_name" class="imageblock">
@@ -7694,13 +7700,13 @@ variable at the beginning of the line.</p>
 Slack site. Go to the #general room. Then, you can test that Hubot
 is properly connectd by typing in the name of your Hubot
 and then a command like <code>the rules</code>. For example, if our Hubot is
-named probot, then we would type <code>probot the rules</code>, which then displays the following conversation as shown in <a href="#hubots_built_in_repartee">Hubot&#8217;s built-in repartee</a>.</p>
+named probot, then we would type <code>probot the rules</code>, which then displays the following conversation as shown in <a href="#hubots_built_in_repartee">Hubot’s built-in repartee</a>.</p>
 </div>
 <div id="hubots_built_in_repartee" class="imageblock">
 <div class="content">
 <img src="images/btwg_08in05.png" alt="btwg 08in05">
 </div>
-<div class="title">Figure 31. Hubot&#8217;s built-in repartee</div>
+<div class="title">Figure 31. Hubot’s built-in repartee</div>
 </div>
 <div class="paragraph">
 <p>We see that our Hubot printed out the rules it
@@ -7730,14 +7736,14 @@ pugs. Beware!</p>
 <div class="sect2">
 <h3 id="_installation_on_heroku">Installation on Heroku</h3>
 <div class="paragraph">
-<p>Now that we&#8217;ve successfully started our Hubot locally, we can move it
+<p>Now that we’ve successfully started our Hubot locally, we can move it
 to Heroku and keep it running even when our laptop is turned off.</p>
 </div>
 <div class="sect3">
 <h4 id="_setting_up_heroku">Setting Up Heroku</h4>
 <div class="paragraph">
 <p>Heroku requires registration before using it. Heroku offers free plans and everything
-we&#8217;ll do here can be done using one of them. Once you have created an
+we’ll do here can be done using one of them. Once you have created an
 account, install the Heroku toolbelt found here:
 <a href="https://toolbelt.heroku.com/" class="bare">https://toolbelt.heroku.com/</a>. The toolbelt provides a set
 of tools useful for managing Heroku applications. You will need to
@@ -7745,7 +7751,7 @@ have Ruby set up as explained in <a href="#introduction">[introduction]</a>.</p>
 </div>
 <div class="paragraph">
 <p>If your chatbot is working per the instructions given in the previous
-section, then it is almost ready to deploy to Heroku. You&#8217;ll need to
+section, then it is almost ready to deploy to Heroku. You’ll need to
 add the same environment variable using the Heroku tools. In addition
 to the authentication token for Slack, you will need to configure a
 URL for your site. Heroku will generate a URL for you from the name of
@@ -7810,7 +7816,7 @@ locally, and then push into Heroku using the ease of the Git workflow
 as a deployment layer.</p>
 </div>
 <div class="paragraph">
-<p>Now that we have created and installed Hubot, let&#8217;s look at the
+<p>Now that we have created and installed Hubot, let’s look at the
 Activity API and determine how we want to code our extension.</p>
 </div>
 </div>
@@ -7822,7 +7828,7 @@ Activity API and determine how we want to code our extension.</p>
 to the notifications you see on social networking sites, events that
 occur that document important points of interest inside a timeline of
 activity. GitHub activity events are often tied to important
-milestones inside of a developer&#8217;s day, activities like pushing
+milestones inside of a developer’s day, activities like pushing
 commits into the main remote repository, asking questions on
 discussion threads associated with a repository, or assigning issues
 to a developer for review.</p>
@@ -7836,7 +7842,7 @@ user has watched a repository and issues or comments are added, a pull
 request is made, or there are comments made on a commit. In addition,
 even if a user has not watched a repository, they will be notified if
 that user is <em>@mentioned</em> (prefixing the @ character to a team
-member&#8217;s name inside a comment), when an issue is assigned to them, or
+member’s name inside a comment), when an issue is assigned to them, or
 when that user participates in a discussion associated with any
 repository.</p>
 </div>
@@ -7853,8 +7859,8 @@ which email can be delivered breeds a secondary problem: overwhelm. It
 can be very easy to lose focus (vital to building software) when you
 are constantly context switching by checking email, and notifications
 can often fly by. In addition, email is privately directed and
-prevents easy collaboration; generally people don&#8217;t share email
-inboxes. Let&#8217;s extend our Hubot to help us resolve these problems by taking
+prevents easy collaboration; generally people don’t share email
+inboxes. Let’s extend our Hubot to help us resolve these problems by taking
 our GitHub notifications into a shared and "opt-in when you are logged-in"
 communication channel.</p>
 </div>
@@ -7872,7 +7878,7 @@ Python), and after the initial learning curve, can feel easier to read
 than JavaScript, especially when you have many nested function
 callbacks (common in JavaScript programming); it is easier to see
 where a function begins and ends given the indentation levels. Hubot
-is itself written in CoffeeScript, and we&#8217;ll write our extension in
+is itself written in CoffeeScript, and we’ll write our extension in
 CoffeeScript as well.</p>
 </div>
 <div class="admonitionblock note">
@@ -7916,7 +7922,7 @@ discrete messages.</p>
 <li>
 <p>Hubot has different response mechanisms. They can choose to respond
 only when they hear exact phrases or when keywords are found in any
-message, and you don&#8217;t need to do the grunt work inside your code to
+message, and you don’t need to do the grunt work inside your code to
 determine the differences between these communication types.</p>
 </li>
 <li>
@@ -7977,13 +7983,13 @@ the specific pull request ID from a chat user message.</p>
 <div class="paragraph">
 <p>There are examples of the other two features (events and generic
 errors) inside the examples script that ship with the Hubot source
-code but we won&#8217;t use those APIs in our Hubot.</p>
+code but we won’t use those APIs in our Hubot.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_code_reviews_via_pull_requests">Code Reviews via Pull Requests</h4>
 <div class="paragraph">
-<p>As we&#8217;ve seen in other chapters, pull requests are the mechanism used
+<p>As we’ve seen in other chapters, pull requests are the mechanism used
 on GitHub to easily integrate code changes into a project. Contributors
 either fork the master repository and then issue a pull request against that
 repository, or, if they have write permission to the main
@@ -8080,11 +8086,11 @@ channel with the text "Thanks, you got it!"</p>
 <li>
 <p>The accept method then also calls <code>console.log</code> with information
 that is displayed on the console from which we started Hubot. This is
-a simple way for us to assure everything worked correctly; if we don&#8217;t
+a simple way for us to assure everything worked correctly; if we don’t
 see this message, our code before this was broken. The <code>console.log</code>
 is not visible to any users in the channel. It is good practice to
 remove this code when you finalize your production code, but if you
-forget, it won&#8217;t affect anything happening in the channel.</p>
+forget, it won’t affect anything happening in the channel.</p>
 </li>
 <li>
 <p>We then define the <code>decline</code> method using the same APIs as for the
@@ -8096,8 +8102,8 @@ forget, it won&#8217;t affect anything happening in the channel.</p>
 <p>If Hubot is running, you will need to restart it to reload any
 scripts. Kill Hubot (using Ctrl-C), and then restart it, and then
 play with commands inside your Slack site. Enter the commands
-<code>probot accept</code> and <code>probot decline</code> and you&#8217;ll see Hubot
-responding inside the channel. You&#8217;ll also see the message <code>Accepted!</code> or
+<code>probot accept</code> and <code>probot decline</code> and you’ll see Hubot
+responding inside the channel. You’ll also see the message <code>Accepted!</code> or
 <code>Declined!</code> printed to the console on which Hubot is
 running.</p>
 </div>
@@ -8105,8 +8111,8 @@ running.</p>
 <div class="sect4">
 <h5 id="_writing_tests_for_hubot_extensions">Writing tests for Hubot extensions</h5>
 <div class="paragraph">
-<p>Now that we have the basics of our Hubot working, let&#8217;s make sure we
-certify our code with some tests. We&#8217;ll use the Jasmine testing
+<p>Now that we have the basics of our Hubot working, let’s make sure we
+certify our code with some tests. We’ll use the Jasmine testing
 framework for NodeJS. It offers an elegant behavior-driven testing
 syntax where you specify a behavior as the first parameter to an <code>it</code>
 function, and as a second parameter, a function that is run as the
@@ -8114,13 +8120,13 @@ test itself. Jasmine manages running each <code>it</code> call and displays a
 nice output of passing and failed tests at the end of your
 run. Jasmine tests are typically written in JavaScript, but the latest versions of
 Jasmine support tests are also written in CoffeeScript. Hubot is written
-in CoffeeScript, so let&#8217;s write our tests in CoffeeScript as
+in CoffeeScript, so let’s write our tests in CoffeeScript as
 well. We need to put our tests inside a
 directory called <em>spec</em> and make sure our filename ends with
-<em>.spec.coffee</em>. Let&#8217;s use <em>spec/pr-delegator.spec.coffee</em> as the
+<em>.spec.coffee</em>. Let’s use <em>spec/pr-delegator.spec.coffee</em> as the
 complete filename. Jasmine expects spec files to have <em>.spec.</em> at the
 end of their filename (before the extension, either <em>.js</em> or
-<em>.coffee</em>); if your filename does not match this pattern Jasmine won&#8217;t
+<em>.coffee</em>); if your filename does not match this pattern Jasmine won’t
 recognize it as a test.</p>
 </div>
 <div class="listingblock">
@@ -8161,7 +8167,7 @@ running Hubot itself, Hubot creates the robot and passes it into the
 and query it to make sure it is receiving the proper
 configuration. If we make a change inside our actual Hubot code and
 forget to update our tests to verify those changes, our tests will
-fail and we&#8217;ll know we need to either augment our tests, or something
+fail and we’ll know we need to either augment our tests, or something
 broke inside our robot, a good automated sanity check for us when we
 are feverishly coding away, animating our helpful Hubot.</p>
 </div>
@@ -8255,7 +8261,7 @@ this:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>If your username and password are correct and you don&#8217;t have
+<p>If your username and password are correct and you don’t have
 two-factor authentication turned on, the request will succeed and you
 will get back a token inside the JSON response:</p>
 </div>
@@ -8394,8 +8400,8 @@ disturbed by. We create a few variables we use in the final
 command. Since the $CONFIG variable is particularly long, we use <code>echo</code>
 to print out a bunch of information with the webhook URL in the
 middle. If you want to see the result of that variable, type <code>echo
-$CONFIG</code> and you&#8217;ll notice the snippet <code>&#8230;&#8203; "url":
-"https://inqry-chatbot.herokuapp.com/pr" &#8230;&#8203;</code> properly interpolated.</p>
+$CONFIG</code> and you’ll notice the snippet <code>…​ "url":
+"https://inqry-chatbot.herokuapp.com/pr" …​</code> properly interpolated.</p>
 </div>
 <div class="paragraph">
 <p>Here we use the Heroku API URL as our webhook endpoint. This means we
@@ -8414,10 +8420,10 @@ digest. We want to make sure all requests are real requests from GitHub
 and not a cracker attempting to maliciously inject themselves into our
 conversations. To protect from this possible situation, we verify each
 request back into GitHub by using the secret generated
-when we created the webhook. We&#8217;ll discuss this in detail later in this
+when we created the webhook. We’ll discuss this in detail later in this
 chapter, but for now, establish a secret when you create the hook. A
 cracker might be able to guess about where our endpoint exists, but
-unless Heroku or GitHub is compromised, they won&#8217;t know our webhook secret.</p>
+unless Heroku or GitHub is compromised, they won’t know our webhook secret.</p>
 </div>
 <div class="paragraph">
 <p>We should update our tests to make sure we anticipate this new
@@ -8448,7 +8454,7 @@ the end of the file:</p>
 </div>
 <div class="paragraph">
 <p>Now if we run our tests, they all pass. If they do, publish our new
-version of the app into Heroku. We&#8217;ll omit this step in the future,
+version of the app into Heroku. We’ll omit this step in the future,
 but if you want to receive pull requests on the router you have set up,
 remember that you need to publish your files into Heroku so the
 endpoint is public.</p>
@@ -8479,7 +8485,7 @@ notifications.</p>
 <h4 id="_triggering_real_pull_requests">Triggering Real Pull Requests</h4>
 <div class="paragraph">
 <p>We can now start testing our Hubot with real GitHub
-notifications. First, let&#8217;s set up a repository we can use for
+notifications. First, let’s set up a repository we can use for
 testing. Creating the new repository on GitHub is a quick task if we
 use the <code>hub</code> tool described in <a href="#Jekyll">Ruby and Jekyll</a>:</p>
 </div>
@@ -8521,7 +8527,7 @@ like the following:</p>
 </div>
 <div class="paragraph">
 <p>All of this can be automated using a combination of Git commands and cURL.
-We&#8217;ve seen some of these commands before and can reuse the previous
+We’ve seen some of these commands before and can reuse the previous
 command-line invocations and variables we used when generating
 our webhook using the API via cURL. Our config variable is similar,
 but the required fields in this case are: the title and body for the
@@ -8532,10 +8538,10 @@ where to merge it to using the "base" key.</p>
 <p>Creating a new branch, adding some content, and then issuing a pull
 request against the branch might be something we need to do several
 (or more) times as we experiment and learn about the Hubot extension
-API. The examples here work right out of the box, but don&#8217;t be fooled
+API. The examples here work right out of the box, but don’t be fooled
 into thinking that it all went exactly as we expected the first time.
 Given that, these are commands you might want to perform multiple times as you are
-experimenting, so let&#8217;s put the commands described in the previous paragraph
+experimenting, so let’s put the commands described in the previous paragraph
 into a bash script that is generic and can be run multiple times. We
 can call it issue-pull-request.sh and place the script inside the
 test directory:</p>
@@ -8578,7 +8584,7 @@ in the following code or an error message. And, as we are going to run this scri
 a command, make it executable using the <code>chmod</code> command.</p>
 </div>
 <div class="paragraph">
-<p>Now, let&#8217;s run it and see what happens:</p>
+<p>Now, let’s run it and see what happens:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -8621,7 +8627,7 @@ very bottom of the page a list of recent deliveries to our webhook, as in <a hre
 <div class="paragraph">
 <p>These requests all failed; our Hubot is not correctly configured
 to handle real HTTP requests from GitHub. This does show that GitHub is
-trying to do something when a pull request is received. We&#8217;ll work on
+trying to do something when a pull request is received. We’ll work on
 getting our handler code written and pushed into Heroku, and then
 issue another PR.</p>
 </div>
@@ -8629,7 +8635,7 @@ issue another PR.</p>
 <div class="sect3">
 <h4 id="_handling_pr_notifications_as_post_requests_over_http">Handling PR Notifications as Post Requests over HTTP</h4>
 <div class="paragraph">
-<p>Let&#8217;s build our HTTP handler when PR notifications arrive from
+<p>Let’s build our HTTP handler when PR notifications arrive from
 GitHub. At first glance, we might take the easy route, adding it
 directly into the top-level script. But given the fact that
 JavaScript handles events inside of callbacks and the fact that Hubot
@@ -8638,9 +8644,9 @@ extensions only export a single constructor (using the
 test, a separate module, which we require in our main extension script.</p>
 </div>
 <div class="paragraph">
-<p>We start by writing our tests. We&#8217;ve already created a test that
+<p>We start by writing our tests. We’ve already created a test that
 verifies the call to <code>robot.router.post</code>. Our new functionality will
-actually handle the PR notification, so let&#8217;s add a new grouping using
+actually handle the PR notification, so let’s add a new grouping using
 the describe syntax and call it "#pr". The new functionality is
 simple: if the Hubot receives the proper parameters (most importantly
 that the internal secret matches the secret sent on the request) then
@@ -8725,11 +8731,11 @@ provided by the built-in <em>express</em> server Hubot uses to provide
 an HTTP server). For debugging purposes we output that the secret
 was validated, if it was in fact validated, but otherwise the behavior
 of our response to the calling client is the same regardless of
-whether they provided a correct secret or not. We don&#8217;t want to
+whether they provided a correct secret or not. We don’t want to
 provide an attacker with anything extra if they pass in an incorrect secret.</p>
 </div>
 <div class="paragraph">
-<p>If we run our tests we will see them all pass&#x3a;</p>
+<p>If we run our tests we will see them all pass:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -8780,7 +8786,7 @@ process) and then sends it a SIGHUP signal, signaling to Hubot that it
 should quit.</p>
 </div>
 <div class="paragraph">
-<p>Provided you connected correctly to your Slack site, you&#8217;ll also see a
+<p>Provided you connected correctly to your Slack site, you’ll also see a
 message inside your #general channel, which says "OMG, GitHub is on my
 caller-id!?!" We now have a simple way to trigger a pull request notification
 without going through the formality of actually generating a pull
@@ -9013,7 +9019,7 @@ that inside our tests. We will need to provide a new function called
 <code>users</code> to the Hubot inside the faked brain we created.</p>
 </div>
 <div class="paragraph">
-<p>Unfortunately, things don&#8217;t just work when we change our code to this:</p>
+<p>Unfortunately, things don’t just work when we change our code to this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -9113,7 +9119,7 @@ anyoneButProbot = ( users ) -&gt;
 <div class="sect4">
 <h5 id="_sending_pr_data_via_webhook">Sending PR data via webhook</h5>
 <div class="paragraph">
-<p>Our wiring is almost complete, so let&#8217;s actually send real pull
+<p>Our wiring is almost complete, so let’s actually send real pull
 request information. If we run our script <code>issue-pull-request.sh</code> we
 will see it sending data out to our Hubot. Once we have deployed to
 Heroku, our Hubot is listening on a public hostname. GitHub will
@@ -9285,7 +9291,7 @@ it "should allow calls with the secret and url", (done) -&gt;
 </div>
 </div>
 <div class="paragraph">
-<p>You&#8217;ll notice we moved the secret out of the JSON and into the
+<p>You’ll notice we moved the secret out of the JSON and into the
 headers. This is the same structure our Hubot will see when the
 GitHub webhook encodes the content of the JSON and provides us with a
 secure hash in the HTTP_X_HUB_SIGNATURE key. Inside our test we will need
@@ -9293,14 +9299,14 @@ to provide the same signature inside our mocked request object. We
 could duplicate our secure hash generation code from the
 handler implementation, or we could be lazy and just run our tests
 once (knowing they will fail this time), watch for the
-console.log output that says "Hash: cd970490d83c&#8230;&#8203;" and copy this
+console.log output that says "Hash: cd970490d83c…​" and copy this
 hash into our mocked request object. Once we do this, our tests will
 pass.</p>
 </div>
 <div class="paragraph">
 <p>Now, after reloading our Hubot, if we issue a pull request using our
 issue-pull-request.sh script, we should see the matching
-hashes. But we won&#8217;t (at least if you used the same <em>package.json</em>
+hashes. But we won’t (at least if you used the same <em>package.json</em>
 file as we specified earlier) because of a critical bug inside of Hubot
 at the time of this writing.</p>
 </div>
@@ -9498,7 +9504,7 @@ notification, and falsely engage chat room users around it. If the PR
 the attacker used was fake, it might confuse our Hubot, but no real
 harm would be done. If they used an existing real PR, an attacker
 could trick our Hubot into adding data to the PR, adding confusion in
-the comments about who accepted the review request. We won&#8217;t solve that
+the comments about who accepted the review request. We won’t solve that
 potential problem with this code, but you can imagine adding code to
 our Hubot that handles a case like this (for example, by checking
 first to see if someone was already tagged on the PR, and ignoring
@@ -9521,7 +9527,7 @@ user we are interacting with (provided they accepted).</p>
 <p>There are multiple ways in which a Hubot can interact with chat room messages. We chose the <code>respond</code> method, but there is another method called <code>hear</code> we could have used. <code>respond</code> is used when the message is preceded by the Hubot name, so only messages that look like <code>probot: accept</code> or <code>@probot decline</code> or <code>/ accept</code> (if the Hubot name alias is enabled) will be processed by our Hubot. We could have used <code>hear</code> but in our case we are processing a simple response, and without a clear direction for the message, it would be difficult to always make sure we were interpreting the message in the correct context. <code>respond</code> makes more sense here.</p>
 </div>
 <div class="paragraph">
-<p>If they decline the request, let&#8217;s just graciously note that the offer was declined:</p>
+<p>If they decline the request, let’s just graciously note that the offer was declined:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -9556,15 +9562,15 @@ value, you should probably call <code>JSON.stringify</code> on the object to
 maintain full control over the roundtrip storing and retrieval.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s modify our Hubot handler to deal with accepting or declining
+<p>Let’s modify our Hubot handler to deal with accepting or declining
 responses (and change our extension file to deal with this new
 interface). Of course, we will need to add to our tests. Finally, we
 will need to set up a way to provide the GitHub API key to our Hubot
-handler, so we&#8217;ll add a method to do that that looks almost exactly
+handler, so we’ll add a method to do that that looks almost exactly
 like the one for setting our secret key.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll use a GitHub API NodeJs module called <code>node-github</code>, found on
+<p>We’ll use a GitHub API NodeJs module called <code>node-github</code>, found on
 GitHub at <a href="https://github.com/mikedeboer/node-github" class="bare">https://github.com/mikedeboer/node-github</a>. If we look
 at the API documentation, we see that it supports authentication using
 an OAuth token (using the <code>github.<span class="keep-together">authenticate</span>( {  'type' : 'oauth': 'token' : '...' }</code> syntax), and has methods we can use to add a comment to an
@@ -9573,17 +9579,17 @@ issue or pull request associated with a repository (using the
 </div>
 <div class="paragraph">
 <p>Knowing that this module handles most of the work for us between these
-two methods, we can start by writing our tests. We&#8217;ll create a new
+two methods, we can start by writing our tests. We’ll create a new
 describe block called <code>#response</code> that groups our tests together. As
 we noted earlier, our Hubot can take affirmative and negative
 responses, so our tests should reflect these two code paths. Our setup
 block (the <code>beforeEach</code> section) in both cases should do the same
-thing for each response&#x2014;make the pull request invitation to a random user: this all
-happens inside our <code>prHandler</code> code. We don&#8217;t need to verify the
+thing for each response—make the pull request invitation to a random user: this all
+happens inside our <code>prHandler</code> code. We don’t need to verify the
 expectations of this method since that got that covered by prior
 tests. After we get our handler to the right state, we need to test
 that the handler works correctly with an <code>accept</code> and <code>decline</code> method
-(they don&#8217;t yet exist in our handler code so we&#8217;ll add them
+(they don’t yet exist in our handler code so we’ll add them
 next).</p>
 </div>
 <div class="paragraph">
@@ -9603,12 +9609,12 @@ Hubot handler that receives the pull request information, and we
 will add code that does this (and is exposed in our handler for
 testing). We saw that a pull request comes in through a large JSON
 response, and we can use the URL we used earlier as the way we decode
-this information. So, we&#8217;ll need to have two more tests inside our
+this information. So, we’ll need to have two more tests inside our
 <code>#response</code> block, one for the decoding of the URL into a message
 object, and another to retrieve the username we insert into the
 comment stored in the pull request on the repository. We know what our
 test URL looks like since we saw it in our PR webhook message, but we
-don&#8217;t yet have the structure of the chat message from which we can
+don’t yet have the structure of the chat message from which we can
 pull out our username, so our test will need to be adjusted when we
 know what it really looks like.</p>
 </div>
@@ -9678,7 +9684,7 @@ nested in several deeper levels of indentation.
 Refer to the sample repository for the exact code if there is confusion.</p>
 </div>
 <div class="paragraph">
-<p>Our tests will fail if we run them now. So, let&#8217;s write the code at
+<p>Our tests will fail if we run them now. So, let’s write the code at
 the end of our delegator extension. We need code that parses the URL into the
 appropriate structured message object, code to put the reminder into
 the pull request comment on GitHub, and code that pulls the user out
@@ -9692,7 +9698,7 @@ little more investigation, so we will leave this as a placeholder for now.</p>
 call, we just need to split the message into pieces by the slash
 character, and then retrieve the correct items by index. We probably
 could add some additional tests that cover passing in empty strings,
-or other edge cases, but we&#8217;ll leave it as an exercise to the
+or other edge cases, but we’ll leave it as an exercise to the
 reader. Our code does not crash in these cases, but it would be
 nice to have coverage of our expectations represented in our tests:</p>
 </div>
@@ -9786,7 +9792,7 @@ to us when we get a respond callback might have it in there. The
 <code>respond</code> method provided by the Hubot API is documented mostly by
 way of the example scripts that come with Hubot. There is very little
 information on what the parameter passed to your callback looks
-like. Let&#8217;s use the <code>util</code> library to inspect the data and print it to
+like. Let’s use the <code>util</code> library to inspect the data and print it to
 the console. We abbreviate the full output here, and show you that it
 contains information on the  user who sent the message to our
 Hubot. We can access this information by using
@@ -9819,7 +9825,7 @@ the name of the user:</p>
 </div>
 <div class="paragraph">
 <p>Inside it all we can find information we need,
-specifically the username and email. So, let&#8217;s update our test and
+specifically the username and email. So, let’s update our test and
 our handler code. The last test in our spec file can be modified to
 look like this:</p>
 </div>
@@ -9862,7 +9868,7 @@ the PR. We can use the collaborator subsection of the Repository API
 to look up their name on GitHub.</p>
 </div>
 <div class="paragraph">
-<p>If we don&#8217;t find them inside the list of users and there is not an
+<p>If we don’t find them inside the list of users and there is not an
 exact match with their Slack name then we have at least one problem,
 maybe two. First, we could just have a mismatch in their identities
 (their usernames are different on each site). If this is the case, we
@@ -9876,7 +9882,7 @@ discussion should happen (write access to a repository is a big
 resposibility in a way that being inside a chat room is not). Adding a
 user as a repository collaborator should not be automated inside a chat
 room. Because of the complexity here, we will write code to unify a
-username inside the chat room, but we won&#8217;t handle the case where
+username inside the chat room, but we won’t handle the case where
 there is no clarification to be made because they are not in the
 repository collaborator list.</p>
 </div>
@@ -10010,7 +10016,7 @@ PROBOT_SECRET=XYZABC</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Don&#8217;t forget that when we run our tests, we will need to specify the
+<p>Don’t forget that when we run our tests, we will need to specify the
 environment variables on the command line as well:</p>
 </div>
 <div class="listingblock">
@@ -10054,10 +10060,10 @@ laptops have not yet been reimagined for mobile devices. We are
 getting close though: the GitHub API is accessible through the well-written EGit client library for Java, and this library supports both reading
 data stored on GitHub and writing data back into it. These are a
 perfect set of building blocks to develop applications for the Android
-platform, currently the world&#8217;s most popular mobile OS.</p>
+platform, currently the world’s most popular mobile OS.</p>
 </div>
 <div class="paragraph">
-<p>In this chapter, we&#8217;ll use the Java EGit libraries to develop a small
+<p>In this chapter, we’ll use the Java EGit libraries to develop a small
 Android application that posts to our blog hosted on GitHub. Our
 blogging application will allow us to log in to GitHub, and then ask us
 for a quick note describing how we are feeling. The application will
@@ -10081,7 +10087,7 @@ series of Ruby commands documented here; if you want to know more
 about Jekyll, it is covered in more depth in <a href="#Jekyll">Ruby and Jekyll</a>.
 There are a few items of note when establishing a Jekyll blog that
 have some complexity, things like mapping a hostname properly and using the
-correct branch inside Git. For our purposes here, however, we won&#8217;t need
+correct branch inside Git. For our purposes here, however, we won’t need
 to make sure all that is established. All we need is to make sure
 we have a sandbox repository that has the structure of a Jekyll blog:</p>
 </div>
@@ -10102,7 +10108,7 @@ $ git push -u origin master</code></pre>
 <p>These commands install the correct libraries for using Jekyll (and one
 for our tests as well), generate a new blog using the Jekyll command-line tool, and then create a blog on GitHub with those files. On the
 second line we specify the name of the blog; you are welcome to change
-this to any name you&#8217;d like, just make sure the tests match the name.</p>
+this to any name you’d like, just make sure the tests match the name.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -10115,7 +10121,7 @@ When you have finished running these commands, you should close the
 terminal window. There are other commands later in this chapter that
 should occur in a fresh directory and as such it is best not to run
 those commands from within the same directory where you created your
-Jekyll blog. You&#8217;ve pushed all those files into GitHub, so you could
+Jekyll blog. You’ve pushed all those files into GitHub, so you could
 safely delete the local repository in this directory.
 </td>
 </tr>
@@ -10125,7 +10131,7 @@ safely delete the local repository in this directory.
 <div class="sect3">
 <h4 id="_android_development_tools">Android Development Tools</h4>
 <div class="paragraph">
-<p>If you don&#8217;t have a physical Android device, don&#8217;t fret. You can follow
+<p>If you don’t have a physical Android device, don’t fret. You can follow
 along with this chapter without having an actual Android device by doing
 development and testing on a virtual device.</p>
 </div>
@@ -10157,7 +10163,7 @@ building Android applications.</p>
 <div class="sect2">
 <h3 id="_creating_a_new_project">Creating a New Project</h3>
 <div class="paragraph">
-<p>Let&#8217;s now create our Android project. When you first open Android
+<p>Let’s now create our Android project. When you first open Android
 Studio, you will see an option in the right pane inviting you to
 create a new project. Click the "Start a new Android Studio
 project" option. In the next step, you will see a screen for
@@ -10172,7 +10178,7 @@ automatically generate the "package name" for you as
 <p>You will then need to choose a target SDK. The higher the target,
 the better access to newer Android APIs, but the fewer number of
 devices that can run the application. The code in this chapter will
-work with older SDKs, so let&#8217;s make a balanced choice and use Android
+work with older SDKs, so let’s make a balanced choice and use Android
 4.4 (KitKat), which runs on phones and tablets. At the moment this means,
 according to Android Studio, that our application will run on 49.5% of
 Android devices in the world as shown in <a href="#choose-android-sdk">Choose an Android SDK</a>.</p>
@@ -10313,9 +10319,9 @@ mode.</p>
 <h5 id="_creating_avds_for_development">Creating AVDs for development</h5>
 <div class="paragraph">
 <p>Android Studio makes creating AVD (Android Virtual Devices) simple. To
-start, under the &#x201c;Tools&#x201d; menu, click &#x201c;Android&#x201d; and then select
-&#x201c;AVD Manager.&#x201d; To create a new AVD, click the &#x201c;Create Virtual
-Device&#x201d; button and follow the prompts. You are generally free to
+start, under the “Tools” menu, click “Android” and then select
+“AVD Manager.” To create a new AVD, click the “Create Virtual
+Device” button and follow the prompts. You are generally free to
 choose whatever settings you like. Google produces a real device
 called the Nexus 5. This is the Android reference device, and is a
 good option for a generic device with good support across all
@@ -10381,14 +10387,14 @@ in fact the XML file itself has the value displayed here (<code>@string/app_name
 <div class="paragraph">
 <p>When the application is launched, the Android OS will launch this
 activity and then call the <code>onCreate</code> function for us. Inside this
-function, our application calls our parent&#8217;s implementation of
+function, our application calls our parent’s implementation of
 <code>onCreate</code>, and then inflates the layout for our application. Layouts
 are XML files in which the UI of an Android application is
 declaratively described.</p>
 </div>
 <div class="paragraph">
 <p>Android Studio created a default layout for us (called
-<em>activity_main.xml</em>), but let&#8217;s ignore that and create our own
+<em>activity_main.xml</em>), but let’s ignore that and create our own
 layout. To do so, right-click (Ctrl-click on OS X) on the <em>layouts</em>
 directory, and then choose "New" and then "Layout resource file" at
 the very top of the list (Android Studio nicely chooses the most
@@ -10400,18 +10406,18 @@ the filename, and accept the other defaults.</p>
 descriptive label for the username, a password field (and associated
 descriptive label) for the password, a button to click that tells our
 app to attempt to log in, and a status field that indicates success or
-failure of the login. So, let&#8217;s modify the generated <em>main.xml</em> to
+failure of the login. So, let’s modify the generated <em>main.xml</em> to
 specify this user interface. To edit this file as text, click the
 tab labeled Text next to the tab labeled Design at the very bottom
 of the <em>main.xml</em> pane to switch to text view. Then, edit the file to
 look like the following:</p>
 </div>
-<pre data-type="programlisting" data-code-language="java">&lt;?xml version="1.0" encoding="utf-8"?&gt; &lt;-- <a class="co" id="aco_android_and_the_git_data_api_CO2-1" href="#acallout_android_and_the_git_data_api_CO2-1"><img src="callouts/1.png" alt="1"/></a> --&gt;
+<pre data-type="programlisting" data-code-language="java">&lt;?xml version="1.0" encoding="utf-8"?&gt; &lt;-- <a class="co" id="aco_android_and_the_git_data_api_CO2-1" href="#acallout_android_and_the_git_data_api_CO2-1"><img src="callouts/1.png" alt="1"></a> --&gt;
 &lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    &gt;  &lt;-- <a class="co" id="aco_android_and_the_git_data_api_CO2-2" href="#acallout_android_and_the_git_data_api_CO2-2"><img src="callouts/2.png" alt="2"/></a> --&gt;
+    &gt;  &lt;-- <a class="co" id="aco_android_and_the_git_data_api_CO2-2" href="#acallout_android_and_the_git_data_api_CO2-2"><img src="callouts/2.png" alt="2"></a> --&gt;
 &lt;TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -10434,14 +10440,14 @@ look like the following:</p>
     android:layout_height="wrap_content"
     android:id="@+id/password"
     android:inputType="textWebPassword"
-    /&gt;  &lt;-- <a class="co" id="aco_android_and_the_git_data_api_CO2-3" href="#acallout_android_and_the_git_data_api_CO2-3"><img src="callouts/3.png" alt="3"/></a> --&gt;
+    /&gt;  &lt;-- <a class="co" id="aco_android_and_the_git_data_api_CO2-3" href="#acallout_android_and_the_git_data_api_CO2-3"><img src="callouts/3.png" alt="3"></a> --&gt;
 
 &lt;Button
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="Login"
     android:id="@+id/login"
-    /&gt;  &lt;-- <a class="co" id="aco_android_and_the_git_data_api_CO2-4" href="#acallout_android_and_the_git_data_api_CO2-4"><img src="callouts/4.png" alt="4"/></a> --&gt;
+    /&gt;  &lt;-- <a class="co" id="aco_android_and_the_git_data_api_CO2-4" href="#acallout_android_and_the_git_data_api_CO2-4"><img src="callouts/4.png" alt="4"></a> --&gt;
 
 &lt;TextView
     android:layout_width="match_parent"
@@ -10459,19 +10465,19 @@ file, it should be relatively easy to understand what is
 happening here.</p>
 
 <dl class="calloutlist">
-<dt><a class="co" id="acallout_android_and_the_git_data_api_CO2-1" href="#aco_android_and_the_git_data_api_CO2-1"><img src="callouts/1.png" alt="1"/></a></dt>
+<dt><a class="co" id="acallout_android_and_the_git_data_api_CO2-1" href="#aco_android_and_the_git_data_api_CO2-1"><img src="callouts/1.png" alt="1"></a></dt>
 <dd><p>The entire layout is wrapped in a <code>LinearLayout</code>, which simply
 positions each element stacked vertically inside it. We set the
 height and width layout attributes to <code>match_parent</code>, which means this
 layout occupies the entire space of the screen.</p></dd>
-<dt><a class="co" id="acallout_android_and_the_git_data_api_CO2-2" href="#aco_android_and_the_git_data_api_CO2-2"><img src="callouts/2.png" alt="2"/></a></dt>
+<dt><a class="co" id="acallout_android_and_the_git_data_api_CO2-2" href="#aco_android_and_the_git_data_api_CO2-2"><img src="callouts/2.png" alt="2"></a></dt>
 <dd><p>We then add the elements we described previously: pairs of <code>TextView</code>
 and <code>EditView</code> for the label and entry options necessary for the
 username and password.</p></dd>
-<dt><a class="co" id="acallout_android_and_the_git_data_api_CO2-3" href="#aco_android_and_the_git_data_api_CO2-3"><img src="callouts/3.png" alt="3"/></a></dt>
+<dt><a class="co" id="acallout_android_and_the_git_data_api_CO2-3" href="#aco_android_and_the_git_data_api_CO2-3"><img src="callouts/3.png" alt="3"></a></dt>
 <dd><p>The password field customizes the type to be a password field,
 which means the entry is hidden when we enter it.</p></dd>
-<dt><a class="co" id="acallout_android_and_the_git_data_api_CO2-4" href="#aco_android_and_the_git_data_api_CO2-4"><img src="callouts/4.png" alt="4"/></a></dt>
+<dt><a class="co" id="acallout_android_and_the_git_data_api_CO2-4" href="#aco_android_and_the_git_data_api_CO2-4"><img src="callouts/4.png" alt="4"></a></dt>
 <dd><p>Some elements in the XML have an ID attribute, which allows us to
 access the items within our Java code, such as when we need to assign
 a handler to a button or retrieve text entered by the user from an
@@ -10542,7 +10548,7 @@ provide context while saving the post:</p>
 <div class="paragraph">
 <p>Most of this should be familiar once you have reviewed the <em>main.xml</em>
 file (and be sure to copy this from the associated sample repository
-on GitHub if you don&#8217;t want to copy it in yourself).</p>
+on GitHub if you don’t want to copy it in yourself).</p>
 </div>
 <div class="paragraph">
 <p>Now that we have our XML established, we can ready our application for
@@ -10574,7 +10580,7 @@ emulator itself!</p>
 <div class="sect3">
 <h4 id="_unit_tests_for_our_github_client">Unit Tests for Our GitHub Client</h4>
 <div class="paragraph">
-<p>Let&#8217;s start by defining a unit test. Since the unit test runs on our
+<p>Let’s start by defining a unit test. Since the unit test runs on our
 development machine, our test and implementation code should be
 written such that they do not need to load any Android classes. This
 forces us to constrain functionality to only the GitHub API. We will
@@ -10713,7 +10719,7 @@ API; sleeping for a few seconds fixes this.</p>
 library. We load a URL that provides us with the events for a
 specified repository, events that will have the commit message when
 it is a push type event. This repository happens to be public so we
-don&#8217;t require authentication against the GitHub API to see this data.</p>
+don’t require authentication against the GitHub API to see this data.</p>
 </li>
 <li>
 <p>Once we have the body of the HTTP call, we can scan it to verify
@@ -10769,7 +10775,7 @@ the JSON as a string works for our test.</p>
 <div class="sect3">
 <h4 id="_android_ui_tests">Android UI Tests</h4>
 <div class="paragraph">
-<p>Let&#8217;s now write a UI test. Our test will start our app, find the
+<p>Let’s now write a UI test. Our test will start our app, find the
 username and password fields, enter in the proper username and
 password text, then click the login button, and finally verify that we
 have logged in by checking for the text "Logged into GitHub" in our
@@ -10909,14 +10915,14 @@ other parts of the application. As such, we will skip the setup
 required to run our tests within Android Studio for now.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s now build the application itself to pass these tests.</p>
+<p>Let’s now build the application itself to pass these tests.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_application_implementation">Application Implementation</h3>
 <div class="paragraph">
-<p>Now we can start writing some Java code for our application. Let&#8217;s
+<p>Now we can start writing some Java code for our application. Let’s
 make it so our <code>MainActivity</code> class will inflate the layouts we
 defined earlier:</p>
 </div>
@@ -11009,7 +11015,7 @@ that the UI looks appropriate. Our login form looks like <a href="#simple-ui-blo
 <div class="sect3">
 <h4 id="_code_to_log_in_to_github">Code to Log In to GitHub</h4>
 <div class="paragraph">
-<p>Now we can wire in the GitHub API. Let&#8217;s first work on the <code>login()</code>
+<p>Now we can wire in the GitHub API. Let’s first work on the <code>login()</code>
 function. Poking into the
 <a href="http://bit.ly/1SQ93Qf">EGit
 libary reference</a>, we can write GitHub login code, which is as simple as
@@ -11039,7 +11045,7 @@ the UI with the results of the code that ran inside <code>doInBackground()</code
 <div class="paragraph">
 <p>Before we implement the login, we need to update our <code>onCreate</code>
 function of the <code>MainActivity</code>. Our login button handles logging in,
-so let&#8217;s register a click handler on the login button that will call
+so let’s register a click handler on the login button that will call
 the login task we will define inside our class based off <code><span class="keep-together">Async</span>Task</code>:</p>
 </div>
 <div class="listingblock">
@@ -11146,7 +11152,7 @@ to do that.</p>
 <li>
 <p>We wrap the call to <code>getUser()</code> in a try block as the function
 signature can throw an error (if the network were down, for example).
-We don&#8217;t really need to retrieve information about the user using the
+We don’t really need to retrieve information about the user using the
 User object, but this call verifies that our username and password are
 correct, and we store this result in our return value.
 GitHub will not use the credentials you set until you make an API
@@ -11154,7 +11160,7 @@ call, so we need to use our credentials to access something in order
 to verify that those credentials work.</p>
 </li>
 <li>
-<p>Let&#8217;s call our function <code>loggedIn()</code> instead of <code>login()</code> to more
+<p>Let’s call our function <code>loggedIn()</code> instead of <code>login()</code> to more
 accurately reflect the fact that when we call this, we are already
 logged in to GitHub.</p>
 </li>
@@ -11280,8 +11286,8 @@ background thread:</p>
 <ol>
 <li>
 <p>First, we retrieve the parameters we need to send off to the
-GitHub API. Notice that we don&#8217;t attempt to retrieve these from the
-UI. Background threads don&#8217;t have access to the Android UI functions.</p>
+GitHub API. Notice that we don’t attempt to retrieve these from the
+UI. Background threads don’t have access to the Android UI functions.</p>
 </li>
 <li>
 <p>This function returns a true or false value indicating success or
@@ -11352,14 +11358,14 @@ API expects you to create a Git "tree" and then place a "blob" object
 into that tree. You then wrap the tree in a "commit" object and then
 create that commit on GitHub using a data service wrapper. In
 addition, writing a tree into GitHub requires knowing the base SHA
-identifier, so you&#8217;ll see code that retrieves the last SHA in the
+identifier, so you’ll see code that retrieves the last SHA in the
 tree associated with our current branch. This code will work
 regardless of whether we are pushing code into the master branch, or
 into the gh-pages branch, so this utility class works with real
 Jekyll blogs.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll write a helper class called <code>GitHubHelper</code> and add a single
+<p>We’ll write a helper class called <code>GitHubHelper</code> and add a single
 function that writes a file to our repository.</p>
 </div>
 <div class="paragraph">
@@ -11372,7 +11378,7 @@ already installed in our Gradle file previously (the "commons-codec" declaration
 <div class="paragraph">
 <p>We will start by defining a series of high-level functions inside
 <code>SaveFile</code> to get through building a commit inside of GitHub. Each
-function itself contains some complexity so let&#8217;s look first at the
+function itself contains some complexity so let’s look first at the
 overview of what it takes to put data into GitHub using the Git Data API:</p>
 </div>
 <div class="listingblock">
@@ -11442,7 +11448,7 @@ functions. As you can see, the <code>SaveFile</code> function has the same
 signature as the function we call inside our unit test.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s implement each of the functions specified in the
+<p>Let’s implement each of the functions specified in the
 GitHubHelper class.</p>
 </div>
 </div>
@@ -11553,7 +11559,7 @@ the java <code>SimpleDateFormat</code> class to help create a string of that for
 <h4 id="_github_services">GitHub Services</h4>
 <div class="paragraph">
 <p>Next, we implement <code>createServices()</code>. There are several services
-(wrappers around Git protocols) we need to instantiate. We don&#8217;t
+(wrappers around Git protocols) we need to instantiate. We don’t
 use them all immediately, but we will need them at various steps
 during the file save process. The <code>createServices</code> call manages these
 for us:</p>
@@ -11864,18 +11870,18 @@ API. Good work!</p>
 <div class="sect3">
 <h4 id="_passing_all_our_tests">Passing All Our Tests</h4>
 <div class="paragraph">
-<p>Our code is complete. Let&#8217;s make sure our tests run successfully.</p>
+<p>Our code is complete. Let’s make sure our tests run successfully.</p>
 </div>
 <div class="paragraph">
 <p>We need to set up our test configuration to run within Android Studio.
-Select the &#x201c;Build Variants&#x201d; vertical tab on the left, and in Test
+Select the “Build Variants” vertical tab on the left, and in Test
 Artifact select Unit Tests. Then, open the Run menu, and
-select &#x201c;Edit configurations&#x201d;. Click the plus symbol, and choose
+select “Edit configurations”. Click the plus symbol, and choose
 JUnit. You will be presented with space to create a unit test run
-configuration. First, click &#x201c;Use classpath of module&#x201d; and
-select &#x201c;app&#x201d;. Make sure the Test Kind is set to class, and then
+configuration. First, click “Use classpath of module” and
+select “app”. Make sure the Test Kind is set to class, and then
 click the selector to the right of the class field. It should
-display your test class &#x201c;GitHubHelperTest.java&#x201d;. We will need to store
+display your test class “GitHubHelperTest.java”. We will need to store
 the username and password as environment variables, so click to add
 these. Your final configuration should look like <a href="#creating-unit-tests">Creating a unit test configuration</a>.</p>
 </div>
@@ -11984,7 +11990,7 @@ using the Activity API.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-12 06:46:26 PDT
+Last updated 2018-10-12 07:45:34 PDT
 </div>
 
 <div onclick="openCustomization()" class="fab-customization">☃</div>
@@ -12016,7 +12022,7 @@ Last updated 2018-10-12 06:46:26 PDT
 	<p id="selectedText">
 	</p>
 
-	<input name="change" type="text" placeholder="Enter your comment or edit request..."/>
+	<input name="change" type="text" placeholder="Enter your comment or edit request...">
       </main>
       <footer class="modal__footer">
 	<button onclick="storeIt()" class="modal__btn modal__btn-primary">Store comment</button>
@@ -12040,7 +12046,7 @@ Last updated 2018-10-12 06:46:26 PDT
 	FYI: This does not yet work!
 	<a target="_new" href="https://goo.gl/forms/8o5NgerENFqgm6vH3">Can you help provide feedback on what you like and want?</a>
 
-	<div  class="customization">
+	<div class="customization">
 	  <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
 	  <label for="checkbox_id">Minimize callouts</label>
 	  <div class="explanation">If a chapter contains callouts with code, don't show those.
@@ -12075,7 +12081,7 @@ Last updated 2018-10-12 06:46:26 PDT
 
       </main>
       <footer class="modal__footer">
-	<button  class="modal__btn modal__btn-primary">Save Customizations</button>
+	<button class="modal__btn modal__btn-primary">Save Customizations</button>
 	<button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
       </footer>
     </div>
@@ -12088,10 +12094,7 @@ Last updated 2018-10-12 06:46:26 PDT
   You've been tagged on it, so you will get updates automatically.
 </div>
 
-<iframe height="150px" width="100%"
-	style="background-color: white !important"
-	frameborder="0" id="th"
-	src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
+<iframe height="150px" width="100%" style="background-color: white !important" frameborder="0" id="th" src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
 
 <div class="faked">NB: This "contribution" button is a only a simulation, no actual money is required.
 You can safely click the contribute button to see what would happen if you actually made a micro-contribution.
@@ -12128,5 +12131,5 @@ You can safely click the contribute button to see what would happen if you actua
 </div>
 </div>
 </div>
+
 </body>
-</html>

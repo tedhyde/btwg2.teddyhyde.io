@@ -1,6 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<body>
+<div id="excerpt"><div class="sect1">
+<h2>JavaScript and the Git Data API</h2>
+<div class="sectionbody"><div class="paragraph"><p>
+Applications utilizing the GitHub API will typically reside inside a
+server. You are not limited, however, to accessing
+the API from within server side programming languages exclusively.
+The GitHub API works perfectly well from within a web browser context
+as well, and the UI to your application come for free if you know a
+little HTML. In this chapter we discuss how to use the unofficial
+JavaScript client library to access the GitHub API and build a single
+page application (SPA) which we host entirely on GitHub.
+</p></div></div>
+</div></div>
+
+
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -417,16 +430,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <script src="edit.js"></script>
 <link rel="stylesheet" type="text/css" href="fab.css">
 <link rel="stylesheet" type="text/css" href="micromodal.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css">
 <!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
 <!-- Include jQuery Popup Overlay -->
 <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
-</head>
-<body class="article">
+
+
 <div id="header">
 </div>
-<div id="content">
+<div id="content" style="display: none">
 <div class="sect1">
 <h2 id="JavaScript">JavaScript and the Git Data API</h2>
 <div class="sectionbody">
@@ -448,7 +461,7 @@ recently the best way to test nonlinear code. But, recent
 toolkits like AngularJS and promise-based libraries have made testing
 not only easy but elegant as well. Building applications on top of
 third party services makes testing even more important than it already
-was, and we&#8217;ll make sure to add testing to our application to verify
+was, and we’ll make sure to add testing to our application to verify
 the functionality works as we expect.</p>
 </div>
 <div class="paragraph">
@@ -479,23 +492,23 @@ coffee shop and reviews, but the granularity of information about that
 coffee shop is often poor and limited in scope. Do they offer rice
 milk as a dairy free alternative?  What special details should I know
 when considering a place? Many guidance and mapping applications
-exist, but if they don&#8217;t fit my own personalized informational niche,
+exist, but if they don’t fit my own personalized informational niche,
 I might miss a unique experience. With such a pressing and dire
-problem in front of us, let&#8217;s use the GitHub API to solve it.</p>
+problem in front of us, let’s use the GitHub API to solve it.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll build a coffee shop single page web app which allows anyone to add
+<p>We’ll build a coffee shop single page web app which allows anyone to add
 information on coffee shops, information which is flexible and
 dynamic, and search and filter through that information about a coffee
 shop. All files, such as the HTML, images  and JavaScript will be
-hosted on GitHub. And, we&#8217;ll be using the GitHub API to allow
+hosted on GitHub. And, we’ll be using the GitHub API to allow
 contributors to add data to our database, a database which we will
 also host on GitHub. And, as GitHub developers write code with tests,
 we will write tests to validate our JavaScript code as well as the
 expectations we have of the GitHub API.</p>
 </div>
 <div class="paragraph">
-<p>More specifically, we&#8217;ll use these technologies:</p>
+<p>More specifically, we’ll use these technologies:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -512,13 +525,13 @@ are testable.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>You don&#8217;t need to know these technologies in advance of working on this chapter.</p>
+<p>You don’t need to know these technologies in advance of working on this chapter.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_set_up">Set Up</h3>
 <div class="paragraph">
-<p>To create our app, let&#8217;s first create our main web page and push it into our repository.</p>
+<p>To create our app, let’s first create our main web page and push it into our repository.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -533,7 +546,7 @@ $ git config push.default gh-pages</code></pre>
 </div>
 <div class="paragraph">
 <p>Notice that we created a new repository, and then created and entered
-the gh-pages branch. We&#8217;ll do all our work there. And, by using the
+the gh-pages branch. We’ll do all our work there. And, by using the
 git config command, we specified that we want the default push branch
 to be gh-pages. This allows us to use <code>git push</code> to push our branch up
 instead of the longer <code>git push origin gh-pages</code>.</p>
@@ -596,7 +609,7 @@ hostname far in advance if your site has to be live by a certain point.
 <h4 id="_adding_the_support_libraries">Adding the support libraries</h4>
 <div class="paragraph">
 <p>As we mentioned, we will use the GitHub.js library, AngularJS, and
-Bootstrap. Let&#8217;s add those to our project now. Using whatever editor
+Bootstrap. Let’s add those to our project now. Using whatever editor
 you prefer, edit the index.html file to look like this:</p>
 </div>
 <div class="listingblock">
@@ -633,7 +646,7 @@ and compile our page from the body tag downward.</p>
 </li>
 <li>
 <p>The <code>{{ }}</code> (double brackets) are an AngularJS two-way data binding
-directive. You&#8217;ll see two-way data binding in action very soon if it
+directive. You’ll see two-way data binding in action very soon if it
 is not already familiar. Adding this code here sanity checks whether
 AngularJS is working for us; if we see "Welcome to Coffeete.ch"
 without the braces then we know AngularJS is loading and working
@@ -641,7 +654,7 @@ properly. If we see the braces, then there is some error in our
 setup to resolve. Two way data-binding solves a significant pain point when building JS apps:
 marshalling data back and forth between network events, into HTML
 and out of HTML forms. AngularJS does all this heavy lifting for
-you. In a moment we&#8217;ll show how to use two-way databinding as it was
+you. In a moment we’ll show how to use two-way databinding as it was
 intended by defining a variable on the AngularJS scope. We then
 access the variable using the same <code>{{ }}</code> databinding directives.</p>
 </li>
@@ -666,7 +679,7 @@ $ wget https://github.com/michael/github/raw/master/github.js</code></pre>
 <div class="sect2">
 <h3 id="_an_angularjs_application_using_github_js">An AngularJS Application using GitHub.js</h3>
 <div class="paragraph">
-<p>Now let&#8217;s implement a file <code>coffeetech.js</code> file which is where we will
+<p>Now let’s implement a file <code>coffeetech.js</code> file which is where we will
 build our single page application functionality. Create a new file called
 <code>coffeetech.js</code> in the root of your repository.</p>
 </div>
@@ -778,8 +791,8 @@ references.</p>
 <div class="title">Figure 1. The whole messy JSON</div>
 </div>
 <div class="paragraph">
-<p>That is a lot of data. AngularJS&#8217;s JSON filter pretty printed
-it for us, but this is a bit too much. Let&#8217;s change the HTML to reduce
+<p>That is a lot of data. AngularJS’s JSON filter pretty printed
+it for us, but this is a bit too much. Let’s change the HTML to reduce
 some noise.</p>
 </div>
 <div class="listingblock">
@@ -805,7 +818,7 @@ src="angular.js"&gt;&lt;/script&gt;
 </div>
 <div class="paragraph">
 <p>We can filter this information by modifying the HTML to show just a
-few vital pieces of information from the repository JSON. Let&#8217;s
+few vital pieces of information from the repository JSON. Let’s
 display the <code>subscriber_count</code> and the <code>network_count</code>. Now we see
 something more palatable (<a href="#pulling_out_what_we_want">Pulling out what we want</a>).</p>
 </div>
@@ -816,7 +829,7 @@ something more palatable (<a href="#pulling_out_what_we_want">Pulling out what w
 <div class="title">Figure 2. Pulling out what we want</div>
 </div>
 <div class="paragraph">
-<p>We&#8217;ve just extracted the subscriber and network count from the gollum
+<p>We’ve just extracted the subscriber and network count from the gollum
 repository hosted on GitHub using the GitHub API and placed it into
 our single page app.</p>
 </div>
@@ -825,7 +838,7 @@ our single page app.</p>
 <div class="paragraph">
 <p>We are going to be building a coffeeshop database. We want to use Git
 as our datastore, but Git and its associated tools (either command
-line tools or GitHub) don&#8217;t offer the same features as
+line tools or GitHub) don’t offer the same features as
 a standard relational database. So, we need to think and plan how we
 will structure our data inside our repository to make it easily searchable.</p>
 </div>
@@ -840,14 +853,14 @@ their city manually.</p>
 <div class="paragraph">
 <p>If we look at the <a href="https://github.com/michael/github">Github.js javascript documentation on Github</a>
 we can see that there are some
-options for us to pull content from a repository. We&#8217;ll store a data
+options for us to pull content from a repository. We’ll store a data
 file in JSON named after the city inside our repository and retrieve
 this from that repository. It looks like the calls we need to use are
 <code>github.getRepo( username, reponame )</code> and once we have retrieved the
 repository, <code>repo.contents( branch, path, callback )</code>.</p>
 </div>
 <div class="paragraph">
-<p>Now that we have a bare bones application let&#8217;s pause and make sure we
+<p>Now that we have a bare bones application let’s pause and make sure we
 are building something we can refactor and maintain long term. This
 means adding tests to our project.</p>
 </div>
@@ -861,7 +874,7 @@ easier for an outsider (meaning other team members) to use our code.
 Testing facilitates "social coding."</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll use a JavaScript testing tool called "karma". Karma simplifies
+<p>We’ll use a JavaScript testing tool called "karma". Karma simplifies
 writing JavaScript unit tests. We need to first install the tool, then
 write a test or two. Karma can easily be installed using NPM
 (installation of which is documented in the <a href="#appendix">[appendix]</a>).</p>
@@ -912,12 +925,12 @@ dependencies in our tests.</p>
 <ol>
 <li>
 <p>The <code>files</code> section specifying the load order of our JavaScript
-implementations and the test scripts. You can see a few of the files we&#8217;ve
+implementations and the test scripts. You can see a few of the files we’ve
 added above specified directly and wildcards to cover the remaining
 files.</p>
 </li>
 <li>
-<p>Note also that we&#8217;ve specified Chrome as our test browser (so
+<p>Note also that we’ve specified Chrome as our test browser (so
 you should have it installed), which is a safe bet because it works on
 just about any desktop platform you might be running. Know that
 you can always choose Safari or Firefox if you want Karma to test
@@ -927,7 +940,7 @@ specified and run your tests inside a test harness in those browsers.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>To write the test, let&#8217;s clarify what we want our code to do:</p>
+<p>To write the test, let’s clarify what we want our code to do:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -949,14 +962,14 @@ any of the cities. If so, set the current city to the first match.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Concretely, let&#8217;s assert that we load the list of cities and have 2
+<p>Concretely, let’s assert that we load the list of cities and have 2
 of them, then we load a matching city named "Portland", a city which
 has three shops available.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll use a <code>ng-init</code> directive which is the mechanism to tell
+<p>We’ll use a <code>ng-init</code> directive which is the mechanism to tell
 AngularJS we want to call the function specified when the controller
-has finished loading. We&#8217;ll call this function <code>init</code> so let&#8217;s test it
+has finished loading. We’ll call this function <code>init</code> so let’s test it
 below.</p>
 </div>
 <div class="paragraph">
@@ -970,7 +983,7 @@ ability to define your own custom matchers. Jasmine also gives you the
 ability to "spy" on functions, which is another way of saying Jasmine
 can intercept function calls to validate that those calls were made in
 the way you anticipate. It is easiest to explain the power of Jasmine
-by showing the elegance of the tests themselves, so let&#8217;s do that now.</p>
+by showing the elegance of the tests themselves, so let’s do that now.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1013,13 +1026,13 @@ the <code>$controller</code> and <code>$rootScope</code> objects, which we use t
 </li>
 <li>
 <p>We will be creating two functions which generate the mock objects
-required for our tests. We&#8217;ll discuss these two functions in a bit.</p>
+required for our tests. We’ll discuss these two functions in a bit.</p>
 </li>
 <li>
 <p>Scope is the angular convention for the object into which all
 functionality and state is stored. We create a new scope using the
 AngularJS utility function <code>$rootScope.$new()</code> function and store a
-reference to this scope so we can test functionality we&#8217;ve implemented
+reference to this scope so we can test functionality we’ve implemented
 in our actual code.</p>
 </li>
 <li>
@@ -1032,7 +1045,7 @@ inspect that data and assert our implementation is correct.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Now, let&#8217;s write an actual test.</p>
+<p>Now, let’s write an actual test.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1093,7 +1106,7 @@ proving that a call was made.</p>
 <div class="paragraph">
 <p>Now we can implement the two mocking functions vital for the test. Put
 them in between the <code>beforeEach( module( "coffeetech" ) )</code> line and
-the <code>beforeEach( inject( &#8230;&#8203; ) )</code> functions to provide proper
+the <code>beforeEach( inject( …​ ) )</code> functions to provide proper
 visibility to Karma.</p>
 </div>
 <div class="listingblock">
@@ -1227,7 +1240,7 @@ Chrome 32.0.1700 (Mac OS X 10.9.1) GithubCtrl #init should initialize,
 <div class="sect3">
 <h4 id="_coffeetech_js">CoffeeTech.js</h4>
 <div class="paragraph">
-<p>Then, add the <code>coffeetech.js</code> file. We&#8217;ll focus just on the setup code
+<p>Then, add the <code>coffeetech.js</code> file. We’ll focus just on the setup code
 and the changes to the <code>init</code> function for now.</p>
 </div>
 <div class="listingblock">
@@ -1288,7 +1301,7 @@ our tests.</p>
 <p>Our new controller "injects" the various objects we need. We have
 extracted the GitHub API object and a Geo object into dependencies,
 and this syntax finds the proper objects and provides them to our
-controller. You&#8217;ll also notice a slightly different syntax for
+controller. You’ll also notice a slightly different syntax for
 creating the controller <code>controller( "CtrlName", [ 'dependency1',
 'dependency2', function( dependency1, dependency2 ) {} ] );</code>. This
 style works even if JavaScript minification were to occur; the
@@ -1332,9 +1345,9 @@ callback, we need to call <code>scope.$apply()</code> like we showed in prior ex
 <div class="sect2">
 <h3 id="_geocoding_support">Geocoding Support</h3>
 <div class="paragraph">
-<p>We&#8217;ll build functions
+<p>We’ll build functions
 to retrieve the data for a city from the GitHub API, find the location
-of the user using their browser&#8217;s Geolocation feature, use the user&#8217;s
+of the user using their browser’s Geolocation feature, use the user’s
 current location to determine what cities they are close to, implement
 a distance calculation function, load the city once close proximity
 cities are determined, and finally, add a function to query the user
@@ -1458,7 +1471,7 @@ function.</p>
 This was code I developed after reading a post on Geocoding using a
 stored procedure within the PostgreSQL database, and I converted the
 code to JavaScript. Unless you are a geocoding geek, how do we know
-this works as advertised? Well, let&#8217;s write some tests to prove it.
+this works as advertised? Well, let’s write some tests to prove it.
 Add these lines to the bottom of your <code>coffeetech.spec.js</code>, just within
 the last <code>});</code> closing braces:</p>
 </div>
@@ -1491,7 +1504,7 @@ enough to what Google reports the distance to be.</p>
 <div class="sect3">
 <h4 id="_city_data">City Data</h4>
 <div class="paragraph">
-<p>Let&#8217;s seed our application with some starting data and write out the
+<p>Let’s seed our application with some starting data and write out the
 <code>cities.json</code> file.</p>
 </div>
 <div class="listingblock">
@@ -1588,14 +1601,14 @@ shop.</p>
 <div class="paragraph">
 <p>If you run this in your browser, you will not see the shops for our city
 displayed. Something is broken, so
-let&#8217;s investigate. I recommend using the Chrome browser to
+let’s investigate. I recommend using the Chrome browser to
 debug this, but you can use any browser and set of developer tools you
 like. For Chrome, right clicking on the
 page anywhere and selecting "Inspect Element" at the bottom (or by
 the keyboard shortcut "F12" or "Ctrl + Shift
 + I" on Windows or Linux or "Cmd + Opt + I" on Mac ) will bring up
 the developer console. Then select the
-console window. Refresh the browser window, and you&#8217;ll see this in the
+console window. Refresh the browser window, and you’ll see this in the
 console:</p>
 </div>
 <div class="listingblock">
@@ -1604,7 +1617,7 @@ console:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>If you click the link to the right for GitHub.js, you&#8217;ll see something like <a href="#an_unexpected_error">An unexpected error</a>.</p>
+<p>If you click the link to the right for GitHub.js, you’ll see something like <a href="#an_unexpected_error">An unexpected error</a>.</p>
 </div>
 <div id="an_unexpected_error" class="imageblock">
 <div class="content">
@@ -1615,7 +1628,7 @@ console:</p>
 <div class="paragraph">
 <p>You see at the point of error that we are calling <code>select</code> on the tree.
 Select appears to be a method defined on an underscore character. If
-you use JavaScript frequently, you&#8217;ll recognize that the underscore
+you use JavaScript frequently, you’ll recognize that the underscore
 variable comes from the Underscore library, and <code>select</code> is a method
 which detects the first matching instance inside an array. Under the
 hood, the Github.js library is pulling the entire tree from the
@@ -1673,7 +1686,7 @@ someone might find useful once they have found the coffeeshop on their
 favorite mapping application.</p>
 </div>
 <div class="paragraph">
-<p>So, to start, let&#8217;s add some faked data to our coffee shop
+<p>So, to start, let’s add some faked data to our coffee shop
 information. Add a file called <code>portland.json</code> file that looks like
 this:</p>
 </div>
@@ -1705,7 +1718,7 @@ this:</p>
 </div>
 <div class="paragraph">
 <p>Notice that we added an array called <code>information</code> to our data set.
-We&#8217;ll use this to allow simple search. Add the search feature to our
+We’ll use this to allow simple search. Add the search feature to our
 <code>index.html</code></p>
 </div>
 <div class="listingblock">
@@ -1763,7 +1776,7 @@ we show the extra information.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Now if we type the word &#x201c;gluten&#x201d; in our search box, we filter out
+<p>Now if we type the word “gluten” in our search box, we filter out
 anything except shops that match that, and we see the information
 pieces formatted as labels underneath the shop name (<a href="#filtering_coffeeshops_using_the_term_gluten">Filtering coffee shops using the term gluten</a>).</p>
 </div>
@@ -1776,7 +1789,7 @@ pieces formatted as labels underneath the shop name (<a href="#filtering_coffees
 <div class="sect3">
 <h4 id="_user_contributed_data">User Contributed Data</h4>
 <div class="paragraph">
-<p>Now that we have a functioning application, let&#8217;s allow people to add
+<p>Now that we have a functioning application, let’s allow people to add
 information themselves and help build our database. Just beneath the
 link to the map link, add a button which will allow us to annotate a
 coffeeshop with extra information.</p>
@@ -1790,7 +1803,7 @@ possible from within our webapp using the Github.js library. Of
 course, if someone is going to fork a repository into their account,
 we must ask the user to login, so we will prompt them for
 their username and password. If you are grimacing at the thought of a
-webapp asking for GitHub credentials, don&#8217;t fret, we&#8217;ll find a safe
+webapp asking for GitHub credentials, don’t fret, we’ll find a safe
 way to achieve the same thing shortly.</p>
 </div>
 <div class="paragraph">
@@ -1803,7 +1816,7 @@ to our HTML.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s add some tests. Add another file called
+<p>Let’s add some tests. Add another file called
 <code>coffeetech.annotate.spec.js</code> with these contents:</p>
 </div>
 <div class="listingblock">
@@ -1992,7 +2005,7 @@ in a waiting state.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>If you are still running karma in the background, you&#8217;ll see the tests
+<p>If you are still running karma in the background, you’ll see the tests
 fail with:</p>
 </div>
 <div class="listingblock">
@@ -2004,7 +2017,7 @@ annotate a shop FAILED
 </div>
 </div>
 <div class="paragraph">
-<p>Now, let&#8217;s implement this functionality in our <code>coffeetech.js</code> file.
+<p>Now, let’s implement this functionality in our <code>coffeetech.js</code> file.
 Add these lines to the bottom of the file, but before the last closing
 braces. The function <code>annotate</code> actually does two things: make a fork of the
 repository for the user, and then adds annotation information to that
@@ -2042,7 +2055,7 @@ annotations about the shop are added.</p>
 <li>
 <p>We prompt the user three times: username and password on GitHub,
 and the text they want to annotate. If this seems like a really bad
-way to do things, don&#8217;t worry, we&#8217;ll fix it in a moment.</p>
+way to do things, don’t worry, we’ll fix it in a moment.</p>
 </li>
 <li>
 <p>We create a new Github object with the username and password
@@ -2068,7 +2081,7 @@ could just mean it was still pending on GitHub.</p>
 <li>
 <p>We register a message using a key called "forking" which we can
 use inside our HTML template to display to the user that our fork has
-completed. We&#8217;ll build this function out soon, and it basically stores
+completed. We’ll build this function out soon, and it basically stores
 the value and a string for display, and allows us to clear it when the
 message is no longer valid.</p>
 </li>
@@ -2079,7 +2092,7 @@ data to our new forked repository once the process is fully complete.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s now build the code to annotate our repository after the fork has
+<p>Let’s now build the code to annotate our repository after the fork has
 completed.</p>
 </div>
 <div class="listingblock">
@@ -2135,7 +2148,7 @@ $scope.annotateAfterForkCompletes = function() {<b class="conum">(1)</b>
 new forked repository. We use the username provided to our code when
 the user logs in to build the repository object. We then read the
 <code>cities.json</code> file from the repository; if we retrieve this file
-successfully (we don&#8217;t see the <code>err</code> object evaluating to true) then
+successfully (we don’t see the <code>err</code> object evaluating to true) then
 we know we are ready to start editing data.</p>
 </li>
 <li>
@@ -2152,7 +2165,7 @@ elements to ignore when serializing and how and if to indent the
 resultant JSON. So, we provide the stripHashKey function to remove the
 <code>$$hashKey</code> Angular tracking data, and an indentation count. The
 indentation count makes it much easier to read a pull request, because
-the diff&#8217;ing algorithm can diff line by line rather than as a long
+the diff’ing algorithm can diff line by line rather than as a long
 JSON string, which is how <code>JSON.stringify</code> serializes by default.</p>
 </li>
 <li>
@@ -2227,7 +2240,7 @@ $scope.notifyWaiting = function( state, msg ) { <b class="conum">(3)</b>
 <li>
 <p>The <code>appendQuirkToShop</code> function creates an empty array if it is
 not yet defined and then adds the annotation to the list of annotations
-We don&#8217;t want our code to crash if we try to add an
+We don’t want our code to crash if we try to add an
 annotation to an object for which there is an undefined array reference.</p>
 </li>
 <li>
@@ -2275,7 +2288,7 @@ HTML.</p>
 <div class="title">Figure 5. Adding information through a pull request</div>
 </div>
 <div class="paragraph">
-<p>Now we can review changes through GitHub&#8217;s integrated online diff tool (<a href="#reviewing_annotation_pull_request_diffs_from_within_github">Reviewing annotation pull request diffs from within GitHub</a>).</p>
+<p>Now we can review changes through GitHub’s integrated online diff tool (<a href="#reviewing_annotation_pull_request_diffs_from_within_github">Reviewing annotation pull request diffs from within GitHub</a>).</p>
 </div>
 <div id="reviewing_annotation_pull_request_diffs_from_within_github" class="imageblock">
 <div class="content">
@@ -2350,7 +2363,7 @@ other services.
 </table>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s modify our application to use OAuth.</p>
+<p>Let’s modify our application to use OAuth.</p>
 </div>
 <div class="sect3">
 <h4 id="_authentication_requires_a_server">Authentication Requires a Server</h4>
@@ -2413,7 +2426,7 @@ application by clicking the "Register application" button as shown in <a href="#
 <p>Now, create an account on Firebase. Once you have done this, create
 a new app called "CoffeeTech" inside Firebase. The APP URL needs be unique, so use
 "coffeetech-&lt;USERNAME&gt;", replacing USERNAME with your GitHub username.
-Once you have created the app, click the "View Firebase" button. You&#8217;ll
+Once you have created the app, click the "View Firebase" button. You’ll
 then see a settings screen, and click "Simple Login" and then
 "GitHub" as shown in <a href="#creating_the_firebase_hosted_login">Creating the Firebase hosted login</a>.</p>
 </div>
@@ -2429,11 +2442,11 @@ Firebase Simple Login settings for the GitHub provider. Make sure the
 "enabled" checkbox is checked to enable the provider.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ve now established a login application on GitHub and configured it
+<p>We’ve now established a login application on GitHub and configured it
 to use the Firebase service, and have properly configured Firebase to
 use that GitHub application. We want all
 functionality, especially external services, to be covered by tests,
-so we&#8217;ll write that test coverage next.</p>
+so we’ll write that test coverage next.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2536,7 +2549,7 @@ we are changing the required injections for any controller.</p>
 (normally created inside the initialization).</p>
 </li>
 <li>
-<p>We prompt only once for the data to annotate (we don&#8217;t need to
+<p>We prompt only once for the data to annotate (we don’t need to
 prompt for username and password any longer).</p>
 </li>
 </ol>
@@ -2641,7 +2654,7 @@ the token.</p>
 </div>
 <div class="paragraph">
 <p>After we make these changes, we can click the "Add factoid" button and
-we&#8217;ll get a dialog like <a href="#the_final_step_in_the_permission_flow">The final step in the permission flow for GitHub access using Firebase</a> indicating we are logging in to GitHub
+we’ll get a dialog like <a href="#the_final_step_in_the_permission_flow">The final step in the permission flow for GitHub access using Firebase</a> indicating we are logging in to GitHub
 (via the Firebase SimpleLogin).</p>
 </div>
 <div id="the_final_step_in_the_permission_flow" class="imageblock">
@@ -2654,15 +2667,15 @@ we&#8217;ll get a dialog like <a href="#the_final_step_in_the_permission_flow">T
 <p>After you authorize the application, the execution flow is identical to the
 the prior authentication flow (using username and password). As an optimization
 we could check for previous logins before calling <code>$login()</code> again but
-we don&#8217;t do that here, meaning the login dialog is momentarily popped up
+we don’t do that here, meaning the login dialog is momentarily popped up
 each time we click the button.</p>
 </div>
 <div class="paragraph">
 <p>Once users have logged in, they will be redirected to the application,
-and we&#8217;ll notify them they have submitted a pull request with their
+and we’ll notify them they have submitted a pull request with their
 contribution. Since their contribution is associated with their GitHub
 account, they will receive standard pull request notifications when
-their contribution is accepted, so we don&#8217;t need to implement that
+their contribution is accepted, so we don’t need to implement that
 ourselves.</p>
 </div>
 </div>
@@ -2670,7 +2683,7 @@ ourselves.</p>
 <div class="sect2">
 <h3 id="_summary">Summary</h3>
 <div class="paragraph">
-<p>We&#8217;ve built an application in JavaScript that requires no server and provides users
+<p>We’ve built an application in JavaScript that requires no server and provides users
 with a searchable coffeeshop database that accepts contributions in a
 very safe and secure way using the Pull Request API. We were able to completely ignore all the
 administrative features of a data entry system, delegating all these
@@ -2688,7 +2701,7 @@ using the Activities API.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-12 06:46:27 PDT
+Last updated 2018-10-12 07:45:36 PDT
 </div>
 
 <div onclick="openCustomization()" class="fab-customization">☃</div>
@@ -2720,7 +2733,7 @@ Last updated 2018-10-12 06:46:27 PDT
 	<p id="selectedText">
 	</p>
 
-	<input name="change" type="text" placeholder="Enter your comment or edit request..."/>
+	<input name="change" type="text" placeholder="Enter your comment or edit request...">
       </main>
       <footer class="modal__footer">
 	<button onclick="storeIt()" class="modal__btn modal__btn-primary">Store comment</button>
@@ -2744,7 +2757,7 @@ Last updated 2018-10-12 06:46:27 PDT
 	FYI: This does not yet work!
 	<a target="_new" href="https://goo.gl/forms/8o5NgerENFqgm6vH3">Can you help provide feedback on what you like and want?</a>
 
-	<div  class="customization">
+	<div class="customization">
 	  <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
 	  <label for="checkbox_id">Minimize callouts</label>
 	  <div class="explanation">If a chapter contains callouts with code, don't show those.
@@ -2779,7 +2792,7 @@ Last updated 2018-10-12 06:46:27 PDT
 
       </main>
       <footer class="modal__footer">
-	<button  class="modal__btn modal__btn-primary">Save Customizations</button>
+	<button class="modal__btn modal__btn-primary">Save Customizations</button>
 	<button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
       </footer>
     </div>
@@ -2792,10 +2805,7 @@ Last updated 2018-10-12 06:46:27 PDT
   You've been tagged on it, so you will get updates automatically.
 </div>
 
-<iframe height="150px" width="100%"
-	style="background-color: white !important"
-	frameborder="0" id="th"
-	src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
+<iframe height="150px" width="100%" style="background-color: white !important" frameborder="0" id="th" src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
 
 <div class="faked">NB: This "contribution" button is a only a simulation, no actual money is required.
 You can safely click the contribute button to see what would happen if you actually made a micro-contribution.
@@ -2832,5 +2842,5 @@ You can safely click the contribute button to see what would happen if you actua
 </div>
 </div>
 </div>
+
 </body>
-</html>

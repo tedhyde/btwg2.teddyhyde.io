@@ -1,6 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<body>
+<div id="excerpt"><div class="sect1">
+<h2>The Unclad GitHub API</h2>
+<div class="sectionbody"><div class="paragraph"><p>
+This chapter eases us into reading and writing data from the GitHub
+API. Successive chapters show you how to access information
+from the GitHub API using a variety of client libraries. These client
+libraries, by design, hide the nuts and bolts of the API from you,
+providing streamlined and idiomatic methods to view and modify data
+inside a Git repository hosted on GitHub. This chapter, however, gives
+you a naked viewpoint of the GitHub API and  documents the details of
+the raw HTTP requests and responses. It also discusses the different
+ways to access public and private data inside of GitHub and where
+limitations exist. And, it gives you an overview of the options for
+accessing GitHub data when running inside a web browser context where
+network access is restrained.
+</p></div></div>
+</div></div>
+
+
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -417,16 +434,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <script src="edit.js"></script>
 <link rel="stylesheet" type="text/css" href="fab.css">
 <link rel="stylesheet" type="text/css" href="micromodal.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css">
 <!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
 <!-- Include jQuery Popup Overlay -->
 <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
-</head>
-<body class="article">
+
+
 <div id="header">
 </div>
-<div id="content">
+<div id="content" style="display: none">
 <div class="sect1">
 <h2 id="introduction">The Unclad GitHub API</h2>
 <div class="sectionbody">
@@ -479,7 +496,7 @@ curl"). If you are using Windows or want to manually install it, go to
 </table>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s make a request. We&#8217;ll start with the most basic GitHub API
+<p>Let’s make a request. We’ll start with the most basic GitHub API
 endpoint found at <a href="https://api.github.com" class="bare">https://api.github.com</a>.</p>
 </div>
 <div class="listingblock">
@@ -499,7 +516,7 @@ endpoint found at <a href="https://api.github.com" class="bare">https://api.gith
 </div>
 </div>
 <div class="paragraph">
-<p>We&#8217;ve abbreviated the response to make it more readable. A few salient
+<p>We’ve abbreviated the response to make it more readable. A few salient
 things to notice: there are a lot of URLs pointing to secondary
 information, parameters are included in the URLs, and the
 response format is JSON.</p>
@@ -512,7 +529,7 @@ response format is JSON.</p>
 <h3 id="_breadcrumbs_to_successive_api_paths">Breadcrumbs to Successive API Paths</h3>
 <div class="paragraph">
 <p>The GitHub API is a Hypermedia API. Though a discussion on what constitutes
-hypermedia deserves an entire book of its own (Check out O&#8217;Reilly&#8217;s
+hypermedia deserves an entire book of its own (Check out O’Reilly’s
 "Hypermedia APIs with HTML5 and Node"), you can absorb much of what
 makes hypermedia interesting by just looking at a response. First, you
 can see from the API response above that by making a request to the
@@ -521,7 +538,7 @@ responses. Not all clients use this information, of course, but one
 goal behind Hypermedia APIs is that clients can dynamically adjust
 their endpoints without recoding the client code. If the thought of
 GitHub changing an API because clients <strong>should</strong> be written to handle
-new endpoints automatically sounds worriesome, don&#8217;t fret too much:
+new endpoints automatically sounds worriesome, don’t fret too much:
 GitHub is very dilligent about maintaining and supporting their API in a way
 that most companies would do well to emulate. But, you should know
 that you can rely on having a API reference inside the API itself,
@@ -540,11 +557,11 @@ involving a developer who can read API documentation. At least that is
 the dream that Hypermedia points us to; if you are skeptical, at least know that
 APIs such as GitHub encode documentation into themselves, and you can
 bet GitHub has test coverage to prove that this documentation matches
-the information delivered by the API endpoints. That&#8217;s a strong
+the information delivered by the API endpoints. That’s a strong
 guarantee that is sadly missing from many other APIs.</p>
 </div>
 <div class="paragraph">
-<p>Now let&#8217;s briefly discuss the format of all GitHub API responses: JSON.</p>
+<p>Now let’s briefly discuss the format of all GitHub API responses: JSON.</p>
 </div>
 </div>
 <div class="sect2">
@@ -554,7 +571,7 @@ guarantee that is sadly missing from many other APIs.</p>
 format. JSON is a "lightweight data interchange format" (read more on
 the JSON.org website). There are other competing and effective
 formats, such as XML ("Extensible Markup Language") or YAML ("YAML
-Ain&#8217;t Markup Language"), but JSON is quickly becoming the defacto
+Ain’t Markup Language"), but JSON is quickly becoming the defacto
 standard for web services.</p>
 </div>
 <div class="paragraph">
@@ -592,7 +609,7 @@ double-quotes, not single-quotes.</p>
 <div class="paragraph">
 <p>We are using a command line tool, cURL, to retrieve data from the
 API. It would be handy to have a simple command line tool that also
-processes that JSON. Let&#8217;s talk about one such tool next.</p>
+processes that JSON. Let’s talk about one such tool next.</p>
 </div>
 <div class="sect3">
 <h4 id="_parsing_json_from_the_command_line">Parsing JSON from the Command Line</h4>
@@ -619,7 +636,7 @@ Linux, Windows and Solaris (<a href="http://stedolan.github.io/jq/download/" cla
 </table>
 </div>
 <div class="paragraph">
-<p>Going deeper, in the prior example, let&#8217;s pull out something
+<p>Going deeper, in the prior example, let’s pull out something
 interesting from the API map that we receive when we access
 api.github.com.</p>
 </div>
@@ -635,7 +652,7 @@ api.github.com.</p>
 <div class="paragraph">
 <p>What just happened? The <code>jq</code> tool parsed the JSON, and using the
 <code>.current_user_url</code> filter, it retrieved content from the JSON
-response. If you look at the response again, you&#8217;ll notice it has
+response. If you look at the response again, you’ll notice it has
 key/value pairs inside an associative array. It uses the
 <code>current_user_url</code> as a key into that associative array and prints out
 the value there.</p>
@@ -653,8 +670,8 @@ restrict that information and clean up the request we should use the
 <p>It should be easy to understand how the jq filter is applied to the
 response JSON. For a more complicated request (for example, we might
 want to obtain a list of public repositories for a user), we can see
-the pattern for the jq pattern parameter emerging. Let&#8217;s get a more
-complicated set of information, a user&#8217;s list of repositories and see
+the pattern for the jq pattern parameter emerging. Let’s get a more
+complicated set of information, a user’s list of repositories and see
 how we can extract information from the response using jq.</p>
 </div>
 <div class="listingblock">
@@ -704,7 +721,7 @@ parse error: Invalid numeric literal at line 1, column 7</code></pre>
 uses invalid single quote characters, fails with an error. Jq filters
 are strings passed as arguments, and the shell which provides the
 string to jq does not care, however, if you use single quotes or
-double quotes, as you see above. The echo command, if you didn&#8217;t
+double quotes, as you see above. The echo command, if you didn’t
 already know, prints out whatever string you provide to it; when we
 combine this with the pipe character we can easily provide that string
 to jq through standard input.</p>
@@ -719,7 +736,7 @@ stedolan.github.io/jq.</p>
 GitHub API and parse out bits of information from that response, all
 in a single line. But, there will be times when you incorrectly
 specify parameters to cURL or the API, and the data is not what you
-expect. Now we&#8217;ll learn about how to debug the cURL tool and the API
+expect. Now we’ll learn about how to debug the cURL tool and the API
 service itself to provide more context when things go wrong.</p>
 </div>
 </div>
@@ -728,7 +745,7 @@ service itself to provide more context when things go wrong.</p>
 <div class="paragraph">
 <p>As mentioned, cURL is a great tool when you are verifying that a
 response is what you expect it to be. The response body is important,
-but often you&#8217;ll want access to the headers as well. cURL makes
+but often you’ll want access to the headers as well. cURL makes
 getting these easy with the <code>-i</code> and <code>-v</code> switches. The <code>-i</code> switch
 prints out request headers, and the <code>-v</code> switch prints out both
 request and response headers (the <code>&gt;</code> character indicates request
@@ -814,13 +831,13 @@ API. When you make a request to the GitHub API you can specify the
 format you want to work with by sending an Accept header with your request.</p>
 </div>
 <div class="paragraph">
-<p>Now, let&#8217;s use a response to build another response.</p>
+<p>Now, let’s use a response to build another response.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_following_a_hypermedia_api">Following a Hypermedia API</h3>
 <div class="paragraph">
-<p>We&#8217;ll use the "map" of the API by hitting the base endpoint, and then
+<p>We’ll use the "map" of the API by hitting the base endpoint, and then
 use the response to manually generate another request.</p>
 </div>
 <div class="listingblock">
@@ -1017,7 +1034,7 @@ for applications that need access to the GitHub API.</p>
 </div>
 <div class="paragraph">
 <p>If you are using two factor authentication, this flow requires
-additional steps, all of which are documented within the <a href="#Hubot Chapter">[Hubot Chapter]</a>.</p>
+additional steps, all of which are documented within the <a href="#Hubot%20Chapter">[Hubot Chapter]</a>.</p>
 </div>
 <div class="paragraph">
 <p>To use this token, you specify the token inside an authorization
@@ -1063,7 +1080,7 @@ authentication flow will be unchaged.</p>
 Be very careful about the scopes you request when building a service
 or application. Users are (rightly) paranoid about the data they are
 handing over to you, and will evaluate your application based on the scopes
-requested. If they don&#8217;t think you need that scope, be sure to remove
+requested. If they don’t think you need that scope, be sure to remove
 it from the list you provide to GitHub when authorizing and consider
 escalation to a higher scope after you have developed some trust with
 your users.
@@ -1085,7 +1102,7 @@ your request, but asking for everything up front (before you have a
 relationship with the user) often results in a user abandoning the login.</p>
 </div>
 <div class="paragraph">
-<p>Now let&#8217;s get into the specifics of authentication using OAuth.</p>
+<p>Now let’s get into the specifics of authentication using OAuth.</p>
 </div>
 </div>
 <div class="sect4">
@@ -1118,7 +1135,7 @@ password usually.</p>
 <p>A real world flow is described in full in the <a href="#Hubot">[Hubot]</a> chapter.</p>
 </div>
 <div class="paragraph">
-<p>Now let&#8217;s look at the variety of HTTP status codes GitHub uses to
+<p>Now let’s look at the variety of HTTP status codes GitHub uses to
 communicate feedback when using the API.</p>
 </div>
 </div>
@@ -1181,7 +1198,7 @@ Status: 400 Bad Request
 <div class="paragraph">
 <p>Here we attempt to generate a new gist by using the endpoint described
 at the Gist API documentation:
-<a href="https://developer.github.com/v3/gists/#create-a-gist" class="bare">https://developer.github.com/v3/gists/#create-a-gist</a>. We&#8217;ll detail
+<a href="https://developer.github.com/v3/gists/#create-a-gist" class="bare">https://developer.github.com/v3/gists/#create-a-gist</a>. We’ll detail
 Gists in more detail in a later chapter. This issue fails because we
 are not using JSON (this looks it could be YAML, which we will discuss
 in the Jekyll chapter). The payload is sent using the <code>-d</code>
@@ -1195,7 +1212,7 @@ cURL to make a POST request to GitHub.</p>
 <h4 id="_improper_json_422">Improper JSON (422)</h4>
 <div class="paragraph">
 <p>If any of the fields in your request are invalid, GitHub will respond
-with a 422 error. Let&#8217;s attempt to fix the previous request. The
+with a 422 error. Let’s attempt to fix the previous request. The
 documentation indicates the JSON payload should look like this:</p>
 </div>
 <div class="listingblock">
@@ -1238,7 +1255,7 @@ key inside the request payload.</p>
 <div class="sect3">
 <h4 id="_successful_creation_201">Successful Creation (201)</h4>
 <div class="paragraph">
-<p>We&#8217;ve seen what happens when the JSON is invalid, but what happens
+<p>We’ve seen what happens when the JSON is invalid, but what happens
 when the JSON is valid for our request?</p>
 </div>
 <div class="listingblock">
@@ -1279,7 +1296,7 @@ succeeded. They give a little bit of extra information, however, in
 that they tell the client that the data has not changed since the last
 time the same request was made. This is valuable information if you
 are concerned about your usage limits (and in most cases you will
-be). We have not yet explained how rate limits work, so let&#8217;s discuss
+be). We have not yet explained how rate limits work, so let’s discuss
 that and then return to demonstrate triggering a 304 response code by using
 conditional headers.</p>
 </div>
@@ -1288,10 +1305,10 @@ conditional headers.</p>
 <h4 id="developer-api-rates">GitHub API Rate Limits</h4>
 <div class="paragraph">
 <p>GitHub tries to limit the rate at which users can make requests to the
-API.  Anonymous requests (requests that haven&#8217;t authenticated with
+API.  Anonymous requests (requests that haven’t authenticated with
 either a username/password or OAuth information) are limited to 60
 requests an hour. If you are developing a system to integrate with the
-GitHub API on behalf of users, clearly 60 requests per hour isn&#8217;t
+GitHub API on behalf of users, clearly 60 requests per hour isn’t
 going to be sufficient.</p>
 </div>
 <div class="paragraph">
@@ -1304,9 +1321,9 @@ credentials when making requests on behalf of many users.</p>
 <div class="paragraph">
 <p>For this reason, if your web site or service uses the GitHub API to
 request information from the GitHub API, you should consider using
-OAuth and make requests to the GitHub API using your user&#8217;s shared
+OAuth and make requests to the GitHub API using your user’s shared
 authentication information. If you use a token connected to another
-user&#8217;s GitHub account, the rate limits count against that user, and
+user’s GitHub account, the rate limits count against that user, and
 not your user account.</p>
 </div>
 <div class="admonitionblock note">
@@ -1345,7 +1362,7 @@ has a timezone in Coordinated Universal Time (UTC).</p>
 <div class="paragraph">
 <p>The following command listing uses curl to retrieve the rate limit
 for an anonymous request.   This response is abbreviated to save space
-in this book, but you&#8217;ll notice that the quota information is supplied
+in this book, but you’ll notice that the quota information is supplied
 twice: once in the HTTP response headers and again in the JSON
 response.  The rate limit headers are returned with every request to
 the GitHub API, so there is little need to make a direct call to the
@@ -1376,11 +1393,11 @@ the GitHub API, so there is little need to make a direct call to the
 </div>
 </div>
 <div class="paragraph">
-<p>60 requests over the course of an hour isn&#8217;t very much, and if
+<p>60 requests over the course of an hour isn’t very much, and if
 you plan on doing anything interesting, you will likely exceed this
 limit quickly. If you are hitting up against the 60 requests per
 minute limit, you will likely want to investigate making authenticated
-requests to the GitHub API. We&#8217;ll show that when we discuss
+requests to the GitHub API. We’ll show that when we discuss
 authenticated requests.</p>
 </div>
 <div class="paragraph">
@@ -1393,11 +1410,11 @@ limits. And, remember, rate limits are reset after 24 hours.</p>
 <h3 id="_conditional_requests_to_avoid_rate_limitations">Conditional Requests to Avoid Rate Limitations</h3>
 <div class="paragraph">
 <p>If you are querying the GitHub APIs to obtain activity data for a user
-or a repository, there&#8217;s a good chance that many of your requests
-won&#8217;t return much activity.  If you check for new activity once every
+or a repository, there’s a good chance that many of your requests
+won’t return much activity.  If you check for new activity once every
 few minutes, there will be time periods over which no activity has
 occurred.  These constant polls still use up requests
-in your rate limit even though there&#8217;s no new activity to be
+in your rate limit even though there’s no new activity to be
 delivered.</p>
 </div>
 <div class="paragraph">
@@ -1410,8 +1427,8 @@ rate limit.</p>
 </div>
 <div class="paragraph">
 <p>The following command listing is an example of passing in the
-If-Modified-Since HTTP header to the GitHub API. Here we&#8217;ve
-specified that we&#8217;re only interested in receiving content if the
+If-Modified-Since HTTP header to the GitHub API. Here we’ve
+specified that we’re only interested in receiving content if the
 Twitter Boostrap repositories has been altered after 7:49 PM GMT on
 Sunday, August 11, 2013.  The GitHub API responds with a HTTP 304
 response code which also tells us that the last time this repository
@@ -1435,7 +1452,7 @@ Last-Modified: Sun, 11 Aug 2013 19:48:39 GMT</pre>
 <div class="paragraph">
 <p>The GitHub API also understands HTTP caching tags. An ETag, or Entity Tag, is an HTTP
 header that is used to control whether or not content that you have
-previously cached is the most recent version.  Here&#8217;s how your systems
+previously cached is the most recent version.  Here’s how your systems
 would use ETag:</p>
 </div>
 <div class="ulist">
@@ -1455,7 +1472,7 @@ would use ETag:</p>
 ETag</p>
 </li>
 <li>
-<p>If the server doesn&#8217;t have a newer version it returns an HTTP 304</p>
+<p>If the server doesn’t have a newer version it returns an HTTP 304</p>
 </li>
 </ul>
 </div>
@@ -1465,7 +1482,7 @@ ETag</p>
 <div class="paragraph">
 <p>The following command listing demonstrates two commands.  The first
 curl call to the GitHub API generates an ETag value, and the second
-value passes this ETag value as an If-None-Match header.  You&#8217;ll note
+value passes this ETag value as an If-None-Match header.  You’ll note
 that the second response is an HTTP 304 which tells the caller that
 there is no new content available.</p>
 </div>
@@ -1496,7 +1513,7 @@ ETag: "462c74009317cf64560b8e395b9d0cdd"</pre>
 </div>
 <div class="paragraph">
 <p>Use of conditional request headers is encouraged to conserve resources
-and make sure that the infrastructure that supports GitHub&#8217;s API isn&#8217;t
+and make sure that the infrastructure that supports GitHub’s API isn’t
 asked to generated content unnecessarily.</p>
 </div>
 <div class="paragraph">
@@ -1504,7 +1521,7 @@ asked to generated content unnecessarily.</p>
 client, and as long as our network permits it, we can do whatever we
 want. The GitHub API is accessible in other situations as well, like
 from within a browser context, and certain restrictions apply there,
-so let&#8217;s discuss that next.</p>
+so let’s discuss that next.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1515,7 +1532,7 @@ command line then you are free to issue any network calls as long as
 your network permits it. If you are attempting to access the GitHub
 API from within a browser using JavaScript and the XHR
 (XmlHttpRequest) object, then you should be aware of limitations
-imposed by the browser&#8217;s same-origin policy. In a nutshell, you are
+imposed by the browser’s same-origin policy. In a nutshell, you are
 not able to access domains from JavaScript using standard XHR requests
 outside of the domain from which you retrieved the original
 page. There are two options for getting around this restriction, one
@@ -1655,7 +1672,7 @@ GitHub API domain as you would any other XHR request going into the
 same domain.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ve covered much of the details of connecting and dissecting the
+<p>We’ve covered much of the details of connecting and dissecting the
 GitHub API, but there are a few other options to know about when using
 it. One of them is that you can use the GitHub API service to provide
 rendered content when you need it.</p>
@@ -1666,7 +1683,7 @@ rendered content when you need it.</p>
 <div class="paragraph">
 <p>When you send a request to the GitHub API, you have some ability to
 specify the format of the response you expect.  For example, if you
-are requesting content that contains text from a commit&#8217;s comment
+are requesting content that contains text from a commit’s comment
 thread, you can use the Accept header to ask for the raw markdown or
 for the HTML this markdown generates.  You also have the ability to
 specify this version of the GitHub API you are using.  At this point,
@@ -1676,8 +1693,8 @@ you can specify either version 3 or beta of the API.</p>
 <h5 id="_retrieving_formatted_content">Retrieving Formatted Content</h5>
 <div class="paragraph">
 <p>The Accept header you send with a request can affect the format of
-text returned by the GitHub API.  As an example, let&#8217;s assume you
-wanted to read the body of a GitHub Issue. An issue&#8217;s body is stored
+text returned by the GitHub API.  As an example, let’s assume you
+wanted to read the body of a GitHub Issue. An issue’s body is stored
 in markdown and will be sent back in the request by default. If we
 wanted to render the response as HTML instead of markdown, we could do
 this by sending a different accept header, as the following cURL
@@ -1702,8 +1719,8 @@ $ curl -s $URL \
 representation of the data, sent as markdown.</p>
 </li>
 <li>
-<p>Note that if we don&#8217;t request the HTML representation, we
-don&#8217;t see it in the JSON by default.</p>
+<p>Note that if we don’t request the HTML representation, we
+don’t see it in the JSON by default.</p>
 </li>
 <li>
 <p>If we use a customized accept header like in
@@ -1737,7 +1754,7 @@ documentation.</p>
 <td class="content">
 The GitHub team has already provided very thorough documentation on
 their API with examples using cURL. Bookmark this URL:
-<a href="https://developer.github.com/v3/" class="bare">https://developer.github.com/v3/</a>. You&#8217;ll use it often. Do note that
+<a href="https://developer.github.com/v3/" class="bare">https://developer.github.com/v3/</a>. You’ll use it often. Do note that
 this URL is tied, obviously, to the current API "Version 3", so this
 URL will change when a new version is released.
 </td>
@@ -1760,7 +1777,7 @@ supported by GitHub, and also learned about the possibilities and
 tradeoffs when accessing the GitHub API from within a browser context.</p>
 </div>
 <div class="paragraph">
-<p>In the next chapter we will look at Gists and the Gist API. We&#8217;ll use
+<p>In the next chapter we will look at Gists and the Gist API. We’ll use
 Ruby to build a Gist display program, and host all source files for
 the application as a Gist itself.</p>
 </div>
@@ -1770,7 +1787,7 @@ the application as a Gist itself.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-12 06:46:26 PDT
+Last updated 2018-10-12 07:45:35 PDT
 </div>
 
 <div onclick="openCustomization()" class="fab-customization">☃</div>
@@ -1802,7 +1819,7 @@ Last updated 2018-10-12 06:46:26 PDT
 	<p id="selectedText">
 	</p>
 
-	<input name="change" type="text" placeholder="Enter your comment or edit request..."/>
+	<input name="change" type="text" placeholder="Enter your comment or edit request...">
       </main>
       <footer class="modal__footer">
 	<button onclick="storeIt()" class="modal__btn modal__btn-primary">Store comment</button>
@@ -1826,7 +1843,7 @@ Last updated 2018-10-12 06:46:26 PDT
 	FYI: This does not yet work!
 	<a target="_new" href="https://goo.gl/forms/8o5NgerENFqgm6vH3">Can you help provide feedback on what you like and want?</a>
 
-	<div  class="customization">
+	<div class="customization">
 	  <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
 	  <label for="checkbox_id">Minimize callouts</label>
 	  <div class="explanation">If a chapter contains callouts with code, don't show those.
@@ -1861,7 +1878,7 @@ Last updated 2018-10-12 06:46:26 PDT
 
       </main>
       <footer class="modal__footer">
-	<button  class="modal__btn modal__btn-primary">Save Customizations</button>
+	<button class="modal__btn modal__btn-primary">Save Customizations</button>
 	<button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
       </footer>
     </div>
@@ -1874,10 +1891,7 @@ Last updated 2018-10-12 06:46:26 PDT
   You've been tagged on it, so you will get updates automatically.
 </div>
 
-<iframe height="150px" width="100%"
-	style="background-color: white !important"
-	frameborder="0" id="th"
-	src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
+<iframe height="150px" width="100%" style="background-color: white !important" frameborder="0" id="th" src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
 
 <div class="faked">NB: This "contribution" button is a only a simulation, no actual money is required.
 You can safely click the contribute button to see what would happen if you actually made a micro-contribution.
@@ -1914,5 +1928,5 @@ You can safely click the contribute button to see what would happen if you actua
 </div>
 </div>
 </div>
+
 </body>
-</html>

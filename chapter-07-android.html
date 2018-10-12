@@ -1,6 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<body>
+<div id="excerpt"><div class="sect1">
+<h2>Android and the Git Data API</h2>
+<div class="sectionbody"><div class="paragraph"><p>
+You might not use your phone right now as a developer tool, but the
+odds are that you will soon. At the moment, phones and tablets can be
+great for reading code, but the editors we developers use on our
+laptops have not yet been reimagined for mobile devices. We are
+getting close though: the GitHub API is accessible through the well
+written EGit client library for Java, and this library supports both reading
+data stored on GitHub and writing data back into it. These are a
+perfect set of building blocks to develop applications for the Android
+platform, currently the world’s most popular mobile OS.
+</p></div></div>
+</div></div>
+
+
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -417,16 +431,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <script src="edit.js"></script>
 <link rel="stylesheet" type="text/css" href="fab.css">
 <link rel="stylesheet" type="text/css" href="micromodal.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css">
 <!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
 <!-- Include jQuery Popup Overlay -->
 <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
-</head>
-<body class="article">
+
+
 <div id="header">
 </div>
-<div id="content">
+<div id="content" style="display: none">
 <div class="sect1">
 <h2 id="_android_and_the_git_data_api">Android and the Git Data API</h2>
 <div class="sectionbody">
@@ -439,10 +453,10 @@ getting close though: the GitHub API is accessible through the well
 written EGit client library for Java, and this library supports both reading
 data stored on GitHub and writing data back into it. These are a
 perfect set of building blocks to develop applications for the Android
-platform, currently the world&#8217;s most popular mobile OS.</p>
+platform, currently the world’s most popular mobile OS.</p>
 </div>
 <div class="paragraph">
-<p>In this chapter, we&#8217;ll use the Java EGit libraries to develop a small
+<p>In this chapter, we’ll use the Java EGit libraries to develop a small
 Android application which posts to our blog hosted on GitHub. Our
 blogging application will allow us to login to GitHub, and then ask us
 for a quick note describing how we are feeling. The application will
@@ -466,7 +480,7 @@ series of Ruby commands documented here; if you want to know more
 about Jekyll, it is covered in more depth in the Jekyll chapter.
 There are a few items of note when establishing a Jekyll blog that
 have some complexity, things like mapping a hostname properly and using the
-correct branch inside git. For our purposes here, however, we won&#8217;t need
+correct branch inside git. For our purposes here, however, we won’t need
 to make sure all that is established. All we need is to make sure that
 we have a sandbox repository that has the structure of a jekyll blog.</p>
 </div>
@@ -486,7 +500,7 @@ $ git push -u origin master</code></pre>
 for our tests as well), generate a new blog using the jekyll command
 line tool, and then create a blog on GitHub with those files. On the
 second line we specify the name of the blog; you are welcome to change
-this to any name you&#8217;d like, just make sure the tests match the name.</p>
+this to any name you’d like, just make sure the tests match the name.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -499,7 +513,7 @@ When you have finished running these commands, you should close the
 terminal window. There are other commands later in this chapter which
 should occur in a fresh directory and as such it is best not to run
 those commands from within the same directory where you created your
-jekyll blog. You&#8217;ve pushed all those files into GitHub, so you could
+jekyll blog. You’ve pushed all those files into GitHub, so you could
 safely delete the local repository in this directory.
 </td>
 </tr>
@@ -509,7 +523,7 @@ safely delete the local repository in this directory.
 <div class="sect3">
 <h4 id="_android_development_tools">Android Development Tools</h4>
 <div class="paragraph">
-<p>If you don&#8217;t have a physical Android device, don&#8217;t fret. You can follow
+<p>If you don’t have a physical Android device, don’t fret. You can follow
 along with this chapter without having an actual Android device by doing
 development and testing on a virtual device.</p>
 </div>
@@ -541,7 +555,7 @@ building Android applications.</p>
 <div class="sect2">
 <h3 id="_creating_a_new_project">Creating a New Project</h3>
 <div class="paragraph">
-<p>Let&#8217;s now create our Android project. When you first open Android
+<p>Let’s now create our Android project. When you first open Android
 Studio, you will see an option in the right pane inviting you to
 create a new project. Click on the "Start a new Android Studio
 project" option. In the next step, you will see a screen for
@@ -556,7 +570,7 @@ automatically generate the "package name" for you as
 <p>You will then need to choose a target SDK. The higher the target,
 the better access to newer Android APIs, but the fewer number of
 devices which can run the application. The code in this chapter will
-work with older SDKs, so let&#8217;s make a balanced choice and use Android
+work with older SDKs, so let’s make a balanced choice and use Android
 4.4 (KitKat) running on phone and tablets. At the moment this means,
 according to Android Studio, that our application will run on 49.5% of
 Android devices in the world.</p>
@@ -763,14 +777,14 @@ in fact the XML file itself has the value displayed below (<code>@string/app_nam
 <div class="paragraph">
 <p>When the application is launched, the Android OS will launch this
 activity and then call the <code>onCreate</code> function for us. Inside this
-function, our application calls our parent&#8217;s implementation of
+function, our application calls our parent’s implementation of
 <code>onCreate</code>, and then inflates the layout for our application. Layouts
 are XML files in which the UI of an Android application is
 declaratively described.</p>
 </div>
 <div class="paragraph">
 <p>Android Studio created a default layout for us (called
-<code>activity_main.xml</code>), but let&#8217;s ignore that and create our own
+<code>activity_main.xml</code>), but let’s ignore that and create our own
 layout. To do so, right click (control-click on OSX) on the <code>layouts</code>
 directory, and then choose "New" and then "Layout resource file" at
 the very top of the list (Android Studio nicely chooses the most
@@ -782,7 +796,7 @@ the file name, and accept the other default.s</p>
 descriptive label for the username, a password field (and associated
 descriptive label) for the password, a button to click that tells our
 app to attempt to login, and a status field which indicates success or
-failure of the login. So, let&#8217;s modify the generated <code>main.xml</code> to
+failure of the login. So, let’s modify the generated <code>main.xml</code> to
 specify this user interface. To edit this file as text, click on the
 tab labeled "Text" next to the tab labeled "Design" at the very bottom
 of the <code>main.xml</code> pane to switch to text view. Then, edit the file to
@@ -934,7 +948,7 @@ provide context while saving the post.</p>
 <div class="paragraph">
 <p>Most of this should be familiar once you have reviewed the <code>main.xml</code>
 file (and be sure to copy this from the associated sample repository
-on GitHub if you don&#8217;t want to copy it in yourself).</p>
+on GitHub if you don’t want to copy it in yourself).</p>
 </div>
 <div class="paragraph">
 <p>Now that we have our XML established, we can ready our application for
@@ -966,7 +980,7 @@ emulator itself!</p>
 <div class="sect3">
 <h4 id="_unit_tests_for_our_github_client">Unit Tests for our GitHub Client</h4>
 <div class="paragraph">
-<p>Let&#8217;s start by defining a unit test. Since the unit test runs on our
+<p>Let’s start by defining a unit test. Since the unit test runs on our
 development machine, our test and implementation code should be
 written such that they not need to load any Android classes. This
 forces us to constrain functionality to only the GitHub API. We will
@@ -1104,7 +1118,7 @@ API; sleeping for a few seconds fixes this.</p>
 library. We load a URL which provides us with the events for a
 specified repository, events which will have the commit message when
 it is a push type event. This repository happens to be public so we
-don&#8217;t require authentication against the GitHub API to see this data.</p>
+don’t require authentication against the GitHub API to see this data.</p>
 </li>
 <li>
 <p>Once we have the body of the HTTP call, we can scan it to verify
@@ -1160,7 +1174,7 @@ the JSON as a string works for our test.</p>
 <div class="sect3">
 <h4 id="_android_ui_tests">Android UI Tests</h4>
 <div class="paragraph">
-<p>Let&#8217;s now write a UI test. Our test will start our app, find the
+<p>Let’s now write a UI test. Our test will start our app, find the
 username and password fields, enter in the proper username and
 password text, then click the login button, and finally verify that we
 have logged in by checking for the text "Logged into GitHub" in our
@@ -1299,14 +1313,14 @@ other parts of the application. As such, we will skip the setup
 required to run our tests within Android Studio for now.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s now build the application itself to pass these tests.</p>
+<p>Let’s now build the application itself to pass these tests.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_application_implementation">Application Implementation</h3>
 <div class="paragraph">
-<p>Now we can start writing some Java code for our application. Let&#8217;s
+<p>Now we can start writing some Java code for our application. Let’s
 make it so our <code>MainActivity</code> class will inflate the layouts we
 defined earlier.</p>
 </div>
@@ -1399,7 +1413,7 @@ the UI looks appropriate. Our login form looks like this:</p>
 <div class="sect3">
 <h4 id="_code_to_login_to_github">Code to Login to GitHub</h4>
 <div class="paragraph">
-<p>Now we can wire in the GitHub API. Let&#8217;s first work on the <code>login()</code>
+<p>Now we can wire in the GitHub API. Let’s first work on the <code>login()</code>
 function. Poking into the
 <a href="https://github.com/eclipse/egit-github/tree/master/org.eclipse.egit.github.core">EGit
 libary reference</a>, we can write GitHub login code that is as simple as
@@ -1429,7 +1443,7 @@ the UI with the results of the code that ran inside <code>doInBackground()</code
 <div class="paragraph">
 <p>Before we implement the login, we need to update our <code>onCreate</code>
 function of the <code>MainActivity</code>. Our login button handles logging in,
-so let&#8217;s register a click handler on the login button that will call
+so let’s register a click handler on the login button that will call
 the login task we will define inside our class based off AsyncTask.</p>
 </div>
 <div class="listingblock">
@@ -1535,7 +1549,7 @@ to do that.</p>
 <li>
 <p>We wrap the call to <code>getUser()</code> in a try block as the function
 signature can throw an error (if the network were down, for example).
-We don&#8217;t really need to retrieve information about the user using the
+We don’t really need to retrieve information about the user using the
 User object, but this call verifies that our username and password are
 correct and we store the result of the call in our return value.
 GitHub will not use the credentials you set until you make an API
@@ -1543,7 +1557,7 @@ call, so we need to use our credentials to access something in order
 to verify those credentials work.</p>
 </li>
 <li>
-<p>Let&#8217;s call our function <code>loggedIn()</code> instead of <code>login()</code> to more
+<p>Let’s call our function <code>loggedIn()</code> instead of <code>login()</code> to more
 accurately reflect the fact that when we call this, we are already
 logged into GitHub.</p>
 </li>
@@ -1668,8 +1682,8 @@ background thread.</p>
 <ol>
 <li>
 <p>First, we retrieve the parameters we need to send off to the
-GitHub API. Notice that we don&#8217;t attempt to retrieve these from the
-UI. Background threads don&#8217;t have access to the Android UI functions.</p>
+GitHub API. Notice that we don’t attempt to retrieve these from the
+UI. Background threads don’t have access to the Android UI functions.</p>
 </li>
 <li>
 <p>This function returns a true or false value indicating success or
@@ -1740,14 +1754,14 @@ API expects you to create a git "tree" and then place a "blob" object
 into that tree. You then wrap the tree in a "commit" object and then
 create that commit on GitHub using a data service wrapper. In
 addition, writing a tree into GitHub requires knowing the base SHA
-identifier, so you&#8217;ll see code which retrieves the last SHA in the
+identifier, so you’ll see code which retrieves the last SHA in the
 tree associated with our current branch. This code will work
 regardless of whether we are pushing code into the master branch, or
 into the gh-pages branch, so this utility class works with real
 Jekyll blogs.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll write a helper class called <code>GitHubHelper</code> and add a single
+<p>We’ll write a helper class called <code>GitHubHelper</code> and add a single
 function which writes a file to our repository.</p>
 </div>
 <div class="paragraph">
@@ -1760,7 +1774,7 @@ already installed in our Gradle file above (the "commons-codec" declaration).</p
 <div class="paragraph">
 <p>We will start by defining a series of high level functions inside
 <code>SaveFile</code> to get through building a commit inside of GitHub. Each
-function itself contains some complexity so let&#8217;s look first at the
+function itself contains some complexity so let’s look first at the
 overview of what it takes to put data into GitHub using the Git Data API.</p>
 </div>
 <div class="listingblock">
@@ -1830,7 +1844,7 @@ functions. As you can see, the <code>SaveFile</code> function has the same
 signature as the function we call inside our unit test.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s implement each of the functions specified in the
+<p>Let’s implement each of the functions specified in the
 GitHubHelper class.</p>
 </div>
 </div>
@@ -1941,7 +1955,7 @@ the java <code>SimpleDateFormat</code> class to help in creating a string of tha
 <h4 id="_github_services">GitHub Services</h4>
 <div class="paragraph">
 <p>Next, we implement <code>createServices()</code>. There are several services
-(wrappers around git protocols) which we need to instantiate. We don&#8217;t
+(wrappers around git protocols) which we need to instantiate. We don’t
 use them all immediately, but we will need them at various steps
 during the file save process. The <code>createServices</code> call manages these
 for us.</p>
@@ -2251,13 +2265,13 @@ API. Good work!</p>
 <div class="sect3">
 <h4 id="_passing_all_our_tests">Passing all our tests</h4>
 <div class="paragraph">
-<p>Our code is complete. Let&#8217;s make sure our tests run successfully.</p>
+<p>Our code is complete. Let’s make sure our tests run successfully.</p>
 </div>
 <div class="paragraph">
 <p>We need to setup our test configuration to run within Android Studio.
 Select the "Build Variants" vertical tab on the left, and in "Test
 Artifact" select "Unit Tests". Then, open the "Run" menu, and
-select "Edit configurations&#8230;&#8203;". Click the plus symbol, and choose
+select "Edit configurations…​". Click the plus symbol, and choose
 JUnit. You will be presented with space to create a unit test run
 configuration. First, click on the "Use classpath of module" and
 select "app". Make sure the "Test Kind" is set to class, and then
@@ -2275,7 +2289,7 @@ these. Your final configuration should look like the following.</p>
 <div class="paragraph">
 <p>Now, create the UI tests configuration: switch to "Android Instrumentation Tests" in the "Test Artifact"
 of the "Build Variants" tab. Then, click on the "Run" menu, and again
-go to "Edit configurations&#8230;&#8203;". Click on the plus symbol, and this
+go to "Edit configurations…​". Click on the plus symbol, and this
 time choose "Android Tests". Choose "app" as the module, and then
 select "android.support.test.runner.AndroidJUnitRunner" as the
 specific instrumentation runner. You can choose whichever target
@@ -2284,7 +2298,7 @@ one. Give the configuration a name like "Android Test".</p>
 </div>
 <div class="paragraph">
 <p>To run your tests, switch to the appropriate test artifact and then
-from the "Run" menu, select "Debug&#8230;&#8203;" and choose the proper test
+from the "Run" menu, select "Debug…​" and choose the proper test
 configuration. You can set breakpoints and step through code in your
 test or implementation from within Android Studio.</p>
 </div>
@@ -2359,7 +2373,7 @@ the GitHub.js library talking to the Pull Request API.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-12 06:46:26 PDT
+Last updated 2018-10-12 07:45:35 PDT
 </div>
 
 <div onclick="openCustomization()" class="fab-customization">☃</div>
@@ -2391,7 +2405,7 @@ Last updated 2018-10-12 06:46:26 PDT
 	<p id="selectedText">
 	</p>
 
-	<input name="change" type="text" placeholder="Enter your comment or edit request..."/>
+	<input name="change" type="text" placeholder="Enter your comment or edit request...">
       </main>
       <footer class="modal__footer">
 	<button onclick="storeIt()" class="modal__btn modal__btn-primary">Store comment</button>
@@ -2415,7 +2429,7 @@ Last updated 2018-10-12 06:46:26 PDT
 	FYI: This does not yet work!
 	<a target="_new" href="https://goo.gl/forms/8o5NgerENFqgm6vH3">Can you help provide feedback on what you like and want?</a>
 
-	<div  class="customization">
+	<div class="customization">
 	  <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
 	  <label for="checkbox_id">Minimize callouts</label>
 	  <div class="explanation">If a chapter contains callouts with code, don't show those.
@@ -2450,7 +2464,7 @@ Last updated 2018-10-12 06:46:26 PDT
 
       </main>
       <footer class="modal__footer">
-	<button  class="modal__btn modal__btn-primary">Save Customizations</button>
+	<button class="modal__btn modal__btn-primary">Save Customizations</button>
 	<button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
       </footer>
     </div>
@@ -2463,10 +2477,7 @@ Last updated 2018-10-12 06:46:26 PDT
   You've been tagged on it, so you will get updates automatically.
 </div>
 
-<iframe height="150px" width="100%"
-	style="background-color: white !important"
-	frameborder="0" id="th"
-	src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
+<iframe height="150px" width="100%" style="background-color: white !important" frameborder="0" id="th" src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
 
 <div class="faked">NB: This "contribution" button is a only a simulation, no actual money is required.
 You can safely click the contribute button to see what would happen if you actually made a micro-contribution.
@@ -2503,5 +2514,5 @@ You can safely click the contribute button to see what would happen if you actua
 </div>
 </div>
 </div>
+
 </body>
-</html>
