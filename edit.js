@@ -232,6 +232,5 @@ function setDisplayById( id, display ) {
 function revealContent(){
   setDisplayById("excerpt", "none" );
   setDisplayById("content", "inline-block" );
-  setTimeout( () => { window.scrollTo(0,0) }, 1000 );
 }
 

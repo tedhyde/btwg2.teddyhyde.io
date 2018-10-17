@@ -1,15 +1,7 @@
-<body>
-<div id="excerpt"><div class="sect1">
-<h2>CoffeScript, Hubot and the Activities API</h2>
-<div class="sectionbody"><div class="paragraph"><p>
-Though the phrase has now been removed from their marketing materials,
-GitHub used to call itself a tool for "social coding." This idea is
-still central to the services GitHub provides, intimate access to the
-social layer inside of GitHub through the Activity API.
-</p></div></div>
-</div></div>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -422,11 +414,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-auth.js"></script>
-<script src="https://cdn.teddyhyde.com/0.0.1/teddyhyde-client-0.0.1.js"></script>
+<script src="https://cdn.teddyhyde.com/0.0.3/teddyhyde-client-0.0.3.js"></script>
 <script src="edit.js"></script>
 <link rel="stylesheet" type="text/css" href="fab.css">
 <link rel="stylesheet" type="text/css" href="micromodal.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css" />
 <!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
 <!-- Include jQuery Popup Overlay -->
@@ -441,9 +433,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
   gtag('config', 'UA-127650375-1');
 </script>
+
+
 </head>
 <body class="article">
-
+<div id="excerpt"><div class="sect1">
+<h2>CoffeScript, Hubot and the Activities API</h2>
+<div class="sectionbody"><div class="paragraph"><p>
+Though the phrase has now been removed from their marketing materials,
+GitHub used to call itself a tool for "social coding." This idea is
+still central to the services GitHub provides, intimate access to the
+social layer inside of GitHub through the Activity API.
+</p></div></div>
+</div></div>
 <div id="header">
 </div>
 <div id="content" style="display: none">
@@ -3064,7 +3066,8 @@ receiving (and faking data) coming from a GitHub webhook.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-12 07:45:36 PDT
+Last updated 2018-10-16 23:22:31 PDT
+</div>
 </div>
 
 <div onclick="openCustomization()" class="fab-customization">☃</div>
@@ -3079,7 +3082,7 @@ Last updated 2018-10-12 07:45:36 PDT
     Click on any dotted section to provide a comment or suggestion. Click on the edit button to cancel.
   </div>
 </div>
-
+    
 <div onclick="toggleEditing()" class="fab">✏️</div>
 
 <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
@@ -3096,7 +3099,7 @@ Last updated 2018-10-12 07:45:36 PDT
 	<p id="selectedText">
 	</p>
 
-	<input name="change" type="text" placeholder="Enter your comment or edit request...">
+	<input name="change" type="text" placeholder="Enter your comment or edit request..."/>
       </main>
       <footer class="modal__footer">
 	<button onclick="storeIt()" class="modal__btn modal__btn-primary">Store comment</button>
@@ -3119,11 +3122,11 @@ Last updated 2018-10-12 07:45:36 PDT
 
 	FYI: This does not yet work!
 	<a target="_new" href="https://goo.gl/forms/8o5NgerENFqgm6vH3">Can you help provide feedback on what you like and want?</a>
-
-	<div class="customization">
+	
+	<div  class="customization">
 	  <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
 	  <label for="checkbox_id">Minimize callouts</label>
-	  <div class="explanation">If a chapter contains callouts with code, don't show those.
+	  <div class="explanation">If a chapter contains callouts with code, don't show those. 
 	    You can display these individually by clicking the summary text when needed.
 	  </div>
 	</div>
@@ -3131,7 +3134,7 @@ Last updated 2018-10-12 07:45:36 PDT
 	<div class="customization">
 	  <input type="checkbox" name="checkbox" id="checkbox_id2" value="value">
 	  <label for="checkbox_id2">Minimize setup instructions</label>
-	  <div class="explanation">If a chapter contains setup instructions, don't show those.
+	  <div class="explanation">If a chapter contains setup instructions, don't show those. 
 	    You can display these individually by clicking the summary text when needed.
 	  </div>
 	</div>
@@ -3143,19 +3146,19 @@ Last updated 2018-10-12 07:45:36 PDT
 	    At certain points in the discussion, present quizes which test your knowledge!
 	  </div>
 	</div>
-
+	
 	<div class="customization">
 	  <input type="checkbox" name="checkbox" id="checkbox_id4" value="value">
 	  <label for="checkbox_id4">Show mistakes</label>
 	  <div class="explanation">
-	    At times the author may have made mistakes in writing the code. You can read about the techniques
+	    At times the author may have made mistakes in writing the code. You can read about the techniques 
 	    used to figure out something was wrong, or only see the final solution.
 	  </div>
 	</div>
 
       </main>
       <footer class="modal__footer">
-	<button class="modal__btn modal__btn-primary">Save Customizations</button>
+	<button  class="modal__btn modal__btn-primary">Save Customizations</button>
 	<button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
       </footer>
     </div>
@@ -3168,9 +3171,12 @@ Last updated 2018-10-12 07:45:36 PDT
   You've been tagged on it, so you will get updates automatically.
 </div>
 
-<iframe height="150px" width="100%" style="background-color: white !important" frameborder="0" id="th" src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
+<iframe height="150px" width="100%"
+	style="background-color: white !important"
+	frameborder="0" id="th"
+	src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
 
-<div class="faked">NB: This "contribution" button is a only a simulation, no actual money is required.
+<div class="faked">NB: This "contribution" button is a only a simulation, no actual money is required. 
 You can safely click the contribute button to see what would happen if you actually made a micro-contribution.
 </div>
 
@@ -3179,17 +3185,17 @@ You can safely click the contribute button to see what would happen if you actua
     <!-- Add content to the popup -->
     <div id="personal_ad_popup">
       <h2>Thanks for your visit.</h2>
-
+      
       <div>
 	You aren't interesting in contributing. I get that, everyone has
 	moments where it just doesn't work. Thanks for visiting.
       </div>
-
+      
       <div>
 	Please watch this ad for 15 seconds and
 	then you'll have full access to the post.
       </div>
-
+      
       <div>
 	While you wait:
 	<a target="_new" href="https://admin.teddyhyde.com">
@@ -3200,10 +3206,11 @@ You can safely click the contribute button to see what would happen if you actua
 	with <strong>PWA notifications</strong> so your users never miss a post,
 	and collect <strong>cryptocurrency micro-contributions</strong> with ease.
     </div>
-
+    
   </div>
 </div>
 </div>
-</div>
+
+
 </body>
 </html>
