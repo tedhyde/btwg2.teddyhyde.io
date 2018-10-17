@@ -1,6 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<body>
+<div id="excerpt"><div class="sect1">
+<h2>Preface</h2>
+<div class="sectionbody"><div class="paragraph"><p>
+This book contains stories about building software tools.
+</p></div></div>
+</div></div>
+
+
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -417,16 +423,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <script src="edit.js"></script>
 <link rel="stylesheet" type="text/css" href="fab.css">
 <link rel="stylesheet" type="text/css" href="micromodal.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css">
 <!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
 <!-- Include jQuery Popup Overlay -->
 <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
-</head>
-<body class="article">
+
+
 <div id="header">
 </div>
-<div id="content">
+<div id="content" style="display: none">
 <div class="sect1">
 <h2 id="preface">Preface</h2>
 <div class="sectionbody">
@@ -440,7 +446,7 @@ more than a tool. A spreadsheet is fundamentally a tool to
 add and subtract numbers. A video game is fundamentally a tool to
 alleviate boredom. Almost immediately after people started writing
 software tools we then discovered we needed more tools to permit us to
-write the tools we set out to build in the first place. Let&#8217;s
+write the tools we set out to build in the first place. Let’s
 call these tools that are strictly to support writing software (rather
 than software tools for the general population) meta-tools.</p>
 </div>
@@ -473,7 +479,7 @@ GitHub.com website is itself a meta-tool and we discuss the many
 facets of the GitHub service. Specifically these technologies are the
 GitHub API and related GitHub technologies, the Gollum wiki, Jekyll
 static  page generator, and the chat robot called Hubot (if you are
-not familiar with any of these, we&#8217;ll explain them fully in their
+not familiar with any of these, we’ll explain them fully in their
 respective chapters).</p>
 </div>
 <div class="paragraph">
@@ -504,11 +510,11 @@ building your own meta-tools.</p>
 is the future of application development. APIs provide a great pattern
 for making data accessible to the multi-screen world. If your
 application is backed by a remote service API, the
-first application could be a mobile app running on Apple&#8217;s iOS
+first application could be a mobile app running on Apple’s iOS
 operating system. Critically, if that business model does not turn out
 to be correct, you can respond quickly to changing requirements and
 iterate to build another application for an Android wearable. Or,
-perhaps you&#8217;ll build an integrated car application, or any other
+perhaps you’ll build an integrated car application, or any other
 console (or even non-console) application. As long as your applications
 can send and receive data using calls to a remote API you are free to
 build whatever user interface you want on whatever platform you want.</p>
@@ -517,18 +523,18 @@ build whatever user interface you want on whatever platform you want.</p>
 <p>As an author, you could write and host your own API. Many frameworks
 for popular languages like Ruby, Go or Java, support building APIs
 using standard architectural styles like REST. Or, you could use a
-third party API. In this book we&#8217;ll focus on a third party API: the
+third party API. In this book we’ll focus on a third party API: the
 GitHub API.</p>
 </div>
 <div class="paragraph">
 <p>Why the GitHub API? The GitHub API is exceedingly relevant if you are
 building software because you are probably using GitHub to manage your
-software code. For those that aren&#8217;t, you might be using Git without
+software code. For those that aren’t, you might be using Git without
 GitHub, and the GitHub API is useful to know there as well, as it
 layers the functionality of Git into a networked programming interface.</p>
 </div>
 <div class="paragraph">
-<p>The GitHub API is perhaps the best designed API I&#8217;ve ever used. It is
+<p>The GitHub API is perhaps the best designed API I’ve ever used. It is
 a hypermedia API, which is an arguably successful attempt to make
 API clients resilient to API changes, a tricky problem. The API is well
 versioned. It is comprehensive, mapping closely to most features of
@@ -613,7 +619,7 @@ these chapters are stories about building applications on top of
 the technologies provided by GitHub. Within these stories you will learn
 the tradeoffs and considerations you will face when you use the GitHub
 API. Chapters in this book often cover multiple pieces of the API
-when appropriate for the story we are telling. We&#8217;ve generally tried
+when appropriate for the story we are telling. We’ve generally tried
 to focus on a major API section and limit exposure to other pieces as
 much as possible, but most chapters do need to bring in small pieces
 of more than one section.</p>
@@ -700,13 +706,13 @@ request review requests.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>We don&#8217;t cover the organization API: this is a small facet of the API
+<p>We don’t cover the organization API: this is a small facet of the API
 with only the ability to list organizations and modify metadata about
 your organization; once you have used other parts of the API this nook
 of the API will be very intuitive.</p>
 </div>
 <div class="paragraph">
-<p>We also don&#8217;t cover the users section of the API. While you might
+<p>We also don’t cover the users section of the API. While you might
 expect it to be an important part of the API, the users API is really
 nothing more than an endpoint to list information about users, add or
 remove SSH keys, adjust email addresses and modify your list of
@@ -723,7 +729,7 @@ is a good reference for issues in that way.</p>
 </div>
 <div class="paragraph">
 <p>The enterprise API works almost exactly the same as the GitHub.com
-site API. We don&#8217;t have a chapter telling a story about an enterprise
+site API. We don’t have a chapter telling a story about an enterprise
 version of the API, but we do provide an appendix which provides a few
 notes about how the examples work when using an enterprise server. We also
 provide the specific syntax for each of the languages used in the
@@ -747,7 +753,7 @@ technologies.</p>
 </div>
 <div class="paragraph">
 <p>You should have a good familiarity with at least one imperative modern
-programming language. You don&#8217;t need to be an expert programmer to
+programming language. You don’t need to be an expert programmer to
 read this book, but having some programming experience and familiarity
 with at least one language is essential.</p>
 </div>
@@ -802,7 +808,7 @@ shell.</p>
 <div class="paragraph">
 <p>If you absorb not only the technical facets of using GitHub but also
 pay attention to the cultural and ideological changes offered behind
-the tools, you&#8217;ll very likely see a new way of working in the modern
+the tools, you’ll very likely see a new way of working in the modern
 age. We focus on these "meta" viewpoints as we discuss the tools
 themselves to help you see these extra opportunities.</p>
 </div>
@@ -847,7 +853,7 @@ developers.</p>
 <div class="paragraph">
 <p>Undoubtedly, many of you picking up this book already have familiarity
 with Ruby or JavaScript/NodeJS. So, the basics and installation of them are in
-appendices in the back of the book. The appendices don&#8217;t cover syntax
+appendices in the back of the book. The appendices don’t cover syntax
 of these languages; we expect you have experience with other languages
 as a prerequisite and can read code from any imperative language
 regardless of the syntax. Later chapters discuss facets of the API and
@@ -921,7 +927,7 @@ transformational about writing tests if you have never done so
 before. Having these examples in hand, we hope, will allow you to
 transition to writing testable code for APIs, especially if you have
 not done so before. Some of the associated repositories have much
-greater test suites than are documented in this book, but we don&#8217;t
+greater test suites than are documented in this book, but we don’t
 cover all the entire set of edge cases in every situation.</p>
 </div>
 </div>
@@ -1005,7 +1011,7 @@ cover all the entire set of edge cases in every situation.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p><ulink role="orm:hideurl:ital" url="http://my.safaribooksonline.com/?portal=oreilly">Safari Books Online</ulink> is an on-demand digital library that delivers expert <ulink role="orm:hideurl" url="http://www.safaribooksonline.com/content">content</ulink> in both book and video form from the world&#8217;s leading authors in technology and business.</p>
+<p><ulink role="orm:hideurl:ital" url="http://my.safaribooksonline.com/?portal=oreilly">Safari Books Online</ulink> is an on-demand digital library that delivers expert <ulink role="orm:hideurl" url="http://www.safaribooksonline.com/content">content</ulink> in both book and video form from the world’s leading authors in technology and business.</p>
 </div>
 </td>
 </tr>
@@ -1032,7 +1038,7 @@ cover all the entire set of edge cases in every situation.</p>
 <member>707-829-0104 (fax)</member>
 </simplelist>
 <div class="paragraph">
-<p>We have a web page for this book, where we list errata, examples, and any additional information. You can access this page at <a href="http://www.oreilly.com/catalog/&lt;catalog page&gt;" class="bare">http://www.oreilly.com/catalog/&lt;catalog page&gt;</a>.</p>
+<p>We have a web page for this book, where we list errata, examples, and any additional information. You can access this page at <a href="http://www.oreilly.com/catalog/&lt;catalog%20page&gt;" class="bare">http://www.oreilly.com/catalog/&lt;catalog page&gt;</a>.</p>
 </div>
 <remark>Don't forget to update the link above.</remark>
 <div class="paragraph">
@@ -1056,11 +1062,11 @@ cover all the entire set of edge cases in every situation.</p>
 <div class="paragraph">
 <p>Chris wants to thank his lovely wife, Nicole. I hope that I have added
 to this book even a tiny bit of the wit and wisdom you provide to me
-and our family every day. My son Roosevelt&#8217;s energy continues to
+and our family every day. My son Roosevelt’s energy continues to
 inspire me and keep me going even when I am at my limits. To my
 daughter Charlotte, you are my little smiling Buddha. To my mother,
 who showed me how to write and, most importantly, why to write, which
-is something we need more of in the technology world. To Tim O&#8217;Brien
+is something we need more of in the technology world. To Tim O’Brien
 who invited me into this project, thank you, and I hope we can
 collaborate again. To Bradley Horowitz, who demonstrates how small
 acts of kindness can have immeasurable impact. And, to David J. Groom,
@@ -1080,7 +1086,7 @@ without you.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-11 16:44:50 PDT
+Last updated 2018-10-12 07:45:35 PDT
 </div>
 
 <div onclick="openCustomization()" class="fab-customization">☃</div>
@@ -1112,7 +1118,7 @@ Last updated 2018-10-11 16:44:50 PDT
 	<p id="selectedText">
 	</p>
 
-	<input name="change" type="text" placeholder="Enter your comment or edit request..."/>
+	<input name="change" type="text" placeholder="Enter your comment or edit request...">
       </main>
       <footer class="modal__footer">
 	<button onclick="storeIt()" class="modal__btn modal__btn-primary">Store comment</button>
@@ -1136,7 +1142,7 @@ Last updated 2018-10-11 16:44:50 PDT
 	FYI: This does not yet work!
 	<a target="_new" href="https://goo.gl/forms/8o5NgerENFqgm6vH3">Can you help provide feedback on what you like and want?</a>
 
-	<div  class="customization">
+	<div class="customization">
 	  <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
 	  <label for="checkbox_id">Minimize callouts</label>
 	  <div class="explanation">If a chapter contains callouts with code, don't show those.
@@ -1171,7 +1177,7 @@ Last updated 2018-10-11 16:44:50 PDT
 
       </main>
       <footer class="modal__footer">
-	<button  class="modal__btn modal__btn-primary">Save Customizations</button>
+	<button class="modal__btn modal__btn-primary">Save Customizations</button>
 	<button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
       </footer>
     </div>
@@ -1184,10 +1190,7 @@ Last updated 2018-10-11 16:44:50 PDT
   You've been tagged on it, so you will get updates automatically.
 </div>
 
-<iframe height="150px" width="100%"
-	style="background-color: white !important"
-	frameborder="0" id="th"
-	src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
+<iframe height="150px" width="100%" style="background-color: white !important" frameborder="0" id="th" src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
 
 <div class="faked">NB: This "contribution" button is a only a simulation, no actual money is required.
 You can safely click the contribute button to see what would happen if you actually made a micro-contribution.
@@ -1224,5 +1227,5 @@ You can safely click the contribute button to see what would happen if you actua
 </div>
 </div>
 </div>
+
 </body>
-</html>

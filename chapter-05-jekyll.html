@@ -1,6 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<body>
+<div id="excerpt"><div class="sect1">
+<h2>Ruby and Jekyll</h2>
+<div class="sectionbody"><div class="paragraph"><p>
+The Jekyll project calls itself a "blog-aware, static site generator
+in Ruby." At its core, Jekyll is a very simple set of
+technologies for building web sites. Simplicity is what gives Jekyll
+its power: using Jekyll you will never have to learn about database
+backends, complicated server installations or any of the myriad
+processes involved with most monolithic web site technologies. Many
+prominent technical bloggers use Jekyll as their blogging platform.
+</p></div></div>
+</div></div>
+
+
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -417,7 +429,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <script src="edit.js"></script>
 <link rel="stylesheet" type="text/css" href="fab.css">
 <link rel="stylesheet" type="text/css" href="micromodal.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css">
 <!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
 <!-- Include jQuery Popup Overlay -->
@@ -436,7 +448,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <body class="article">
 <div id="header">
 </div>
-<div id="content">
+<div id="content" style="display: none">
 <div class="sect1">
 <h2 id="Jekyll">Ruby and Jekyll</h2>
 <div class="sectionbody">
@@ -499,7 +511,7 @@ tools.</p>
 <div class="sect3">
 <h4 id="_operating_jekyll_locally">Operating Jekyll Locally</h4>
 <div class="paragraph">
-<p>To really use jekyll, you&#8217;ll need the <code>jekyll</code> gem. As we explain in
+<p>To really use jekyll, you’ll need the <code>jekyll</code> gem. As we explain in
 the <a href="#appendix">[appendix]</a>, we could install a ruby gem using this command:</p>
 </div>
 <div class="listingblock">
@@ -514,7 +526,7 @@ commands we run inside the command line are lost to us and the world
 we are going to publish any of our sites to GitHub, we will want to
 make sure we are matching the exact versions of Jekyll and its
 dependencies so that a site that works on our local laptop also works
-when published into GitHub. If you don&#8217;t take care of this, you&#8217;ll
+when published into GitHub. If you don’t take care of this, you’ll
 occasionally get an email like this from GitHub:</p>
 </div>
 <div class="listingblock">
@@ -529,10 +541,10 @@ occasionally get an email like this from GitHub:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The fix for these two issues is a simple one. You&#8217;ve probably seen other
+<p>The fix for these two issues is a simple one. You’ve probably seen other
 chapters using a <code>Gemfile</code> to install ruby libraries. Instead of
 using a manual command like <code>bundle</code> to install from the command line,
-let&#8217;s put this dependency into the Gemfile. Then, anyone else using
+let’s put this dependency into the Gemfile. Then, anyone else using
 this repository can run the command <code>bundle install</code> and install the
 correct dependencies. And, instead of using the <code>jekyll</code> gem directly, use the
 <code>github-pages</code> gem which synchronizes your jekyll gem versions with
@@ -559,7 +571,7 @@ way to get your jekyll tool synced with the version running on GitHub.</p>
 <div class="sect2">
 <h3 id="_jekyll_blog_quick_start">Jekyll Blog Quick Start</h3>
 <div class="paragraph">
-<p>We have our required tools installed, so let&#8217;s create a simple blog. Run
+<p>We have our required tools installed, so let’s create a simple blog. Run
 these commands.</p>
 </div>
 <div class="listingblock">
@@ -570,7 +582,7 @@ $ cd myblog</code></pre>
 </div>
 <div class="paragraph">
 <p>The <code>jekyll new</code> commands creates the necessary structure for a
-minimal jekyll blog. Taking a look inside the directory, you&#8217;ll see a
+minimal jekyll blog. Taking a look inside the directory, you’ll see a
 few files which comprise the structure of a basic Jekyll blog.</p>
 </div>
 <div class="paragraph">
@@ -661,7 +673,7 @@ and how they work later in the chapter.</p>
 </div>
 <div class="paragraph">
 <p>Lastly, your jekyll directory has a special file called <code>_config.yml</code>.
-This is the jekyll configuration file. Peering into it, you&#8217;ll see it
+This is the jekyll configuration file. Peering into it, you’ll see it
 is very basic:</p>
 </div>
 <div class="listingblock">
@@ -741,11 +753,11 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 </div>
 </div>
 <div class="paragraph">
-<p>Hopefully you&#8217;ll agree this is a fairly intuitive and readable
+<p>Hopefully you’ll agree this is a fairly intuitive and readable
 alternative to raw HTML. This simplicity and readability is one of the
 major benefits of using Jekyll. Your source files maintain a
 readability that allows you to focus on the content itself, not on the
-technology that will eventually make them beautiful. Let&#8217;s go over
+technology that will eventually make them beautiful. Let’s go over
 this file and investigate some of the important pieces.</p>
 </div>
 <div class="sect3">
@@ -774,7 +786,7 @@ layout, the title, the date and a list of categories.</p>
 </div>
 <div class="paragraph">
 <p>The layout specified references one of the files in our <code>_layouts</code>
-directory. If you don&#8217;t specify a layout file in the YFM, then Jekyll
+directory. If you don’t specify a layout file in the YFM, then Jekyll
 assumes you want to use a file called <code>default.html</code> to wrap your
 content. You can easily imagine adding your own custom layout files
 to this directory and then overriding them in the YFM. If you look at
@@ -790,7 +802,7 @@ Though the title matches the filename (after replacing
 spaces with hyphens), changing the title in the YFM does not affect
 the name of the URL generated by Jekyll. If you want to change the URL, you need to
 rename the file itself. This is a nice benefit if you need to slightly modify the
-title and don&#8217;t want to damage preexisting URLs.</p>
+title and don’t want to damage preexisting URLs.</p>
 </div>
 <div class="paragraph">
 <p>The date and categories are two other variables included in the YFM.
@@ -800,14 +812,14 @@ provide additional context to the post, but are only stored in the
 Markdown file and not included inside the generated content itself.
 The categories list is often used to generate an index file of
 categories with a list of each post included in a category. If you
-come from a Wordpress background, you&#8217;ll likely have used categories.
+come from a Wordpress background, you’ll likely have used categories.
 These are generated dynamically from the MySQL database each time you
 request a list of them, but in Jekyll this file is staticly generated.
 If you wanted something more dynamic, you could imagine generating a
 JSON file with these categories and files, and then building a
 JavaScript widget which requests this file and then does something
 more interactive on the client side. Jekyll can take any template file
-and convert it to JSON (or any other format)&#8201;&#8212;&#8201;you are not limited to
+and convert it to JSON (or any other format) — you are not limited to
 just generating HTML files.</p>
 </div>
 <div class="paragraph">
@@ -828,7 +840,7 @@ private until writing has completed by making sure published is set
 to false. Unfortunately, not all tools that help you create Jekyll
 Markdown files remember to set the published variable explicitly
 inside of YFM, so make sure you check before committing the file to
-your repository if there is something you don&#8217;t yet want published.</p>
+your repository if there is something you don’t yet want published.</p>
 </div>
 </div>
 <div class="sect3">
@@ -845,7 +857,7 @@ fancing formatting, just pure textual content.</p>
 shine. One of the first Markdown components we notice is the backtick
 character, which is used to wrap small spans of code (or code-ish
 information, like filenames in this case). As you use more and more
-Markdown, you&#8217;ll find Markdown to be insidiously clever in the way it
+Markdown, you’ll find Markdown to be insidiously clever in the way it
 provides formatting characters without the onerous weight that HTML
 requires to offer the same explicit formatting.</p>
 </div>
@@ -861,19 +873,19 @@ requires to offer the same explicit formatting.</p>
 fully qualified URL (like "http://example.com"), or a reference to a
 link at the bottom of the page. In our page we have two references,
 keyed as <code>jekyll-gh</code> and <code>jekyll</code>; we can then use these inside our
-page with syntax like <code>[Jekyll&#8217;s GitHub repo][jekyll-gh]</code>. Using
+page with syntax like <code>[Jekyll’s GitHub repo][jekyll-gh]</code>. Using
 references has an additional benefit in that you can use the link more
 than once by its short name.</p>
 </div>
 <div class="paragraph">
 <p>Though not offered in the sample, Markdown provides an easy way to
-generate headers of varying degrees. To add a header, use the <code><mark></code>
-character, and repeat the <code></mark></code> character to build smaller headers.
-These delimiters simply map to the H tag; two hash characters <code><mark></code>
+generate headers of varying degrees. To add a header, use the <code><mark></mark></code>
+character, and repeat the <code></code> character to build smaller headers.
+These delimiters simply map to the H tag; two hash characters <code><mark></mark></code>
 turns into a <code>&lt;h2&gt;</code> tag. Building text enclosed by <code>&lt;h3&gt;</code> tags looks
-like <code></mark># Some Text</code>. You can optionally match the same number of hash
+like <code># Some Text</code>. You can optionally match the same number of hash
 symbols at the end of the line if you find it more expressive (<code><mark>#
-Some Text </mark>#</code>), but you don&#8217;t have to.</p>
+Some Text </mark>#</code>), but you don’t have to.</p>
 </div>
 <div class="paragraph">
 <p>Markdown offers easy shortcuts for most HTML elements: numbered and
@@ -894,11 +906,11 @@ description of the how and why of Markdown.</p>
 You already saw the <code>jekyll serve</code> command which builds the files into
 the <code>_site</code> directory and then starts a webserver with its root at that directory.
 If you start to use this mechanism to build your Jekyll sites then
-there are a few other switches you&#8217;ll want to learn about.</p>
+there are a few other switches you’ll want to learn about.</p>
 </div>
 <div class="paragraph">
 <p>If you are authoring and adjusting a page often, and switching back
-into your browser to see what it looks like, you&#8217;ll find utility in
+into your browser to see what it looks like, you’ll find utility in
 the <code>-w</code> switch ("watch"). This can be used to automatically
 regenerate the entire site if you make changes to any of the source
 files. If you edit a post file and save it, that file will be
@@ -920,7 +932,7 @@ will need to stop and restart the server.
 </table>
 </div>
 <div class="paragraph">
-<p>If you are running multiple Jekyll sites on the same laptop, you&#8217;ll
+<p>If you are running multiple Jekyll sites on the same laptop, you’ll
 quickly find that the second instance of <code>jekyll serve</code> fails because
 it cannot open port 4000. In this case, use <code>jekyll --port 4010</code> to
 open port 4010 (or whatever port you wish to use instead).</p>
@@ -989,7 +1001,7 @@ your username.</p>
 The <code>hub</code> tool was originally written in Ruby and as such could be
 easily installed using only <code>gem instal hub</code>, but hub was recently
 rewritten in Go. Go has a somewhat more complicated installation
-process, so we won&#8217;t document it here. If you have the <code>brew</code> command
+process, so we won’t document it here. If you have the <code>brew</code> command
 installed for OSX, you can install hub with the <code>brew install hub</code>
 command. Other platforms vary, so check <a href="http://github.com/github/hub" class="bare">http://github.com/github/hub</a>
 to determine the best way for your system.
@@ -1185,7 +1197,7 @@ on GitHub.</p>
 <div class="paragraph">
 <p>There are many more options than listed here. For example, by default,
 the Wordpress-Jekyll importer imports categories from your Wordpress
-database, but you can turn this off by specifying <code>"categories" &#8658;
+database, but you can turn this off by specifying <code>"categories" ⇒
 false</code>.</p>
 </div>
 </div>
@@ -1206,7 +1218,7 @@ Then, you can run the importer on that file.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This can be used to export files from a server which you don&#8217;t
+<p>This can be used to export files from a server which you don’t
 maintain, but works with sites you maintain and might be a more
 plausible option than running against a database.</p>
 </div>
@@ -1214,7 +1226,7 @@ plausible option than running against a database.</p>
 <p>To export the XML file, visit the export page on your Wordpress
 site. This is usually mapped to "/wp-admin/export.php", so it will be
 something like "https://blogname.com/wp-admin/export.php" (replacing
-blogname.com with your blog&#8217;s name).</p>
+blogname.com with your blog’s name).</p>
 </div>
 <div class="paragraph">
 <p>Like many free tools, there are definitely limitations to using this
@@ -1283,7 +1295,7 @@ Tumblr exporter scrapes all public posts from the blog, and then
 converts to a Jekyll compatible post format.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ve seen how we can use the importers available on
+<p>We’ve seen how we can use the importers available on
 import.jekyllrb.com to import. What if we have a non-standard site
 that we need to import?</p>
 </div>
@@ -1308,8 +1320,8 @@ is a Jekyll blog. This is much lazier than reading through the Jekyll
 tools and their libraries, of course. I started as a Perl programmer and
 always loved this quote from Larry Wall, the creator of Perl: "We will
 encourage you to develop the three great virtues of a programmer:
-laziness, impatience, and hubris." Let&#8217;s accept our inherent laziness
-and choose the second route. We&#8217;ll write some code to scrape a site
+laziness, impatience, and hubris." Let’s accept our inherent laziness
+and choose the second route. We’ll write some code to scrape a site
 and make a new Jekyll site from scratch, learning about the structure
 of a Jekyll blog through trial and error.</p>
 </div>
@@ -1342,7 +1354,7 @@ scraped by the Internet Archive for this site as shown in <a href="#calendar-vie
 upgrade it to another set of technologies, and never got around to
 completing this migration, and then lost the data. If we click the
 calendar item on June 6th, 2003, we will see a view of the data that
-was more or less complete at the height of the site&#8217;s functionality
+was more or less complete at the height of the site’s functionality
 and data. There are a few broken links to images, but otherwise the
 site is functionally archived inside Archive.org (<a href="#calendar-view-bytravelers">Archive of ByTravelers.com on Archive.org</a>).</p>
 </div>
@@ -1369,7 +1381,7 @@ which the execution and functionality were contained all in one.
 However, if we expose the functionality as a class, and then
 instantiate the class in a separate file, we can also write tests
 which utilize and validate the same steps as the runner script. So,
-let&#8217;s take this smarter approach and create three files: the scraper
+let’s take this smarter approach and create three files: the scraper
 class, the runner class (which instantiates and "runs" our scraper) and the test
 file (which instantiates and validates the functionality of our scraper).</p>
 </div>
@@ -1452,10 +1464,10 @@ closely the code we write inside our runner wrapper.</p>
 <div class="sect3">
 <h4 id="_scraping_titles">Scraping Titles</h4>
 <div class="paragraph">
-<p>Let&#8217;s start with something simple: scraping the titles from the
-site. We&#8217;ll use Ruby to scrape the site; Ruby has some intuitive gems like
+<p>Let’s start with something simple: scraping the titles from the
+site. We’ll use Ruby to scrape the site; Ruby has some intuitive gems like
 mechanize which simplifies building web clients. There is an API for
-the Internet Archive, but I found it flakey and unreliable, so we&#8217;ll
+the Internet Archive, but I found it flakey and unreliable, so we’ll
 just scrape the site. Add these additional lines to the Gemfile using
 this command and the install the libraries.</p>
 </div>
@@ -1525,7 +1537,7 @@ title of the page object.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s run our scraper and see what happens now.</p>
+<p>Let’s run our scraper and see what happens now.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1545,7 +1557,7 @@ title of the page object.</p>
 Wayback Machine" while some have "Read Journal Entries". Archive.org
 will respond with a placeholder title when it does not have content
 from the site (as is the case with item #58, for example). We should
-ignore those pages which don&#8217;t have the string "Read Journal Entries"
+ignore those pages which don’t have the string "Read Journal Entries"
 as the title (which tells us Archive.org does have cached content from
 our site).</p>
 </div>
@@ -1559,8 +1571,8 @@ pieces inside and putting them into our Jekyll posts.</p>
 <div class="paragraph">
 <p>There are two things that make Mechanize immensely powerful as the
 foundation for a scraping tool: easy access to making HTTP calls, and
-a powerful searching syntax once you have a remote document. You&#8217;ve
-seen how Mechanize makes it simple to make a GET request. Let&#8217;s
+a powerful searching syntax once you have a remote document. You’ve
+seen how Mechanize makes it simple to make a GET request. Let’s
 explore sifting through a massive document to get the important pieces
 of textual content. We can manually explore scraping using the Ruby
 IRB (interactive ruby shell).</p>
@@ -1584,11 +1596,11 @@ running. IRB has a lot of features beyond what we will discuss here,
 but those indexes can be used to replay history and for job control,
 like many other types of shells. At the IRB prompt you can enter Ruby
 and IRB executes the command immediately. Once the command executes,
-IRB prints the result; the characters <code>&#8658;</code> indicate the return
+IRB prints the result; the characters <code>⇒</code> indicate the return
 value. When you are playing with Ruby, return values will often be complex
 objects: the return value when
 you use <code>scraper.agent.get</code> is a Mechanize ruby object. This is a very
-large object, so printing it out takes a lot of real estate, and we&#8217;ve
+large object, so printing it out takes a lot of real estate, and we’ve
 abbreviated the majority of it here, and will do that for many complex
 objects to save space when discussing IRB.</p>
 </div>
@@ -1596,7 +1608,7 @@ objects to save space when discussing IRB.</p>
 <p>The last command in IRB saves the HTTP GET request as a page object.
 Once we have the page, how do we extract information from it?
 Mechanize has a nice piece of syntactic sugar that makes it easy to
-search the DOM structure: the "/" operator. Let&#8217;s try it.</p>
+search the DOM structure: the "/" operator. Let’s try it.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1816,7 +1828,7 @@ get these cached responses for free, and inside our IRB sessions as well.</p>
 <p>The titles look good, but the fourth one is a little worrisome. Looks
 like one of the users decided to enclose their title in double
 quotes. To control the formatting, it would be nice to clean that
-up. Let&#8217;s do that, and write tests to verify things work.</p>
+up. Let’s do that, and write tests to verify things work.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1872,7 +1884,7 @@ with double quotes</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>To fix this test, let&#8217;s strip out double quotes by changing one line
+<p>To fix this test, let’s strip out double quotes by changing one line
 in the scraper.rb file.</p>
 </div>
 <div class="listingblock">
@@ -1891,7 +1903,7 @@ end
 you believe in defensive coding. If this function were called with a
 nil value, for example, it would crash. Even if we could guarantee
 that this situation would never occur from our calling context, it is
-better to make our method safe. Let&#8217;s make sure it works and write a
+better to make our method safe. Let’s make sure it works and write a
 test to prove it.</p>
 </div>
 <div class="paragraph">
@@ -2017,7 +2029,7 @@ end</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s build the <code>get_filename</code> method. This method uses the handy Ruby
+<p>Let’s build the <code>get_filename</code> method. This method uses the handy Ruby
 <code>DateTime.parse</code> method to convert a string representation of a date
 into a date object, and then uses the <code>strfmtime</code> method to format
 that date into the format we want in our filename.</p>
@@ -2078,7 +2090,7 @@ def run
 <li>
 <p>We define a render method. This takes the processed information
 (which arrives as a hash) and renders the information into the proper
-format: the YAML Front Matter (YFM) and then the body (which we don&#8217;t
+format: the YAML Front Matter (YFM) and then the body (which we don’t
 have yet). We then return the rendered string.</p>
 </li>
 <li>
@@ -2127,7 +2139,7 @@ layout: post
 is still a perfectly valid Jekyll post.</p>
 </div>
 <div class="paragraph">
-<p>Now let&#8217;s use the jekyll command line tool to start looking at our
+<p>Now let’s use the jekyll command line tool to start looking at our
 posts and to troubleshoot any issues with our Jekyll repository.</p>
 </div>
 </div>
@@ -2163,8 +2175,8 @@ Configuration file: none
 </div>
 </div>
 <div class="paragraph">
-<p>So, we see a few problems already. First, we don&#8217;t have a layout for
-"post". And, there is no configuration file. Let&#8217;s fix these problems.</p>
+<p>So, we see a few problems already. First, we don’t have a layout for
+"post". And, there is no configuration file. Let’s fix these problems.</p>
 </div>
 <div class="paragraph">
 <p>Add a file called <code>_config.yml</code> to the root directory.</p>
@@ -2233,13 +2245,13 @@ wrapped around the entire contents.</p>
 <div class="paragraph">
 <p>When we add these files, the Jekyll tool will notice the file
 system has changed and regenerate files. We now have generated posts, but
-we don&#8217;t have a master index file, so let&#8217;s add this now.</p>
+we don’t have a master index file, so let’s add this now.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_master_index_file_with_liquid_markup">Master Index File with Liquid Markup</h4>
 <div class="paragraph">
-<p>We now have the posts generated properly, but we don&#8217;t have an entry
+<p>We now have the posts generated properly, but we don’t have an entry
 page into the blog. We can create a <code>index.md</code> file which just
 displays an index of all the blog posts.</p>
 </div>
@@ -2281,17 +2293,17 @@ logic operation, like conditionals or loops.</p>
 </div>
 <div class="paragraph">
 <p>The above template has both output and logic tags. We see a logic tag
-in the form of <code>{% for &#8230;&#8203; %}</code> which loops over each post. Jekyll will
+in the form of <code>{% for …​ %}</code> which loops over each post. Jekyll will
 process the entire posts directory and provide it to pages inside the
 <code>site.posts</code> variable, and the <code>for</code> logic tag allows us to iterate
-over them. If we use a <code>{% for &#8230;&#8203; %}</code> tag we need to "close" the tag
+over them. If we use a <code>{% for …​ %}</code> tag we need to "close" the tag
 with a matching <code>{% endfor %}</code> tag. Inside of our for
 loop we have several output tags: <code>{{ post.url }}</code> outputs the post
 URL associated with a post, for example. We also have "filters" which
 are methods defined to process data. One such filter is the
 <code>strip_html</code> filter which you might guess strips out HTML text,
 converting it to escaped text. This is necessary when your text could
-include HTML tags. You&#8217;ll also notice that filters can be "chained";
+include HTML tags. You’ll also notice that filters can be "chained";
 we process the body with the <code>strip_html</code> filter and then truncate the
 text by 40 characters using the <code>truncatewords:40</code> filter.</p>
 </div>
@@ -2306,7 +2318,7 @@ simple index page with the titles of our posts, like <a href="#austere_but_a_ste
 <div class="title">Figure 6. The Index Page, for a naked Jekyll blog</div>
 </div>
 <div class="paragraph">
-<p>This index page lists every post: let&#8217;s make it display only the last
+<p>This index page lists every post: let’s make it display only the last
 ten posts. Copy the <code>index.md</code> file to a file named <code>archive.md</code>.
 Then, change the <code>{% for post in site.posts %}</code> tag to <code>{% for post in
 site.posts | limit:10 %}</code>.</p>
@@ -2418,7 +2430,7 @@ the <code>render</code> method and we will insert it into the post.</p>
 <h4 id="_adding_images_to_jekyll">Adding Images to Jekyll</h4>
 <div class="paragraph">
 <p>Jekyll can host any binary files as well, and Markdown files can host
-the proper markup to include these assets. Let&#8217;s add the images from
+the proper markup to include these assets. Let’s add the images from
 the original site.</p>
 </div>
 <div class="listingblock">
@@ -2488,7 +2500,7 @@ layout: default
 <div class="paragraph">
 <p>Regenerating this page shows us an white background with an awkwardly
 juxtaposed colored image. Adding background colors to the entire site
-will help, so let&#8217;s now modify the CSS for our site.</p>
+will help, so let’s now modify the CSS for our site.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2597,7 +2609,7 @@ your imagination.</p>
 <div class="title">Figure 7. Restoring the original colors and images</div>
 </div>
 <div class="paragraph">
-<p>We&#8217;ve now entirely scraped an old site and built a new Jekyll blog, so
+<p>We’ve now entirely scraped an old site and built a new Jekyll blog, so
 there is just one thing left to do: encourage and permit
 collaboration, which GitHub makes particular easy.</p>
 </div>
@@ -2611,9 +2623,9 @@ because forking is a button click away, you can ask people to
 contribute or make changes with very little friction.
 You might have seen the banner saying "Fork me on GitHub" on many a
 software project page hosted on GitHub. We can motivate others to
-participate in our blog using pull requests. Let&#8217;s add that as a final touch and
+participate in our blog using pull requests. Let’s add that as a final touch and
 invite people to make contributions the GitHub way. The <a href="https://github.com/blog/273-github-ribbons">GitHub blog
-first posted these banners</a> and we&#8217;ll use their code almost as-is inside our
+first posted these banners</a> and we’ll use their code almost as-is inside our
 <code>default.html</code> page, just changing the reference to our repository in
 the link tag.</p>
 </div>
@@ -2657,7 +2669,7 @@ $ sleep $((10*60)) &amp;&amp; open http://bytravelers.com</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>And, don&#8217;t forget to setup DNS records and give yourself appropriate
+<p>And, don’t forget to setup DNS records and give yourself appropriate
 time to let those records propagate out.</p>
 </div>
 </div>
@@ -2665,14 +2677,14 @@ time to let those records propagate out.</p>
 <div class="sect2">
 <h3 id="_summary">Summary</h3>
 <div class="paragraph">
-<p>We&#8217;ve explored the details of Jekyll, looking at the structure of a
+<p>We’ve explored the details of Jekyll, looking at the structure of a
 Jekyll blog. Liquid Markup is a powerful way to use programmatic
 constructs inside of a Markdown file and we document the most
 important concepts around using this templating language. By
 investigating the internals of a Jekyll post, we explained the
 intricacies of YAML Front Matter (YFM) and how seamlessly you can mix
 and match HTML with Markdown syntax. Jekyll blogs can utilize their
-own custom CSS and we&#8217;ve shown how easy it is
+own custom CSS and we’ve shown how easy it is
 to use a powerful complete library like Bootstrap layered underneath a
 site specific small CSS file. And, we built a scraper application
 which retrieves a remote site in its entirety and converts it into the
@@ -2699,7 +2711,7 @@ you to create Jekyll blog posts with the Git Data API.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-11 16:44:50 PDT
+Last updated 2018-10-12 07:45:35 PDT
 </div>
 
 <div onclick="openCustomization()" class="fab-customization">☃</div>
@@ -2731,7 +2743,7 @@ Last updated 2018-10-11 16:44:50 PDT
 	<p id="selectedText">
 	</p>
 
-	<input name="change" type="text" placeholder="Enter your comment or edit request..."/>
+	<input name="change" type="text" placeholder="Enter your comment or edit request...">
       </main>
       <footer class="modal__footer">
 	<button onclick="storeIt()" class="modal__btn modal__btn-primary">Store comment</button>
@@ -2755,7 +2767,7 @@ Last updated 2018-10-11 16:44:50 PDT
 	FYI: This does not yet work!
 	<a target="_new" href="https://goo.gl/forms/8o5NgerENFqgm6vH3">Can you help provide feedback on what you like and want?</a>
 
-	<div  class="customization">
+	<div class="customization">
 	  <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
 	  <label for="checkbox_id">Minimize callouts</label>
 	  <div class="explanation">If a chapter contains callouts with code, don't show those.
@@ -2790,7 +2802,7 @@ Last updated 2018-10-11 16:44:50 PDT
 
       </main>
       <footer class="modal__footer">
-	<button  class="modal__btn modal__btn-primary">Save Customizations</button>
+	<button class="modal__btn modal__btn-primary">Save Customizations</button>
 	<button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
       </footer>
     </div>
@@ -2803,10 +2815,7 @@ Last updated 2018-10-11 16:44:50 PDT
   You've been tagged on it, so you will get updates automatically.
 </div>
 
-<iframe height="150px" width="100%"
-	style="background-color: white !important"
-	frameborder="0" id="th"
-	src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
+<iframe height="150px" width="100%" style="background-color: white !important" frameborder="0" id="th" src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
 
 <div class="faked">NB: This "contribution" button is a only a simulation, no actual money is required.
 You can safely click the contribute button to see what would happen if you actually made a micro-contribution.

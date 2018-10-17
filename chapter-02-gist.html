@@ -1,6 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<body>
+<div id="excerpt"><div class="sect1">
+<h2>Gists and the Gist API</h2>
+<div class="sectionbody"><div class="paragraph"><p>
+GitHub revolutionized software development by responding to a deep
+desire to share information. But calling it just "sharing" does a disservice to
+the tools GitHub provides: these tools remove barriers to
+communication and streamline workflows. These tools also arose at
+exactly the moment when the information technology revolution forced
+companies to adopt more open technologies which assisted an emerging remote
+workforce.
+</p></div></div>
+</div></div>
+
+
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -417,11 +429,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <script src="edit.js"></script>
 <link rel="stylesheet" type="text/css" href="fab.css">
 <link rel="stylesheet" type="text/css" href="micromodal.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.teddyhyde.com/0.0.1/teddyhyde-reveal-jekyll.css">
 <!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
 <!-- Include jQuery Popup Overlay -->
 <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127650375-1"></script>
@@ -436,7 +449,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <body class="article">
 <div id="header">
 </div>
-<div id="content">
+<div id="content" style="display: none">
 <div class="sect1">
 <h2 id="_gists_and_the_gist_api">Gists and the Gist API</h2>
 <div class="sectionbody">
@@ -476,7 +489,7 @@ highlight according to the language when displayed as in <a href="#documenting_j
 <p>There are other services that do this: pastebin was the first, and
 there are many others that offer variances on code sharing. But gists
 by GitHub are not simply a pasting service. Gists are first class
-repositories, forkable, editable and expansive. We&#8217;ll go over the basics
+repositories, forkable, editable and expansive. We’ll go over the basics
 of what gists are, and how to create them, and then show how they
 allow you to share code that is also a live application.</p>
 </div>
@@ -518,7 +531,7 @@ share that URL to mailing lists or anywhere you need public feedback.</p>
 As there are two types of gists (public and secret), it is important
 to understand the differences between them. Public gists are
 searchable. Secret gists are not searchable, but they are accessible
-to anyone who knows the URL. Don&#8217;t post any code to gist which you
+to anyone who knows the URL. Don’t post any code to gist which you
 need to keep secret as once you put it there, it is only as safe as
 the URL is secret.
 </td>
@@ -558,7 +571,7 @@ use a secret gist, prefix the username of the account holder in the
 gist like so: <code>{% gist xrd/8138797 hi.rb %}</code>.</p>
 </div>
 <div class="paragraph">
-<p>Now let&#8217;s look at creating gists from outside the GitHub.com site,
+<p>Now let’s look at creating gists from outside the GitHub.com site,
 using the command line.</p>
 </div>
 </div>
@@ -616,7 +629,7 @@ https://gist.github.com/9345609</code></pre>
 </div>
 <div class="paragraph">
 <p>Gists are often used to show interesting or troublesome code and there
-are times when you don&#8217;t want to display the entirety of a file. In
+are times when you don’t want to display the entirety of a file. In
 this case the command line <code>grep</code> tool can be a useful; <code>grep</code> searches
 for a specific piece of code and with the right switches can include
 several lines of context around that code inside a gist. This command
@@ -648,7 +661,7 @@ fully working and packaged applications inside a Git repository.</p>
 <div class="sect2">
 <h3 id="_gists_as_fully_functioning_apps">Gists as fully functioning apps</h3>
 <div class="paragraph">
-<p>Let&#8217;s build a simple Sinatra application to showcase how code hosted
+<p>Let’s build a simple Sinatra application to showcase how code hosted
 as a gist can also be a living application. Sinatra is a ruby library
 for creating dead-simple web servers. A Sinatra program can be as
 simple as this:</p>
@@ -678,7 +691,7 @@ authentication enabled. In most cases it is easier and more flexible
 to use the Git protocol URL.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s clone it now.</p>
+<p>Let’s clone it now.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -686,7 +699,7 @@ to use the Git protocol URL.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Once you have cloned the repository, go inside it. You&#8217;ll see a list
+<p>Once you have cloned the repository, go inside it. You’ll see a list
 of files, a list which right now numbers only one file.</p>
 </div>
 <div class="listingblock">
@@ -741,11 +754,11 @@ code.</p>
 <div class="sect2">
 <h3 id="_gists_that_render_gists">Gists that render gists</h3>
 <div class="paragraph">
-<p>Let&#8217;s add to our application and use the Octokit Ruby gem to pull all
+<p>Let’s add to our application and use the Octokit Ruby gem to pull all
 public gists for any user we specify. The Octokit library is the
 the official Ruby library for accessing the GitHub API. Why would we want to make a gist
 that displays other gists? Self-referential meta code is all the rage, the
-modern day response to René Magritte&#8217;s famous work: "Ceci n&#8217;est pas une
+modern day response to René Magritte’s famous work: "Ceci n’est pas une
 pipe." <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span></p>
 </div>
 <div class="paragraph">
@@ -879,7 +892,7 @@ Hypermedia APIs with HTML5 and Node</a>.</p>
 <div class="sect3">
 <h4 id="_using_hypermedia_data_from_octokit">Using Hypermedia Data from Octokit</h4>
 <div class="paragraph">
-<p>Now that you know a little about hypermedia, let&#8217;s navigate it using Octokit.</p>
+<p>Now that you know a little about hypermedia, let’s navigate it using Octokit.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -913,7 +926,7 @@ exceeds 100 items).</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s extend our Sinatra app to retrieve actual data about the user&#8217;s
+<p>Let’s extend our Sinatra app to retrieve actual data about the user’s
 gists by using hypermedia references.</p>
 </div>
 <div class="listingblock">
@@ -1004,7 +1017,7 @@ repositories and the Ruby library for accessing GitHub.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-11 16:44:50 PDT
+Last updated 2018-10-12 07:45:35 PDT
 </div>
 
 <div onclick="openCustomization()" class="fab-customization">☃</div>
@@ -1036,7 +1049,7 @@ Last updated 2018-10-11 16:44:50 PDT
 	<p id="selectedText">
 	</p>
 
-	<input name="change" type="text" placeholder="Enter your comment or edit request..."/>
+	<input name="change" type="text" placeholder="Enter your comment or edit request...">
       </main>
       <footer class="modal__footer">
 	<button onclick="storeIt()" class="modal__btn modal__btn-primary">Store comment</button>
@@ -1060,7 +1073,7 @@ Last updated 2018-10-11 16:44:50 PDT
 	FYI: This does not yet work!
 	<a target="_new" href="https://goo.gl/forms/8o5NgerENFqgm6vH3">Can you help provide feedback on what you like and want?</a>
 
-	<div  class="customization">
+	<div class="customization">
 	  <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
 	  <label for="checkbox_id">Minimize callouts</label>
 	  <div class="explanation">If a chapter contains callouts with code, don't show those.
@@ -1095,7 +1108,7 @@ Last updated 2018-10-11 16:44:50 PDT
 
       </main>
       <footer class="modal__footer">
-	<button  class="modal__btn modal__btn-primary">Save Customizations</button>
+	<button class="modal__btn modal__btn-primary">Save Customizations</button>
 	<button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
       </footer>
     </div>
@@ -1108,10 +1121,7 @@ Last updated 2018-10-11 16:44:50 PDT
   You've been tagged on it, so you will get updates automatically.
 </div>
 
-<iframe height="150px" width="100%"
-	style="background-color: white !important"
-	frameborder="0" id="th"
-	src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
+<iframe height="150px" width="100%" style="background-color: white !important" frameborder="0" id="th" src="https://tx.teddyhyde.com/contribution/btwg2.teddyhyde.io"></iframe>
 
 <div class="faked">NB: This "contribution" button is a only a simulation, no actual money is required.
 You can safely click the contribute button to see what would happen if you actually made a micro-contribution.
