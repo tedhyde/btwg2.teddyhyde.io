@@ -214,12 +214,12 @@ function showAltMessage() {
   }, 15*1000 );
 }
 
-TeddyHydeClient.onDecline( function() {
+FinneyForClient.onDecline( function() {
   showAltMessage();
   console.log( "Hey, we declined to pay!!!" );
 });
 
-TeddyHydeClient.onAlreadyPaid( function() {
+FinneyForClient.onAlreadyPaid( function() {
   revealContent();
 });
 
