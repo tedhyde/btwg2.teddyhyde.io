@@ -192,7 +192,7 @@ function turnOffLoginAndEnableEditing() {
     };
 }
   
-TeddyHydeClient.onContribution( function() {
+FinneyForClient.onContribution( function() {
   revealContent();
 });
 
