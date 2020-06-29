@@ -231,6 +231,6 @@ function setDisplayById( id, display ) {
 
 function revealContent(){
   setDisplayById("excerpt", "none" );
-  setDisplayById("content", "inline-block" );
+  setDisplayById("content", "inline" );
 }
 
